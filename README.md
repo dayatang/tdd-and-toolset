@@ -4,6 +4,10 @@
 
 ---
 
+*If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.（如果建筑从业者用我们程序员写程序的方式盖楼造桥，那么第一只飞来驻足的啄木鸟就足以毁灭人类文明）*
+
+<p style="text-align:right">—Weinberg's second law（温伯格第二定律）<p>
+
 本教程是Java开发工具集系列中的一个部分。
 
 ## 工欲善其事，必先利其器
