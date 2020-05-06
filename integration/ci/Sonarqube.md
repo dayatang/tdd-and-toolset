@@ -1,2 +1,0 @@
-# 与Sonarqube集成
-
