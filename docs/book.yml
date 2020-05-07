@@ -1,0 +1,77 @@
+---
+title: Java开发工具集之单元测试工具
+author: 杨宇
+description: 使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发
+language: zh-hans
+gitbook: 3.2.3
+styles:
+  website: "./styles/website.css"
+structure:
+  readme: README.md
+links:
+  sidebar:
+    我的博客: https://yyang.io/
+plugins:
+- "-sharing"
+- splitter
+- expandable-chapters
+- github
+- github-buttons
+- donate
+- sharing-plus
+- anchor-navigation-ex
+- favicon
+pluginsConfig:
+  github:
+    url: https://github.com/dayatang/
+  github-buttons:
+    buttons:
+    - user: dayatang
+      repo: mysql
+      type: star
+      size: small
+      count: true
+  donate:
+    wechat: "/images/wechat.png"
+    alipay: "/images/alipay.png"
+    title: ''
+    button: 打赏
+    alipayText: 支付宝打赏
+    wechatText: 微信打赏
+  sharing:
+    douban: false
+    facebook: false
+    google: false
+    hatenaBookmark: false
+    instapaper: false
+    line: false
+    linkedin: false
+    messenger: false
+    pocket: false
+    qq: false
+    qzone: false
+    stumbleupon: false
+    twitter: false
+    viber: false
+    vk: false
+    weibo: false
+    whatsapp: false
+    all:
+    - google
+    - facebook
+    - weibo
+    - twitter
+    - qq
+    - qzone
+    - linkedin
+    - pocket
+  anchor-navigation-ex:
+    showLevel: false
+  favicon:
+    shortcut: "./source/images/favicon.jpg"
+    bookmark: "./source/images/favicon.jpg"
+    appleTouch: "./source/images/apple-touch-icon.jpg"
+    appleTouchMore:
+      120x120: "./source/images/apple-touch-icon.jpg"
+      180x180: "./source/images/apple-touch-icon.jpg"
+
