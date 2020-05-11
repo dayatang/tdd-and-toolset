@@ -21,8 +21,9 @@ public class AccountWithdrawTest {
 
     @Test
     void shouldSuccess() {
-        account.withdraw(2000);
-        assertThat(account.getBalance()).isEqualTo(8000);
+        int amountOfWithdraw = 2000;
+        account.withdraw(amountOfWithdraw);
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE - amountOfWithdraw);
     }
 
     @Test
@@ -63,6 +64,4 @@ public class AccountWithdrawTest {
         });
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
     }
-
-
 }
