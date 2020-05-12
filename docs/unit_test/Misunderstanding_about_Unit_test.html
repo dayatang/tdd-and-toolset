@@ -1,20 +1,36 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>单元测试的常见错误观念和做法 · GitBook</title>
+        <title>单元测试的常见错误观念和做法 · Java开发工具集之单元测试工具</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="杨宇">
         
         
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -35,18 +51,10 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
+    
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +71,34 @@
     <link rel="prev" href="Unit_Test_in_the_Test_System.html" />
     
 
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +107,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +118,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -618,7 +663,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -656,9 +701,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;">&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;"><b></b>&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x9519;&#x8BEF;&#x89C2;&#x5FF5;"><b></b>1. &#x9519;&#x8BEF;&#x89C2;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#2-&#x9519;&#x8BEF;&#x505A;&#x6CD5;"><b></b>2. &#x9519;&#x8BEF;&#x505A;&#x6CD5;</a></li></ul></ul></div><a href="#&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;"><a name="&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;</h1>
 <p>&#x5F88;&#x591A;&#x4EBA;&#x5BF9;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x5B58;&#x5728;&#x9519;&#x8BEF;&#x7684;&#x89C2;&#x5FF5;&#x548C;&#x9519;&#x8BEF;&#x7684;&#x505A;&#x6CD5;&#x3002;&#x5178;&#x578B;&#x7684;&#x9519;&#x8BEF;&#x89C2;&#x5FF5;&#x548C;&#x505A;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<h2 id="1-&#x9519;&#x8BEF;&#x89C2;&#x5FF5;">1. &#x9519;&#x8BEF;&#x89C2;&#x5FF5;</h2>
+<h2 id="1-&#x9519;&#x8BEF;&#x89C2;&#x5FF5;"><a name="1-&#x9519;&#x8BEF;&#x89C2;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#1-&#x9519;&#x8BEF;&#x89C2;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x9519;&#x8BEF;&#x89C2;&#x5FF5;</h2>
 <ul>
 <li><p><strong>&#x6D4B;&#x8BD5;&#x662F;&#x6D4B;&#x8BD5;&#x4EBA;&#x5458;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x7A0B;&#x5E8F;&#x5458;&#x53EA;&#x5E94;&#x8BE5;&#x5199;&#x4EA7;&#x54C1;&#x4EE3;&#x7801;</strong></p>
 <p>&#x6D4B;&#x8BD5;&#x4EBA;&#x5458;&#x53EA;&#x5728;&#x4E4E;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x5728;&#x529F;&#x80FD;&#x548C;&#x5916;&#x90E8;&#x8D28;&#x91CF;&#x65B9;&#x9762;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x5BA2;&#x6237;&#x548C;&#x7528;&#x6237;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4ED6;&#x4EEC;&#x65E2;&#x4E0D;&#x4E86;&#x89E3;&#x3001;&#x4E5F;&#x4E0D;&#x5728;&#x4E4E;&#x4F60;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x4F60;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;&#xFF0C;&#x56E0;&#x6B64;&#x4ED6;&#x4EEC;&#x53EA;&#x80FD;&#x7F16;&#x5199;&#x9ED1;&#x76D2;&#x6D4B;&#x8BD5;&#x800C;&#x65E0;&#x6CD5;&#x7F16;&#x5199;&#x767D;&#x76D2;&#x6D4B;&#x8BD5;&#x3002;&#x5199;&#x4EE3;&#x7801;&#x548C;&#x5B9A;&#x4E49;&#x5185;&#x90E8;&#x7ED3;&#x6784;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8BC1;&#x660E;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7ED3;&#x6784;&#x7684;&#x6B63;&#x786E;&#x6027;&#x548C;&#x53EF;&#x9760;&#x6027;&#x540C;&#x6837;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
@@ -686,7 +731,7 @@
 <p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x53EF;&#x8BA9;&#x591A;&#x65B9;&#x53D7;&#x76CA;&#x3002;&#x5BA2;&#x6237;&#x901A;&#x8FC7;&#x5F97;&#x5230;&#x66F4;&#x597D;&#x7684;&#x4EA7;&#x54C1;&#x53D7;&#x76CA;&#xFF0C;&#x516C;&#x53F8;&#x901A;&#x8FC7;&#x4EA4;&#x4ED8;&#x66F4;&#x597D;&#x7684;&#x4EA7;&#x54C1;&#x53D7;&#x76CA;&#x3002;&#x4F46;&#x6700;&#x5927;&#x7684;&#x53D7;&#x76CA;&#x8005;&#x662F;&#x7A0B;&#x5E8F;&#x5458;&#x81EA;&#x5DF1;&#x3002;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x81EA;&#x4FE1;&#x5730;&#x7F16;&#x7801;&#xFF0C;&#x7A33;&#x5B9A;&#x5730;&#x524D;&#x8FDB;&#x3002;&#x5F53;&#x672A;&#x6765;&#x7531;&#x4E8E;&#x4FEE;&#x6539;&#x3001;&#x91CD;&#x6784;&#x548C;&#x6269;&#x5C55;&#x5BFC;&#x81F4;bug&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x53CA;&#x65F6;&#x53D1;&#x73B0;&#xFF0C;&#x51C6;&#x786E;&#x5B9A;&#x4F4D;&#xFF0C;&#x4F4E;&#x6210;&#x672C;&#x4FEE;&#x6B63;bug&#xFF0C;&#x4FEE;&#x6B63;&#x540E;&#x901A;&#x8FC7;&#x56DE;&#x5F52;&#x6D4B;&#x8BD5;&#x8FD8;&#x53EF;&#x4EE5;&#x786E;&#x8BA4;&#x8FD9;&#x6B21;&#x4FEE;&#x6B63;&#x6709;&#x6CA1;&#x6709;&#x4E0D;&#x5C0F;&#x5FC3;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x7684;bug&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x4FDD;&#x62A4;&#xFF0C;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x4EA4;&#x4ED8;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x6CA1;&#x6709;bug&#xFF0C;bug&#x7684;&#x4F4D;&#x7F6E;&#x5728;&#x54EA;&#x91CC;&#xFF0C;&#x4FEE;&#x6B63;bug&#x4E4B;&#x540E;&#x4F1A;&#x4E0D;&#x4F1A;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x7684;bug&#x3002;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x5DE5;&#x4F5C;&#x72B6;&#x6001;&#x662F;&#x81EA;&#x4FE1;&#x3001;&#x8F7B;&#x677E;&#x3001;&#x6109;&#x60A6;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x5FD0;&#x5FD1;&#x3001;&#x75B2;&#x5026;&#x3001;&#x6000;&#x7591;&#x81EA;&#x6211;&#x7684;&#x3002;&#x8FD9;&#x6839;&#x672C;&#x662F;&#x4E24;&#x4E2A;&#x4E16;&#x754C;&#x3002;</p>
 </li>
 </ul>
-<h2 id="2-&#x9519;&#x8BEF;&#x505A;&#x6CD5;">2. &#x9519;&#x8BEF;&#x505A;&#x6CD5;</h2>
+<h2 id="2-&#x9519;&#x8BEF;&#x505A;&#x6CD5;"><a name="2-&#x9519;&#x8BEF;&#x505A;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#2-&#x9519;&#x8BEF;&#x505A;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x9519;&#x8BEF;&#x505A;&#x6CD5;</h2>
 <ul>
 <li><p><strong>&#x5C06;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x5199;&#x6210;&#x4E86;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;</strong></p>
 <p>&#x8FD9;&#x662F;&#x5F88;&#x591A;&#x521D;&#x5B66;&#x8005;&#x5E38;&#x89C1;&#x7684;&#x9519;&#x8BEF;&#x505A;&#x6CD5;&#x3002;<strong>&#x5728;&#x6D4B;&#x8BD5;&#x4E2D;&#x91C7;&#x7528;&#x88AB;&#x6D4B;&#x7C7B;&#x7684;&#x771F;&#x5B9E;&#x4F9D;&#x8D56;&#x9879;&#x800C;&#x4E0D;&#x662F;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;&#xFF0C;&#x6216;&#x8005;&#x8FDE;&#x63A5;&#x5230;&#x6570;&#x636E;&#x5E93;&#x3001;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3001;&#x8BBF;&#x95EE;&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;&#x7B49;&#x7B49;</strong>&#x5C31;&#x4F1A;&#x5C06;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x5199;&#x6210;&#x4E86;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x3002;&#x5B83;&#x4E0D;&#x662F;&#x6D4B;&#x8BD5;&#x5355;&#x4E2A;&#x7C7B;&#x7684;&#x5355;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x6D4B;&#x8BD5;&#x4E86;&#x76F8;&#x4E92;&#x534F;&#x4F5C;&#x7684;&#x591A;&#x4E2A;&#x7C7B;&#xFF0C;&#x4EE5;&#x53CA;&#x5916;&#x90E8;&#x73AF;&#x5883;&#x3002;</p>
@@ -753,7 +798,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"单元测试的常见错误观念和做法","level":"1.2.4","depth":2,"next":{"title":"测试哪些内容：Right-BICEP","level":"1.2.5","depth":2,"path":"unit_test/Right-BICEP.md","ref":"unit_test/Right-BICEP.md","articles":[]},"previous":{"title":"单元测试在整个测试体系中的位置","level":"1.2.3","depth":2,"path":"unit_test/Unit_Test_in_the_Test_System.md","ref":"unit_test/Unit_Test_in_the_Test_System.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"unit_test/Misunderstanding_about_Unit_test.md","mtime":"2020-05-08T07:30:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-08T07:34:06.387Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"单元测试的常见错误观念和做法","level":"1.2.4","depth":2,"next":{"title":"测试哪些内容：Right-BICEP","level":"1.2.5","depth":2,"path":"unit_test/Right-BICEP.md","ref":"unit_test/Right-BICEP.md","articles":[]},"previous":{"title":"单元测试在整个测试体系中的位置","level":"1.2.3","depth":2,"path":"unit_test/Unit_Test_in_the_Test_System.md","ref":"unit_test/Unit_Test_in_the_Test_System.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"unit_test/Misunderstanding_about_Unit_test.md","mtime":"2020-05-08T07:30:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-12T06:29:36.190Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -761,6 +806,30 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
@@ -780,10 +849,6 @@
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
