@@ -4,6 +4,7 @@ package yang.yu.tdd.bank;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
 public class AccountWithdrawTest2 {
 
@@ -13,8 +14,10 @@ public class AccountWithdrawTest2 {
         // 1. 创建被测对象account
         Account account = new Account();
 
-        // 2. 设置被测对象的初始状态——将账户当前余额设置为10000元
-        account.setBalance(10000);
+        // 2. 设置被测对象的初始状态并注入协作对象——将账户当前余额设置为10000元
+        Transactions transactions = mock(Transactions.class);
+        account.setTransactions(transactions);
+        account.deposit(10000);
 
         // 3. 执行测试——从账户中取款2000元
         account.withdraw(2000);

@@ -6,17 +6,22 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
 
 public class AccountWithdrawTest {
 
     private static final int ORIGINAL_BALANCE = 10000;
+
+    private Transactions transactions;
 
     private Account account;
 
     @BeforeEach
     void setUp() {
         account = new Account();
-        account.setBalance(ORIGINAL_BALANCE);
+        transactions = mock(Transactions.class);
+        account.setTransactions(transactions);
+        account.deposit(ORIGINAL_BALANCE);
     }
 
     @Test
@@ -24,12 +29,14 @@ public class AccountWithdrawTest {
         int amountOfWithdraw = 2000;
         account.withdraw(amountOfWithdraw);
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE - amountOfWithdraw);
+        verify(transactions).add(account, TransactionType.CREDIT, amountOfWithdraw);
     }
 
     @Test
     void shouldSuccessWhenWithdrawAll() {
         account.withdraw(ORIGINAL_BALANCE);
         assertThat(account.getBalance()).isEqualTo(0);
+        verify(transactions).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE);
     }
 
     @Test
@@ -39,6 +46,7 @@ public class AccountWithdrawTest {
             account.withdraw(2000);
         });
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, 2000);
     }
 
     @Test
@@ -47,6 +55,7 @@ public class AccountWithdrawTest {
             account.withdraw(ORIGINAL_BALANCE + 1);
         });
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE + 1);
     }
 
     @Test
@@ -55,6 +64,7 @@ public class AccountWithdrawTest {
             account.withdraw(-1);
         });
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, -1);
     }
 
     @Test
@@ -63,5 +73,6 @@ public class AccountWithdrawTest {
             account.withdraw(0);
         });
         assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE);
     }
 }
