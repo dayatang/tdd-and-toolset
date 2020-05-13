@@ -1,6 +1,7 @@
 package yang.yu.tdd.bank;
 
 
+import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,6 +32,23 @@ public class AccountWithdrawTest2 {
         // 4.2 断言以指定的参数集调用了协作对象transactions的add方法。
         verify(transactions).add(account, TransactionType.CREDIT, 2000);
 
+    }
+
+    public double squareRoot(double a) {
+        return Math.sqrt(a);
+    }
+
+    @Test
+    void testSquareRootUsingInverse() {
+        double number = 8;
+        double result = squareRoot(number);
+        assertThat(result * result).isCloseTo(number, Percentage.withPercentage(0.00001));
+    }
+
+    @Test
+    void testSquareRootUsingStd() {
+        double number = 8;
+        assertThat(squareRoot(number)).isCloseTo(Math.sqrt(number), Percentage.withPercentage(0.00001));
     }
 
 }
