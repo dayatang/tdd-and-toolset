@@ -1,0 +1,1063 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第一个单元测试 · Java开发工具集之单元测试工具</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨宇">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="What_to_Test.html" />
+    
+    
+    <link rel="prev" href="Misunderstanding_about_Unit_test.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一部分 单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="What_is_Unit_Test.html">
+            
+                <a href="What_is_Unit_Test.html">
+            
+                    
+                    什么是单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Why_Unit_Test.html">
+            
+                <a href="Why_Unit_Test.html">
+            
+                    
+                    为什么要写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Unit_Test_in_the_Test_System.html">
+            
+                <a href="Unit_Test_in_the_Test_System.html">
+            
+                    
+                    单元测试在整个测试体系中的位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Misunderstanding_about_Unit_test.html">
+            
+                <a href="Misunderstanding_about_Unit_test.html">
+            
+                    
+                    单元测试的常见错误观念和做法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="The_First_Unit_Tests.html">
+            
+                <a href="The_First_Unit_Tests.html">
+            
+                    
+                    第一个单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="What_to_Test.html">
+            
+                <a href="What_to_Test.html">
+            
+                    
+                    测试哪些内容：Right-BICEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="CORRECT.html">
+            
+                <a href="CORRECT.html">
+            
+                    
+                    CORRECT边界条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="What_is_Good_Unit_Test.html">
+            
+                <a href="What_is_Good_Unit_Test.html">
+            
+                    
+                    好单元测试的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../tdd/">
+            
+                <a href="../tdd/">
+            
+                    
+                    第二部分 测试驱动开发TDD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../tdd/What_is_TDD.html">
+            
+                <a href="../tdd/What_is_TDD.html">
+            
+                    
+                    什么是TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../tdd/Why_TDD.html">
+            
+                <a href="../tdd/Why_TDD.html">
+            
+                    
+                    为什么要实践TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../tdd/How_TDD.html">
+            
+                <a href="../tdd/How_TDD.html">
+            
+                    
+                    如何实践TDD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../junit/">
+            
+                <a href="../junit/">
+            
+                    
+                    第三部分 使用JUnit编写和执行单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../junit/What_is_JUnit.html">
+            
+                <a href="../junit/What_is_JUnit.html">
+            
+                    
+                    JUnit简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../junit/writing/">
+            
+                <a href="../junit/writing/">
+            
+                    
+                    编写测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../junit/exec/">
+            
+                <a href="../junit/exec/">
+            
+                    
+                    运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../junit/Reports.html">
+            
+                <a href="../junit/Reports.html">
+            
+                    
+                    测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../assertj/">
+            
+                <a href="../assertj/">
+            
+                    
+                    第四部分 使用AssertJ编写测试断言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../assertj/What_is_AssertJ.html">
+            
+                <a href="../assertj/What_is_AssertJ.html">
+            
+                    
+                    断言和AssertJ简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                <a href="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                    
+                    为什么不采用Hamcrest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../assertj/Using_AssertJ.html">
+            
+                <a href="../assertj/Using_AssertJ.html">
+            
+                    
+                    使用AssertJ编写断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    第五部分 使用Mockito创建测试替身
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    测试替身和Mockito简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../mockito/Using_Mockito.html">
+            
+                <a href="../mockito/Using_Mockito.html">
+            
+                    
+                    用Mockito生成测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../integration/">
+            
+                <a href="../integration/">
+            
+                    
+                    第六部分 与其他开发工具的集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../integration/ide/">
+            
+                <a href="../integration/ide/">
+            
+                    
+                    集成到IntelliJ Idea和Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../integration/ide/IDEA.html">
+            
+                <a href="../integration/ide/IDEA.html">
+            
+                    
+                    与IntelliJ IDEA集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../integration/ide/Eclipse.html">
+            
+                <a href="../integration/ide/Eclipse.html">
+            
+                    
+                    与Eclipse集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../integration/build/">
+            
+                <a href="../integration/build/">
+            
+                    
+                    集成到Maven、Ant和Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../integration/build/Maven.html">
+            
+                <a href="../integration/build/Maven.html">
+            
+                    
+                    与Maven集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../integration/build/Ant.html">
+            
+                <a href="../integration/build/Ant.html">
+            
+                    
+                    与Ant集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../integration/build/Gradle.html">
+            
+                <a href="../integration/build/Gradle.html">
+            
+                    
+                    与Gradle集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../integration/ci/">
+            
+                <a href="../integration/ci/">
+            
+                    
+                    与Jenkins和Sonarqube集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../integration/ci/Jenkins.html">
+            
+                <a href="../integration/ci/Jenkins.html">
+            
+                    
+                    与Jenkins集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../integration/ci/Sonarqube.html">
+            
+                <a href="../integration/ci/Sonarqube.html">
+            
+                    
+                    与Sonarqube集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第一个单元测试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><b></b>&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x9700;&#x6C42;"><b></b>1. &#x9700;&#x6C42;</a></li><li><span class="title-icon "></span><a href="#2-&#x5B9E;&#x73B0;"><b></b>2. &#x5B9E;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#21-&#x88AB;&#x6D4B;&#x7C7B;account"><b></b>2.1 &#x88AB;&#x6D4B;&#x7C7B;Account</a></li><li><span class="title-icon "></span><a href="#22-&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x63A5;&#x53E3;"><b></b>2.2 &#x5916;&#x90E8;&#x4F9D;&#x8D56;Transactions&#x63A5;&#x53E3;</a></li></ul><li><span class="title-icon "></span><a href="#3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><b></b>3. &#x5355;&#x5143;&#x6D4B;&#x8BD5;</a></li></ul></ul></div><a href="#&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><a name="&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h1>
+<p>&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x7B2C;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x3002;</p>
+<h2 id="1-&#x9700;&#x6C42;"><a name="1-&#x9700;&#x6C42;" class="anchor-navigation-ex-anchor" href="#1-&#x9700;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x9700;&#x6C42;</h2>
+<p>&#x6211;&#x4EEC;&#x8981;&#x6D4B;&#x8BD5;&#x4E00;&#x4E2A;&#x94F6;&#x884C;&#x8D26;&#x6237;&#x7C7B;Account&#x7684;&#x201C;&#x53D6;&#x6B3E;&#x201D;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x2014;&#x2014;withdraw()&#x65B9;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x5951;&#x7EA6;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x8D26;&#x6237;&#x88AB;&#x51BB;&#x7ED3;&#xFF0C;&#x53D6;&#x6B3E;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x5E76;&#x629B;&#x51FA;AccountLockedException&#x5F02;&#x5E38;</li>
+<li>&#x5982;&#x679C;&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x662F;0&#x6216;&#x8005;&#x8D1F;&#x6570;&#xFF0C;&#x53D6;&#x6B3E;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x5E76;&#x629B;&#x51FA;InvalidAmountException&#x5F02;&#x5E38;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#xFF0C;&#x53D6;&#x6B3E;&#x5C06;&#x5931;&#x8D25;&#xFF0C;&#x5E76;&#x629B;&#x51FA;BalanceInsufficientException&#x5F02;&#x5E38;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x60C5;&#x51B5;&#x90FD;&#x6CA1;&#x53D1;&#x751F;&#xFF0C;&#x53D6;&#x6B3E;&#x5C06;&#x6210;&#x529F;&#xFF0C;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x4F1A;&#x76F8;&#x5E94;&#x6263;&#x51CF;&#xFF0C;&#x5E76;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x8BB0;&#x5F55;&#x8FD9;&#x4E00;&#x7B14;&#x4EA4;&#x6613;&#x3002;</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5173;&#x952E;&#x7684;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;&#x53D6;&#x6B3E;&#x7531;&#x4E8E;&#x4EFB;&#x4F55;&#x539F;&#x56E0;&#x5931;&#x8D25;&#xFF0C;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x53D8;&#x5316;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x53D6;&#x6B3E;&#x6210;&#x529F;&#xFF0C;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x5C06;&#x4F1A;&#x76F8;&#x5E94;&#x51CF;&#x5C11;&#xFF0C;&#x5E76;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x8BB0;&#x5F55;&#x8FD9;&#x7B14;&#x4EA4;&#x6613;&#x3002;</li>
+</ol>
+<h2 id="2-&#x5B9E;&#x73B0;"><a name="2-&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#2-&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5B9E;&#x73B0;</h2>
+<h3 id="21-&#x88AB;&#x6D4B;&#x7C7B;account"><a name="21-&#x88AB;&#x6D4B;&#x7C7B;account" class="anchor-navigation-ex-anchor" href="#21-&#x88AB;&#x6D4B;&#x7C7B;account"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x88AB;&#x6D4B;&#x7C7B;Account</h3>
+<p>&#x57FA;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x5951;&#x7EA6;&#x548C;&#x89C4;&#x5219;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#xFF08;&#x6B64;&#x5904;&#x6682;&#x4E0D;&#x91C7;&#x7528;TDD&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x5199;&#x597D;&#x4EA7;&#x54C1;&#x4EE3;&#x7801;&#xFF0C;&#x518D;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.bank;
+
+<span class="hljs-comment">//&#x88AB;&#x6D4B;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+
+    <span class="hljs-comment">//&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF1A;&#x8D26;&#x6237;&#x662F;&#x5426;&#x88AB;&#x51BB;&#x7ED3;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> locked = <span class="hljs-keyword">false</span>;
+
+    <span class="hljs-comment">//&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF1A;&#x5F53;&#x524D;&#x4F59;&#x989D;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> balance = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">//&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#xFF08;&#x534F;&#x4F5C;&#x8005;&#xFF09;&#xFF1A;&#x8BB0;&#x5F55;&#x6BCF;&#x4E00;&#x7B14;&#x6536;&#x652F;</span>
+    <span class="hljs-keyword">private</span> Transactions transactions;
+
+    <span class="hljs-comment">//&#x7528;&#x4E8E;&#x6CE8;&#x5165;&#x5916;&#x90E8;&#x534F;&#x4F5C;&#x8005;&#x7684;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setTransactions</span><span class="hljs-params">(Transactions transactions)</span> </span>{
+        <span class="hljs-keyword">this</span>.transactions = transactions;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isLocked</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> locked;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBalance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> balance;
+    }
+
+    <span class="hljs-comment">//&#x5B58;&#x6B3E;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deposit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> amount)</span> </span>{
+        <span class="hljs-comment">//&#x5931;&#x8D25;&#x8DEF;&#x5F84;1&#xFF1A;&#x8D26;&#x6237;&#x88AB;&#x51BB;&#x7ED3;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x5B58;&#x6B3E;</span>
+        <span class="hljs-keyword">if</span> (locked) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AccountLockedException();
+        }
+        <span class="hljs-comment">//&#x5931;&#x8D25;&#x8DEF;&#x5F84;2&#xFF1A;&#x5B58;&#x6B3E;&#x91D1;&#x989D;&#x4E0D;&#x662F;&#x6B63;&#x6570;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x5B58;&#x6B3E;</span>
+        <span class="hljs-keyword">if</span> (amount &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidAmountException();
+        }
+        <span class="hljs-comment">//&#x6210;&#x529F;&#xFF08;&#x5FEB;&#x4E50;&#xFF09;&#x8DEF;&#x5F84;</span>
+        balance += amount; <span class="hljs-comment">//&#x5B58;&#x6B3E;&#x6210;&#x529F;&#x540E;&#x6539;&#x53D8;&#x5185;&#x90E8;&#x72B6;&#x6001;</span>
+        transactions.add(<span class="hljs-keyword">this</span>, TransactionType.DEBIT, amount); <span class="hljs-comment">//&#x5B58;&#x6B3E;&#x6210;&#x529F;&#x540E;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x534F;&#x4F5C;&#x8005;</span>
+    }
+
+    <span class="hljs-comment">//&#x53D6;&#x6B3E;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">withdraw</span><span class="hljs-params">(<span class="hljs-keyword">int</span> amount)</span> </span>{
+        <span class="hljs-comment">//&#x5931;&#x8D25;&#x8DEF;&#x5F84;1&#xFF1A;&#x8D26;&#x6237;&#x88AB;&#x51BB;&#x7ED3;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x53D6;&#x6B3E;</span>
+        <span class="hljs-keyword">if</span> (locked) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> AccountLockedException();
+        }
+        <span class="hljs-comment">//&#x5931;&#x8D25;&#x8DEF;&#x5F84;2&#xFF1A;&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x4E0D;&#x662F;&#x6B63;&#x6570;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x53D6;&#x6B3E;</span>
+        <span class="hljs-keyword">if</span> (amount &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InvalidAmountException();
+        }
+        <span class="hljs-comment">//&#x5931;&#x8D25;&#x8DEF;&#x5F84;3&#xFF1A;&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x8D85;&#x8FC7;&#x4F59;&#x989D;&#x65F6;&#x4E0D;&#x5141;&#x8BB8;&#x53D6;&#x6B3E;</span>
+        <span class="hljs-keyword">if</span> (amount &gt; balance) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> BalanceInsufficientException();
+        }
+        <span class="hljs-comment">//&#x6210;&#x529F;&#xFF08;&#x5FEB;&#x4E50;&#xFF09;&#x8DEF;&#x5F84;</span>
+        balance -= amount;   <span class="hljs-comment">//&#x53D6;&#x6B3E;&#x6210;&#x529F;&#x540E;&#x6539;&#x53D8;&#x5185;&#x90E8;&#x72B6;&#x6001;</span>
+        transactions.add(<span class="hljs-keyword">this</span>, TransactionType.CREDIT, amount); <span class="hljs-comment">//&#x53D6;&#x6B3E;&#x6210;&#x529F;&#x540E;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x534F;&#x4F5C;&#x8005;</span>
+    }
+
+    <span class="hljs-comment">//&#x51BB;&#x7ED3;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span> </span>{
+        locked = <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-comment">//&#x89E3;&#x51BB;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unlock</span><span class="hljs-params">()</span> </span>{
+        locked = <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>Account&#x7C7B;&#x6709;&#x4E09;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5176;&#x4E2D;locked&#x548C;balance&#x662F;&#x4E24;&#x4E2A;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x5206;&#x522B;&#x4EE3;&#x8868;&#x51BB;&#x7ED3;&#x72B6;&#x6001;&#x548C;&#x5F53;&#x524D;&#x4F59;&#x989D;&#xFF1B;transactions&#x662F;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#xFF08;&#x534F;&#x4F5C;&#x8005;&#xFF09;&#xFF0C;&#x7528;&#x6765;&#x8BB0;&#x5F55;&#x5B58;&#x53D6;&#x4EA4;&#x6613;&#x3002;</li>
+<li>Account&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;isLocked()&#x548C;getBalance()&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x5C06;locked&#x548C;balance&#x5185;&#x90E8;&#x72B6;&#x6001;&#x66B4;&#x9732;&#x7ED9;&#x5916;&#x754C;&#x3002;</li>
+<li>Account&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;lock()&#x548C;unlock()&#x65B9;&#x6CD5;&#x6765;&#x8BBE;&#x7F6E;locked&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;deposit()&#x548C;withdraw()&#x6765;&#x66F4;&#x6539;balance&#x5185;&#x90E8;&#x72B6;&#x6001;&#x3002;</li>
+<li>Account&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;setTransactions()&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x6CE8;&#x5165;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x3002;</li>
+</ul>
+<h3 id="22-&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x63A5;&#x53E3;"><a name="22-&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#22-&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x5916;&#x90E8;&#x4F9D;&#x8D56;Transactions&#x63A5;&#x53E3;</h3>
+<p>Transactions&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x8BB0;&#x5F55;&#x6BCF;&#x4E00;&#x7B14;&#x5B58;&#x6B3E;&#x3001;&#x53D6;&#x6B3E;&#x4EA4;&#x6613;&#x7684;&#x65B9;&#x6CD5;add():</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Transactions</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Account account, TransactionType transactionType, <span class="hljs-keyword">int</span> amount)</span></span>;
+}
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x8BB0;&#x5F55;&#x4EA4;&#x6613;&#x5173;&#x8054;&#x7684;&#x8D26;&#x6237;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;TransactionType&#x662F;&#x4E2A;&#x679A;&#x4E3E;&#xFF0C;&#x8868;&#x660E;&#x662F;&#x5B58;&#x6B3E;&#x8FD8;&#x662F;&#x53D6;&#x6B3E;&#x3002;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x8868;&#x793A;&#x5B58;&#x53D6;&#x91D1;&#x989D;&#x3002;</p>
+<h2 id="3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><a name="3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#3-&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5355;&#x5143;&#x6D4B;&#x8BD5;</h2>
+<p>&#x9488;&#x5BF9;withdraw()&#x5951;&#x7EA6;&#x548C;&#x4E1A;&#x52A1;&#x89C4;&#x5219;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x4E0B;&#x9762;&#x4E00;&#x7EC4;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6765;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x5168;&#x9762;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.bank;
+
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.assertj.core.api.Assertions.assertThat;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertThrows;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AccountWithdrawTest</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> ORIGINAL_BALANCE = <span class="hljs-number">10000</span>;
+
+    <span class="hljs-keyword">private</span> Transactions transactions;
+
+    <span class="hljs-keyword">private</span> Account account;
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setUp</span><span class="hljs-params">()</span> </span>{
+        account = <span class="hljs-keyword">new</span> Account();
+        transactions = mock(Transactions.class);
+        account.setTransactions(transactions);
+        account.deposit(ORIGINAL_BALANCE);
+    }
+
+    <span class="hljs-comment">//&#x8D26;&#x6237;&#x72B6;&#x6001;&#x6B63;&#x5E38;&#xFF0C;&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x5C0F;&#x4E8E;&#x5F53;&#x524D;&#x4F59;&#x989D;&#x65F6;&#x53D6;&#x6B3E;&#x6210;&#x529F;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldSuccess</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> amountOfWithdraw = <span class="hljs-number">2000</span>;
+        account.withdraw(amountOfWithdraw);
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE - amountOfWithdraw);
+        verify(transactions).add(account, TransactionType.CREDIT, amountOfWithdraw);
+    }
+
+    <span class="hljs-comment">//&#x5C06;&#x4F59;&#x989D;&#x5168;&#x90E8;&#x53D6;&#x5B8C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53D6;&#x6B3E;&#x6210;&#x529F;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldSuccessWhenWithdrawAll</span><span class="hljs-params">()</span> </span>{
+        account.withdraw(ORIGINAL_BALANCE);
+        assertThat(account.getBalance()).isEqualTo(<span class="hljs-number">0</span>);
+        verify(transactions).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE);
+    }
+
+    <span class="hljs-comment">//&#x8D26;&#x6237;&#x88AB;&#x51BB;&#x7ED3;&#xFF0C;&#x53D6;&#x6B3E;&#x5E94;&#x5F53;&#x5931;&#x8D25;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldFailWhenAccountLocked</span><span class="hljs-params">()</span> </span>{
+        account.lock();
+        assertThrows(AccountLockedException.class, () -&gt; {
+            account.withdraw(<span class="hljs-number">2000</span>);
+        });
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, <span class="hljs-number">2000</span>);
+    }
+
+    <span class="hljs-comment">//&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x53D6;&#x6B3E;&#x5E94;&#x5F53;&#x5931;&#x8D25;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldFailWhenAmountLessThanZero</span><span class="hljs-params">()</span> </span>{
+        assertThrows(InvalidAmountException.class, () -&gt; {
+            account.withdraw(-<span class="hljs-number">1</span>);
+        });
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, -<span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-comment">//&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x662F;0&#xFF0C;&#x5E94;&#x5F53;&#x5931;&#x8D25;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldFailWhenAmountEqualToZero</span><span class="hljs-params">()</span> </span>{
+        assertThrows(InvalidAmountException.class, () -&gt; {
+            account.withdraw(<span class="hljs-number">0</span>);
+        });
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE);
+    }
+
+    <span class="hljs-comment">//&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#xFF0C;&#x5E94;&#x5F53;&#x5931;&#x8D25;</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">shouldFailWhenBalanceInsufficient</span><span class="hljs-params">()</span> </span>{
+        assertThrows(BalanceInsufficientException.class, () -&gt; {
+            account.withdraw(ORIGINAL_BALANCE + <span class="hljs-number">1</span>);
+        });
+        assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+        verify(transactions, never()).add(account, TransactionType.CREDIT, ORIGINAL_BALANCE + <span class="hljs-number">1</span>);
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x91C7;&#x7528;JUnit 5&#xFF0C;Mockito 3&#x548C;AssertJ 3&#x7F16;&#x5199;&#x3002;&#x9700;&#x8981;&#x5728;JDK 8&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li>&#x6807;&#x6CE8;&#x4E86;@Test&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;&#x65B9;&#x6CD5;&#x540D;&#x5B57;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x53D6;&#xFF0C;&#x4F46;&#x6700;&#x597D;&#x80FD;&#x591F;&#x5145;&#x5206;&#x8868;&#x8FBE;&#x6D4B;&#x8BD5;&#x610F;&#x56FE;&#x3002;</li>
+<li>&#x6807;&#x6CE8;&#x4E86;@BeforeEach&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x5728;<strong>&#x6BCF;&#x4E00;&#x4E2A;</strong>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x90FD;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x65B9;&#x6CD5;&#x540D;&#x5B57;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x53D6;&#x3002;</li>
+</ul>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x6BCF;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6765;&#x770B;&#xFF0C;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x901A;&#x5E38;&#x90FD;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li><p>&#x521B;&#x5EFA;&#x88AB;&#x6D4B;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code class="lang-java">account = <span class="hljs-keyword">new</span> Account();
+</code></pre>
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x5185;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x5E76;&#x6CE8;&#x5165;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x3002;&#x5BF9;&#x4E8E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x5E94;&#x8BE5;&#x7528;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;&#x4EE3;&#x66FF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x7528;Mockito&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;Transactions&#x63A5;&#x53E3;</span>
+transactions = mock(Transactions.class);
+<span class="hljs-comment">//&#x6CE8;&#x5165;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;</span>
+account.setTransactions(transactions);    
+<span class="hljs-comment">//&#x8C03;&#x7528;&#x5B58;&#x6B3E;&#x65B9;&#x6CD5;&#xFF0C;&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x4F59;&#x989D;</span>
+account.deposit(ORIGINAL_BALANCE);    
+<span class="hljs-comment">//&#x8C03;&#x7528;&#x51BB;&#x7ED3;&#x65B9;&#x6CD5;&#xFF0C;&#x8BBE;&#x7F6E;&#x51BB;&#x7ED3;&#x72B6;&#x6001;</span>
+account.lock();
+</code></pre>
+</li>
+<li><p>&#x8C03;&#x7528;&#x88AB;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x3002;</p>
+<pre><code class="lang-java">account.withdraw(amountOfWithdraw);
+</code></pre>
+</li>
+<li><p>&#x65AD;&#x8A00;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</p>
+<p>&#x6210;&#x529F;&#x65F6;&#x65AD;&#x8A00;&#x4FEE;&#x6539;&#x4E86;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x5E76;&#x8C03;&#x7528;&#x4E86;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x65AD;&#x8A00;&#x5F53;&#x524D;&#x4F59;&#x989D;&#x7B49;&#x4E8E;&#x539F;&#x6709;&#x4F59;&#x989D;&#x51CF;&#x53BB;&#x53D6;&#x6B3E;&#x91D1;&#x989D;</span>
+assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE - amountOfWithdraw);
+<span class="hljs-comment">//&#x65AD;&#x8A00;&#x8C03;&#x7528;&#x4E86;&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x7684;add()&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;account, TransactionType.CREDIT, amountOfWithdraw&#x4E3A;&#x53C2;&#x6570;</span>
+verify(transactions).add(account, TransactionType.CREDIT, amountOfWithdraw);
+</code></pre>
+<p>&#x5931;&#x8D25;&#x65F6;&#x65AD;&#x8A00;&#x629B;&#x51FA;&#x4E86;&#x671F;&#x5F85;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x4F59;&#x989D;&#x6CA1;&#x6709;&#x51CF;&#x5C11;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x4F9D;&#x8D56;transactions&#x6765;&#x521B;&#x5EFA;&#x4EA4;&#x6613;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x65AD;&#x8A00;&#x8C03;&#x7528;&#x88AB;&#x6D4B;&#x65B9;&#x6CD5;&#x540E;&#x629B;&#x51FA;AccountLockedException&#x5F02;&#x5E38;</span>
+assertThrows(AccountLockedException.class, () -&gt; {
+    account.withdraw(<span class="hljs-number">2000</span>);
+}); 
+<span class="hljs-comment">//&#x65AD;&#x8A00;&#x4F59;&#x989D;&#x6CA1;&#x6709;&#x51CF;&#x5C11;</span>
+assertThat(account.getBalance()).isEqualTo(ORIGINAL_BALANCE);
+<span class="hljs-comment">//&#x65AD;&#x8A00;&#x6CA1;&#x6709;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x7684;&#x65B9;&#x6CD5;</span>
+verify(transactions, never()).add(account, TransactionType.CREDIT, <span class="hljs-number">2000</span>);
+</code></pre>
+</li>
+</ol>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7528;&#x5230;&#x4E86;&#x672C;&#x95E8;&#x8BFE;&#x7A0B;&#x5C06;&#x8981;&#x4ECB;&#x7ECD;&#x7684;&#x4E09;&#x5927;&#x6846;&#x67B6;&#xFF1A;</p>
+<ul>
+<li>JUnit&#x7528;&#x6765;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;&#x4E3B;&#x4F53;</li>
+<li>Mockito&#x7528;&#x6765;&#x521B;&#x5EFA;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x7684;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;&#xFF0C;&#x6CE8;&#x5165;&#x5230;&#x88AB;&#x6D4B;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>AssertJ&#x7528;&#x6765;&#x7F16;&#x5199;&#x5404;&#x79CD;&#x65AD;&#x8A00;&#xFF0C;&#x65AD;&#x8A00;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x867D;&#x7136;JUnit&#x4E5F;&#x5305;&#x542B;&#x4E86;&#x672C;&#x8EAB;&#x7684;&#x65AD;&#x8A00;&#x5E93;&#xFF0C;&#x4F46;&#x662F;&#x5185;&#x5BB9;&#x4E0D;&#x591F;&#x4E30;&#x5BCC;&#xFF0C;&#x5F62;&#x5F0F;&#x4E0D;&#x591F;&#x4F18;&#x7F8E;&#x3002;&#x7528;AssertJ&#x6765;&#x5199;&#x65AD;&#x8A00;&#x53EF;&#x8BFB;&#x6027;&#x7B49;&#x65B9;&#x9762;&#x4F1A;&#x597D;&#x5F97;&#x591A;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Misunderstanding_about_Unit_test.html" class="navigation navigation-prev " aria-label="Previous page: 单元测试的常见错误观念和做法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="What_to_Test.html" class="navigation navigation-next " aria-label="Next page: 测试哪些内容：Right-BICEP">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第一个单元测试","level":"1.2.5","depth":2,"next":{"title":"测试哪些内容：Right-BICEP","level":"1.2.6","depth":2,"path":"unit_test/What_to_Test.md","ref":"unit_test/What_to_Test.md","articles":[]},"previous":{"title":"单元测试的常见错误观念和做法","level":"1.2.4","depth":2,"path":"unit_test/Misunderstanding_about_Unit_test.md","ref":"unit_test/Misunderstanding_about_Unit_test.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"unit_test/The_First_Unit_Tests.md","mtime":"2020-05-13T03:37:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-13T03:23:04.935Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
