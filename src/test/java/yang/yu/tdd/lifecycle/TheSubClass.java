@@ -2,7 +2,7 @@ package yang.yu.tdd.lifecycle;
 
 import org.junit.jupiter.api.*;
 
-public class TheSubClass extends TheSuperClass implements TheInterface {
+public class TheSubClass extends TheSuperClass {
 
     @BeforeEach
     @DisplayName("Before Each In Subclass")

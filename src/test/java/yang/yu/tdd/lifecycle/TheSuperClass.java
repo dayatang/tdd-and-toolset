@@ -2,7 +2,7 @@ package yang.yu.tdd.lifecycle;
 
 import org.junit.jupiter.api.*;
 
-public abstract class TheSuperClass {
+public abstract class TheSuperClass implements TheInterface {
 
     @BeforeEach
     @DisplayName("Before Each In Superclass")
