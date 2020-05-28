@@ -29,8 +29,14 @@ public class TheSubClass extends TheSuperClass implements TheInterface {
     }
 
     @Test
-    @DisplayName("The Test Method")
-    void testIt() {
-        System.out.println("The Test Method");
+    @DisplayName("A Test Method")
+    void aTest() {
+        System.out.println("A Test Method");
+    }
+
+    @Test
+    @DisplayName("Another Test Method")
+    void anotherTest() {
+        System.out.println("Another Test Method");
     }
 }
