@@ -1,10 +1,11 @@
-package yang.yu.tdd;
+package yang.yu.tdd.assumptions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 
 import org.junit.jupiter.api.Test;
+import yang.yu.tdd.Calculator;
 
 class AssumptionsDemo {
 

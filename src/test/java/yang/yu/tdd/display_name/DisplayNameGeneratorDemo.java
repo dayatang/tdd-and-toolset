@@ -1,4 +1,4 @@
-package yang.yu.tdd;
+package yang.yu.tdd.display_name;
 import java.lang.reflect.Method;
 
 import org.junit.jupiter.api.DisplayName;

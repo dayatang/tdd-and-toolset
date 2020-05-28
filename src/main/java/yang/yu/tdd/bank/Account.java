@@ -9,10 +9,10 @@ public class Account {
     //内部状态：当前余额
     private int balance = 0;
 
-    //外部协作者：记录每一笔收支
+    //外部依赖（协作者）：记录每一笔收支
     private Transactions transactions;
 
-    //用于注入外部写作者的方法
+    //用于注入外部协作者的方法
     public void setTransactions(Transactions transactions) {
         this.transactions = transactions;
     }

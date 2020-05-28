@@ -1,4 +1,4 @@
-package yang.yu.tdd;
+package yang.yu.tdd.display_name;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
