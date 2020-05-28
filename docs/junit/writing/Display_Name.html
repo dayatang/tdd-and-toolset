@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>编写测试 · Java开发工具集之单元测试工具</title>
+        <title>显示名 · Java开发工具集之单元测试工具</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="First_Test.html" />
+    <link rel="next" href="Assertions.html" />
     
     
-    <link rel="prev" href="../What_is_JUnit.html" />
+    <link rel="prev" href="Life_Cycle_Methods.html" />
     
 
     
@@ -323,7 +323,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="./">
+        <li class="chapter " data-level="1.3.2" data-path="./">
             
                 <a href="./">
             
@@ -363,7 +363,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.3" data-path="Display_Name.html">
+        <li class="chapter active" data-level="1.3.2.3" data-path="Display_Name.html">
             
                 <a href="Display_Name.html">
             
@@ -920,7 +920,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >编写测试</a>
+        <a href="../.." >显示名</a>
     </h1>
 </div>
 
@@ -935,9 +935,125 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;"><b></b>&#x7F16;&#x5199;&#x6D4B;&#x8BD5;</a></li></ul></div><a href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;"><a name="&#x7F16;&#x5199;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x7F16;&#x5199;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F16;&#x5199;&#x6D4B;&#x8BD5;</h1>
-<p>&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x65B9;&#x6CD5;&#x6CE8;&#x89E3;&#x4E3A;@Test<code>,</code>@RepeatedTest<code>,</code>@ParameterizedTest<code>,</code>@TestFactory,  @TestTemplate&#x4E4B;&#x4E00;&#x3002;&#x6211;&#x4EEC;&#x4ECE;@Test&#x5F00;&#x59CB;&#x3002;</p>
-<p>&#x7EDD;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7528;@Test&#x5B9A;&#x4E49;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;4&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;@BeforeEach, @AfterEach, @BeforeAll&#x548C;@AfterAll&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x65F6;&#x95F4;&#x6709;&#x9650;&#xFF0C;&#x53EF;&#x4EE5;&#x53EA;&#x5B66;&#x4E60;&#x672C;&#x7AE0;&#x7684;&#x524D;&#x9762;&#x4E24;&#x8282;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x6709;&#x7A7A;&#x7684;&#x65F6;&#x5019;&#x518D;&#x9009;&#x62E9;&#x5B66;&#x4E60;&#x3002;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x663E;&#x793A;&#x540D;"><b></b>&#x663E;&#x793A;&#x540D;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><b></b>1. &#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;</a></li><li><span class="title-icon "></span><a href="#2-&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><b></b>2. &#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;</a></li></ul></ul></div><a href="#&#x663E;&#x793A;&#x540D;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x663E;&#x793A;&#x540D;"><a name="&#x663E;&#x793A;&#x540D;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x793A;&#x540D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x793A;&#x540D;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;@DisplayName&#x6CE8;&#x89E3;&#x7ED9;&#x6D4B;&#x8BD5;&#x7C7B;&#x548C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x81EA;&#x5B9A;&#x4E49;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x663E;&#x793A;&#x540D;&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x3001;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x751A;&#x81F3;&#x8868;&#x60C5;&#x7B26;&#x53F7;&#x7B49;&#x3002;&#x663E;&#x793A;&#x540D;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x5728;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x3001;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x5668;&#x548C;IDE&#x4E2D;&#xFF0C;&#x589E;&#x5F3A;&#x53EF;&#x8BFB;&#x6027;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.DisplayName;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+
+<span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;A special test case&quot;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisplayNameDemo</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Custom test name containing spaces&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testWithDisplayNameContainingSpaces</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;&#x256F;&#xB0;&#x25A1;&#xB0;&#xFF09;&#x256F;&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testWithDisplayNameContainingSpecialCharacters</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;&#x1F631;&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testWithDisplayNameContainingEmoji</span><span class="hljs-params">()</span> </span>{
+    }
+}
+</code></pre>
+<p>&#x5728;IDEA&#x4E2D;&#x6267;&#x884C;&#x4E0A;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x5448;&#x73B0;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="../../images/display-name-sample.png" alt="display-name-sample"></p>
+<h2 id="1-&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><a name="1-&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;" class="anchor-navigation-ex-anchor" href="#1-&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;</h2>
+<p>JUnit&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x5B9A;&#x5236;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x901A;&#x8FC7;<code>@DisplayNameGeneration</code>&#x6CE8;&#x89E3;&#x6765;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002;&#x5982;&#x679C;<code>@DisplayName</code>&#x548C;<code>@DisplayNameGeneration</code>&#x540C;&#x65F6;&#x5B58;&#x5728;&#xFF0C;&#x524D;&#x8005;&#x66F4;&#x4F18;&#x5148;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.lang.reflect.Method;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.DisplayName;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.DisplayNameGeneration;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.DisplayNameGenerator;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Nested;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.params.ParameterizedTest;
+<span class="hljs-keyword">import</span> org.junit.jupiter.params.provider.ValueSource;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisplayNameGeneratorDemo</span> </span>{
+
+    <span class="hljs-meta">@Nested</span>
+    <span class="hljs-meta">@DisplayNameGeneration</span>(DisplayNameGenerator.ReplaceUnderscores.class)
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A_year_is_not_supported</span> </span>{
+
+        <span class="hljs-meta">@Test</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">if_it_is_zero</span><span class="hljs-params">()</span> </span>{
+        }
+
+        <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;A negative value for year is not supported by the leap year computation.&quot;</span>)
+        <span class="hljs-meta">@ParameterizedTest</span>(name = <span class="hljs-string">&quot;For example, year {0} is not supported.&quot;</span>)
+        <span class="hljs-meta">@ValueSource</span>(ints = { -<span class="hljs-number">1</span>, -<span class="hljs-number">4</span> })
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">if_it_is_negative</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year)</span> </span>{
+        }
+
+    }
+
+    <span class="hljs-meta">@Nested</span>
+    <span class="hljs-meta">@DisplayNameGeneration</span>(IndicativeSentences.class)
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A_year_is_a_leap_year</span> </span>{
+
+        <span class="hljs-meta">@Test</span>
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">if_it_is_divisible_by_4_but_not_by_100</span><span class="hljs-params">()</span> </span>{
+        }
+
+        <span class="hljs-meta">@ParameterizedTest</span>(name = <span class="hljs-string">&quot;Year {0} is a leap year.&quot;</span>)
+        <span class="hljs-meta">@ValueSource</span>(ints = { <span class="hljs-number">2016</span>, <span class="hljs-number">2020</span>, <span class="hljs-number">2048</span> })
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">if_it_is_one_of_the_following_years</span><span class="hljs-params">(<span class="hljs-keyword">int</span> year)</span> </span>{
+        }
+
+    }
+
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IndicativeSentences</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DisplayNameGenerator</span>.<span class="hljs-title">ReplaceUnderscores</span> </span>{
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">generateDisplayNameForClass</span><span class="hljs-params">(Class&lt;?&gt; testClass)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.generateDisplayNameForClass(testClass);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">generateDisplayNameForNestedClass</span><span class="hljs-params">(Class&lt;?&gt; nestedClass)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.generateDisplayNameForNestedClass(nestedClass) + <span class="hljs-string">&quot;...&quot;</span>;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">generateDisplayNameForMethod</span><span class="hljs-params">(Class&lt;?&gt; testClass, Method testMethod)</span> </span>{
+            String name = testClass.getSimpleName() + <span class="hljs-string">&apos; &apos;</span> + testMethod.getName();
+            <span class="hljs-keyword">return</span> name.replace(<span class="hljs-string">&apos;_&apos;</span>, <span class="hljs-string">&apos; &apos;</span>) + <span class="hljs-string">&apos;.&apos;</span>;
+        }
+    }
+}
+</code></pre>
+<pre><code>+-- DisplayNameGeneratorDemo [OK]
+  +-- A year is not supported [OK]
+  | +-- A negative value for year is not supported by the leap year computation. [OK]
+  | | +-- For example, year -1 is not supported. [OK]
+  | | &apos;-- For example, year -4 is not supported. [OK]
+  | &apos;-- if it is zero() [OK]
+  &apos;-- A year is a leap year... [OK]
+    +-- A year is a leap year if it is divisible by 4 but not by 100. [OK]
+    &apos;-- A year is a leap year if it is one of the following years. [OK]
+      +-- Year 2016 is a leap year. [OK]
+      +-- Year 2020 is a leap year. [OK]
+      &apos;-- Year 2048 is a leap year. [OK]
+</code></pre><h2 id="2-&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><a name="2-&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;" class="anchor-navigation-ex-anchor" href="#2-&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;</h2>
+<p>&#x53EF;&#x4EE5;&#x5728;JUnit&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>junit-platform.properties</code>&#x4E2D;&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#xFF1A;</p>
+<pre><code>junit.jupiter.displayname.generator.default = \
+    org.junit.jupiter.api.DisplayNameGenerator$ReplaceUnderscores
+</code></pre><p>&#x6240;&#x6709;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#x90FD;&#x8981;&#x5B9E;&#x73B0;<code>DisplayNameGenerator</code>&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x6D4B;&#x8BD5;&#x7C7B;&#x548C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x663E;&#x793A;&#x540D;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x7684;&#x4F18;&#x5148;&#x89C4;&#x5219;&#x786E;&#x5B9A;&#xFF1A;</p>
+<ol>
+<li><code>@DisplayName</code>&#x6CE8;&#x89E3;&#x7684;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>@DisplayNameGeneration</code>&#x6CE8;&#x89E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;DisplayNameGenerator&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5E73;&#x53F0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>junit-platform.properties</code>&#x4E2D;&#x8BBE;&#x7F6E;&#x7F3A;&#x7701;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>org.junit.jupiter.api.DisplayNameGenerator.Standard</code>&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#x3002;</li>
+</ol>
 
                                 
                                 </section>
@@ -965,12 +1081,12 @@
 
             
                 
-                <a href="../What_is_JUnit.html" class="navigation navigation-prev " aria-label="Previous page: JUnit概述">
+                <a href="Life_Cycle_Methods.html" class="navigation navigation-prev " aria-label="Previous page: 生命周期方法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="First_Test.html" class="navigation navigation-next " aria-label="Next page: 简单测试">
+                <a href="Assertions.html" class="navigation navigation-next " aria-label="Next page: 断言">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -981,7 +1097,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"编写测试","level":"1.3.2","depth":2,"next":{"title":"简单测试","level":"1.3.2.1","depth":3,"path":"junit/writing/First_Test.md","ref":"junit/writing/First_Test.md","articles":[]},"previous":{"title":"JUnit概述","level":"1.3.1","depth":2,"path":"junit/What_is_JUnit.md","ref":"junit/What_is_JUnit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/README.md","mtime":"2020-05-27T04:08:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-28T04:34:00.621Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"显示名","level":"1.3.2.3","depth":3,"next":{"title":"断言","level":"1.3.2.4","depth":3,"path":"junit/writing/Assertions.md","ref":"junit/writing/Assertions.md","articles":[]},"previous":{"title":"生命周期方法","level":"1.3.2.2","depth":3,"path":"junit/writing/Life_Cycle_Methods.md","ref":"junit/writing/Life_Cycle_Methods.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Display_Name.md","mtime":"2020-05-28T03:52:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-28T04:34:00.621Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
