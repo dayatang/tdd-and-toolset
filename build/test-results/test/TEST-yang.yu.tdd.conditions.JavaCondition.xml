@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="yang.yu.tdd.conditions.JavaCondition" tests="9" skipped="5" failures="0" errors="0" timestamp="2020-05-29T07:40:51" hostname="yangyudeMacBook-Pro.local" time="0.011">
+  <properties/>
+  <testcase name="notFromJava8to11()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.003"/>
+  <testcase name="notFromJava9to11()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.001"/>
+  <testcase name="onJava9Or10()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="fromJava9toCurrentJavaFeatureNumber()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.001"/>
+  <testcase name="notFromJava9toCurrentJavaFeatureNumber()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="onlyOnJava8()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="fromJava8To11()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="fromJava9to11()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="notOnJava9()" classname="yang.yu.tdd.conditions.JavaCondition" time="0.001"/>
+  <system-out><![CDATA[Run on Java or above 11
+Run on Java not between 9 to 11
+Run on Java 9 or above
+Run on Java not 9
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
