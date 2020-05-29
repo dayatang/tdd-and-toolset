@@ -7,25 +7,25 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 import org.junit.jupiter.api.Test;
 import yang.yu.tdd.Calculator;
 
-class AssumptionsDemo {
+public class AssumptionsDemo {
 
     private final Calculator calculator = new Calculator();
 
     @Test
-    void testOnlyOnCiServer() {
+    public void testOnlyOnCiServer() {
         assumeTrue("CI".equals(System.getenv("ENV")));
         // remainder of test
     }
 
     @Test
-    void testOnlyOnDeveloperWorkstation() {
+    public void testOnlyOnDeveloperWorkstation() {
         assumeTrue("DEV".equals(System.getenv("ENV")),
                 () -> "Aborting test: not on developer workstation");
         // remainder of test
     }
 
     @Test
-    void testInAllEnvironments() {
+    public void testInAllEnvironments() {
         assumingThat("CI".equals(System.getenv("ENV")),
                 () -> {
                     // perform these assertions only on the CI server

@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 public class EnvVariableCondition {
     @Test
     @EnabledIfEnvironmentVariable(named = "ENV", matches = "staging-server")
-    void onlyOnStagingServer() {
+    public void onlyOnStagingServer() {
         // ...
     }
 

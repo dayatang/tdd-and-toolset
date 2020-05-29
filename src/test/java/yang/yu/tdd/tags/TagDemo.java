@@ -31,6 +31,11 @@ public class TagDemo {
     void testWithTags() {
     }
 
+    @Test
+    @Tag("integration")
+    void integrationTest() {
+    }
+
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
     @Tag("IntegrationTest")
