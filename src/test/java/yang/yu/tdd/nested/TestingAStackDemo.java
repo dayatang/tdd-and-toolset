@@ -17,6 +17,11 @@ class TestingAStackDemo {
 
     Stack<Object> stack;
 
+    @BeforeEach
+    void setup() {
+        System.out.println("setup in Top level Class");
+    }
+
     @Test
     @DisplayName("is instantiated with new Stack()")
     void isInstantiatedWithNew() {
