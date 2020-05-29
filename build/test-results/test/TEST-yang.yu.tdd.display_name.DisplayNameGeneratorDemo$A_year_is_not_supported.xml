@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.display_name.DisplayNameGeneratorDemo$A_year_is_not_supported" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:50:42" hostname="yangyudeMacBook-Pro.local" time="0.006">
-  <properties/>
-  <testcase name="if_it_is_zero()" classname="yang.yu.tdd.display_name.DisplayNameGeneratorDemo$A_year_is_not_supported" time="0.0"/>
-  <testcase name="if_it_is_negative(int)[1]" classname="yang.yu.tdd.display_name.DisplayNameGeneratorDemo$A_year_is_not_supported" time="0.001"/>
-  <testcase name="if_it_is_negative(int)[2]" classname="yang.yu.tdd.display_name.DisplayNameGeneratorDemo$A_year_is_not_supported" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.bank.AccountWithdrawTest2" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:50:42" hostname="yangyudeMacBook-Pro.local" time="0.01">
-  <properties/>
-  <testcase name="shouldSuccess()" classname="yang.yu.tdd.bank.AccountWithdrawTest2" time="0.003"/>
-  <testcase name="testSquareRootUsingInverse()" classname="yang.yu.tdd.bank.AccountWithdrawTest2" time="0.004"/>
-  <testcase name="testSquareRootUsingStd()" classname="yang.yu.tdd.bank.AccountWithdrawTest2" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
