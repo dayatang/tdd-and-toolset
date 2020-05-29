@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.tags.TagDemo" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:40:51" hostname="yangyudeMacBook-Pro.local" time="0.003">
+<testsuite name="yang.yu.tdd.tags.TagDemo" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:50:43" hostname="yangyudeMacBook-Pro.local" time="0.004">
   <properties/>
-  <testcase name="aIntegrationTest()" classname="yang.yu.tdd.tags.TagDemo" time="0.0"/>
-  <testcase name="testWithTags()" classname="yang.yu.tdd.tags.TagDemo" time="0.0"/>
+  <testcase name="aIntegrationTest()" classname="yang.yu.tdd.tags.TagDemo" time="0.001"/>
+  <testcase name="testWithTags()" classname="yang.yu.tdd.tags.TagDemo" time="0.001"/>
   <testcase name="testingTaxCalculation()" classname="yang.yu.tdd.tags.TagDemo" time="0.0"/>
-  <testcase name="integrationTest()" classname="yang.yu.tdd.tags.TagDemo" time="0.0"/>
+  <testcase name="integrationTest()" classname="yang.yu.tdd.tags.TagDemo" time="0.001"/>
   <system-out><![CDATA[This is an integration test too
 This is a integration test: integrationTest()
 ]]></system-out>

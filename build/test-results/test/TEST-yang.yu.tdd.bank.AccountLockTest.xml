@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.bank.AccountLockTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:40:50" hostname="yangyudeMacBook-Pro.local" time="0.047">
+<testsuite name="yang.yu.tdd.bank.AccountLockTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:50:42" hostname="yangyudeMacBook-Pro.local" time="0.046">
   <properties/>
-  <testcase name="shouldBeUnlockedByDefault()" classname="yang.yu.tdd.bank.AccountLockTest" time="0.045"/>
+  <testcase name="shouldBeUnlockedByDefault()" classname="yang.yu.tdd.bank.AccountLockTest" time="0.044"/>
   <testcase name="shouldBeLockedWhenLockAndUnlockedWhenUnlock()" classname="yang.yu.tdd.bank.AccountLockTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

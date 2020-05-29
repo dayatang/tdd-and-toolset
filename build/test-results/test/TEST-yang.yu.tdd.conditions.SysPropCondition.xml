@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.conditions.SysPropCondition" tests="7" skipped="4" failures="0" errors="0" timestamp="2020-05-29T07:40:51" hostname="yangyudeMacBook-Pro.local" time="0.007">
+<testsuite name="yang.yu.tdd.conditions.SysPropCondition" tests="7" skipped="4" failures="0" errors="0" timestamp="2020-05-29T07:50:42" hostname="yangyudeMacBook-Pro.local" time="0.011">
   <properties/>
   <testcase name="notOnCiServer()" classname="yang.yu.tdd.conditions.SysPropCondition" time="0.0"/>
-  <testcase name="multiDisabledIfSystemProperties()" classname="yang.yu.tdd.conditions.SysPropCondition" time="0.0">
+  <testcase name="multiDisabledIfSystemProperties()" classname="yang.yu.tdd.conditions.SysPropCondition" time="0.001">
     <skipped/>
   </testcase>
   <testcase name="onlyOn64BitArchitectures2()" classname="yang.yu.tdd.conditions.SysPropCondition" time="0.0"/>

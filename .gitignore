@@ -13,5 +13,6 @@ target
 *.war
 *.ear
 *.iml
-
+build/
+.gradle
 

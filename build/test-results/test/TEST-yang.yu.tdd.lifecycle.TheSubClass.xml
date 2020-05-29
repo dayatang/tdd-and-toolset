@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="yang.yu.tdd.lifecycle.TheSubClass" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:40:51" hostname="yangyudeMacBook-Pro.local" time="0.006">
+<testsuite name="yang.yu.tdd.lifecycle.TheSubClass" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-29T07:50:43" hostname="yangyudeMacBook-Pro.local" time="0.007">
   <properties/>
-  <testcase name="anotherTest()" classname="yang.yu.tdd.lifecycle.TheSubClass" time="0.003"/>
+  <testcase name="anotherTest()" classname="yang.yu.tdd.lifecycle.TheSubClass" time="0.004"/>
   <testcase name="aTest()" classname="yang.yu.tdd.lifecycle.TheSubClass" time="0.002"/>
   <system-out><![CDATA[Before All In Interface
 Before All In Superclass
