@@ -21,6 +21,7 @@ public class TagDemo {
     @Test
     @IntegrationTest
     void aIntegrationTest() {
+        System.out.println("This is an integration test too");
     }
 
     @Test
@@ -34,11 +35,12 @@ public class TagDemo {
     @Test
     @Tag("integration")
     void integrationTest() {
+        System.out.println("This is a integration test: integrationTest()");
     }
 
     @Target({ElementType.METHOD, ElementType.TYPE})
     @Retention(RetentionPolicy.RUNTIME)
-    @Tag("IntegrationTest")
+    @Tag("integration")
     @interface IntegrationTest {
     }
 }

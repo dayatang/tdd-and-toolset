@@ -79,6 +79,9 @@
           <executions>
             <execution>
               <id>unit-test</id>
+              <goals>
+                <goal>test</goal>
+              </goals>
               <phase>test</phase>
               <configuration>
                 <excludedGroups>integration, acceptance</excludedGroups>
@@ -86,12 +89,20 @@
             </execution>
             <execution>
               <id>integration-test</id>
+              <goals>
+                <goal>test</goal>
+              </goals>
               <phase>integration-test</phase>
               <configuration>
                 <groups>integration</groups>
               </configuration>
             </execution>
           </executions>
+          <configuration>
+            <includes>
+              <include>**/*</include>
+            </includes>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
