@@ -1,5 +1,6 @@
 package yang.yu.tdd.parameterized;
 
+import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
@@ -110,7 +111,7 @@ public class ParameterizedDemo {
     }
 
     @ParameterizedTest
-    @CsvSource({
+    @CsvSource(value = {
             "apple,         1",
             "banana,        2",
             "'lemon, lime', 0xF1"
@@ -118,5 +119,26 @@ public class ParameterizedDemo {
     void testWithCsvSource(String fruit, int rank) {
         assertThat(fruit).isIn("apple", "banana", "lemon, lime");
         assertThat(rank).isNotEqualTo(0);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/two-column.csv", numLinesToSkip = 1, encoding = "UTF-8")
+    void testWithCsvFileSource(String country, int reference) {
+        assertThat(country).isIn("Sweden", "Poland", "United States of America");
+        assertThat(reference).isPositive();
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(MyArgumentsProvider.class)
+    void testWithArgumentsSource(String argument) {
+        assertThat(argument).isIn("apple", "banana");
+    }
+
+    static class MyArgumentsProvider implements ArgumentsProvider {
+
+        @Override
+        public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+            return Stream.of("apple", "banana").map(Arguments::of);
+        }
     }
 }
