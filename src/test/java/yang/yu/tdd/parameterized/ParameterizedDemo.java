@@ -2,8 +2,13 @@ package yang.yu.tdd.parameterized;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.aggregator.AggregateWith;
+import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
+import org.junit.jupiter.params.converter.ConvertWith;
+import org.junit.jupiter.params.converter.JavaTimeConversionPattern;
 import org.junit.jupiter.params.provider.*;
 
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalUnit;
 import java.util.Arrays;
@@ -141,4 +146,72 @@ public class ParameterizedDemo {
             return Stream.of("apple", "banana").map(Arguments::of);
         }
     }
+
+    @ParameterizedTest
+    @EnumSource(ChronoUnit.class)
+    void testWithExplicitArgumentConversion(
+            @ConvertWith(ToStringArgumentConverter.class) String argument) {
+        System.out.println(argument);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = { "01.01.2017", "31.12.2017" })
+    void testWithExplicitJavaTimeConverter(
+            @JavaTimeConversionPattern("dd.MM.yyyy") LocalDate argument) {
+        assertThat(argument.getYear()).isEqualTo(2017);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Jane, Doe, F, 1990-05-20",
+            "John, Doe, M, 1990-10-22"
+    })
+    void testWithArgumentsAccessor(ArgumentsAccessor arguments) {
+        Person person = new Person(arguments.getString(0),
+                arguments.getString(1),
+                arguments.get(2, Gender.class),
+                arguments.get(3, LocalDate.class));
+
+        if (person.getFirstName().equals("Jane")) {
+            assertThat(person.getGender()).isEqualTo(Gender.F);
+        }
+        else {
+            assertThat(person.getGender()).isEqualTo(Gender.M);
+        }
+        assertThat(person.getLastName()).isEqualTo("Doe");
+        assertThat(person.getDateOfBirth().getYear()).isEqualTo(1990);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Jane, Doe, F, 1990-05-20",
+            "John, Doe, M, 1990-10-22"
+    })
+    void testWithArgumentsAggregator(@AggregateWith(PersonAggregator.class) Person person) {
+        if (person.getFirstName().equals("Jane")) {
+            assertThat(person.getGender()).isEqualTo(Gender.F);
+        }
+        else {
+            assertThat(person.getGender()).isEqualTo(Gender.M);
+        }
+        assertThat(person.getLastName()).isEqualTo("Doe");
+        assertThat(person.getDateOfBirth().getYear()).isEqualTo(1990);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "Jane, Doe, F, 1990-05-20",
+            "John, Doe, M, 1990-10-22"
+    })
+    void testWithCustomAggregatorAnnotation(@CsvToPerson Person person) {
+        if (person.getFirstName().equals("Jane")) {
+            assertThat(person.getGender()).isEqualTo(Gender.F);
+        }
+        else {
+            assertThat(person.getGender()).isEqualTo(Gender.M);
+        }
+        assertThat(person.getLastName()).isEqualTo("Doe");
+        assertThat(person.getDateOfBirth().getYear()).isEqualTo(1990);
+    }
+
 }
