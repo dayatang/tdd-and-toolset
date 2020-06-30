@@ -1,0 +1,1385 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>生命周期方法 · Java开发工具集之单元测试工具</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨宇">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Display_Name.html" />
+    
+    
+    <link rel="prev" href="First_Test.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../unit_test/">
+            
+                <a href="../../unit_test/">
+            
+                    
+                    第一部分 单元测试和TDD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../unit_test/What_is_Unit_Test.html">
+            
+                <a href="../../unit_test/What_is_Unit_Test.html">
+            
+                    
+                    什么是单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../unit_test/Why_Unit_Test.html">
+            
+                <a href="../../unit_test/Why_Unit_Test.html">
+            
+                    
+                    为什么要写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                <a href="../../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                    
+                    单元测试在整个测试体系中的位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                <a href="../../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                    
+                    单元测试的常见错误观念和做法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../unit_test/The_First_Unit_Tests.html">
+            
+                <a href="../../unit_test/The_First_Unit_Tests.html">
+            
+                    
+                    第一个单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../unit_test/What_to_Test.html">
+            
+                <a href="../../unit_test/What_to_Test.html">
+            
+                    
+                    测试哪些内容：Right-BICEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../unit_test/CORRECT.html">
+            
+                <a href="../../unit_test/CORRECT.html">
+            
+                    
+                    CORRECT边界条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../unit_test/What_is_Good_Unit_Test.html">
+            
+                <a href="../../unit_test/What_is_Good_Unit_Test.html">
+            
+                    
+                    好单元测试的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../unit_test/TDD.html">
+            
+                <a href="../../unit_test/TDD.html">
+            
+                    
+                    测试驱动开发（TDD）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../unit_test/Environment.html">
+            
+                <a href="../../unit_test/Environment.html">
+            
+                    
+                    在项目中准备测试环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第二部分 使用JUnit编写和执行单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../What_is_JUnit.html">
+            
+                <a href="../What_is_JUnit.html">
+            
+                    
+                    JUnit概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    编写测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="First_Test.html">
+            
+                <a href="First_Test.html">
+            
+                    
+                    简单测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.2" data-path="Life_Cycle_Methods.html">
+            
+                <a href="Life_Cycle_Methods.html">
+            
+                    
+                    生命周期方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="Display_Name.html">
+            
+                <a href="Display_Name.html">
+            
+                    
+                    显示名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="Assertions.html">
+            
+                <a href="Assertions.html">
+            
+                    
+                    断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="Assumptions.html">
+            
+                <a href="Assumptions.html">
+            
+                    
+                    假设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="Disabling_Tests.html">
+            
+                <a href="Disabling_Tests.html">
+            
+                    
+                    使测试失效
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="Conditional_Test_Execution.html">
+            
+                <a href="Conditional_Test_Execution.html">
+            
+                    
+                    有条件执行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="Tags_and_Filtering.html">
+            
+                <a href="Tags_and_Filtering.html">
+            
+                    
+                    标签和过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="Test_Execution_Order.html">
+            
+                <a href="Test_Execution_Order.html">
+            
+                    
+                    测试执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="Nested_Tests.html">
+            
+                <a href="Nested_Tests.html">
+            
+                    
+                    嵌套测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="Dependency_Injection.html">
+            
+                <a href="Dependency_Injection.html">
+            
+                    
+                    依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="Test_Interfaces.html">
+            
+                <a href="Test_Interfaces.html">
+            
+                    
+                    测试接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="Repeated_Tests.html">
+            
+                <a href="Repeated_Tests.html">
+            
+                    
+                    重复测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="Parameterized_Test.html">
+            
+                <a href="Parameterized_Test.html">
+            
+                    
+                    参数化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="Test_Templates.html">
+            
+                <a href="Test_Templates.html">
+            
+                    
+                    测试模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="Dynamic_Tests.html">
+            
+                <a href="Dynamic_Tests.html">
+            
+                    
+                    动态测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="Timeouts.html">
+            
+                <a href="Timeouts.html">
+            
+                    
+                    超时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="Parallel_Execution.html">
+            
+                <a href="Parallel_Execution.html">
+            
+                    
+                    并行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="Built-in_Extensions.html">
+            
+                <a href="Built-in_Extensions.html">
+            
+                    
+                    内建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../exec/">
+            
+                <a href="../exec/">
+            
+                    
+                    运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Reports.html">
+            
+                <a href="../Reports.html">
+            
+                    
+                    测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../assertj/">
+            
+                <a href="../../assertj/">
+            
+                    
+                    第三部分 使用AssertJ编写测试断言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../assertj/What_is_AssertJ.html">
+            
+                <a href="../../assertj/What_is_AssertJ.html">
+            
+                    
+                    断言和AssertJ简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                <a href="../../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                    
+                    为什么不采用Hamcrest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../assertj/Using_AssertJ.html">
+            
+                <a href="../../assertj/Using_AssertJ.html">
+            
+                    
+                    使用AssertJ编写断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../mockito/">
+            
+                <a href="../../mockito/">
+            
+                    
+                    第四部分 使用Mockito创建测试替身
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../mockito/">
+            
+                <a href="../../mockito/">
+            
+                    
+                    测试替身和Mockito简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../mockito/Using_Mockito.html">
+            
+                <a href="../../mockito/Using_Mockito.html">
+            
+                    
+                    用Mockito生成测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../integration/">
+            
+                <a href="../../integration/">
+            
+                    
+                    第五部分 与其他开发工具的集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../integration/ide/">
+            
+                <a href="../../integration/ide/">
+            
+                    
+                    集成到IntelliJ Idea和Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../integration/ide/IDEA.html">
+            
+                <a href="../../integration/ide/IDEA.html">
+            
+                    
+                    与IntelliJ IDEA集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../integration/ide/Eclipse.html">
+            
+                <a href="../../integration/ide/Eclipse.html">
+            
+                    
+                    与Eclipse集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../integration/build/">
+            
+                <a href="../../integration/build/">
+            
+                    
+                    集成到Maven、Ant和Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../integration/build/Maven.html">
+            
+                <a href="../../integration/build/Maven.html">
+            
+                    
+                    与Maven集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../integration/build/Ant.html">
+            
+                <a href="../../integration/build/Ant.html">
+            
+                    
+                    与Ant集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../integration/build/Gradle.html">
+            
+                <a href="../../integration/build/Gradle.html">
+            
+                    
+                    与Gradle集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../integration/ci/">
+            
+                <a href="../../integration/ci/">
+            
+                    
+                    与Jenkins和Sonarqube集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../../integration/ci/Jenkins.html">
+            
+                <a href="../../integration/ci/Jenkins.html">
+            
+                    
+                    与Jenkins集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../../integration/ci/Sonarqube.html">
+            
+                <a href="../../integration/ci/Sonarqube.html">
+            
+                    
+                    与Sonarqube集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >生命周期方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;"><b></b>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#1-beforeeach&#x548C;aftereach"><b></b>1. @BeforeEach&#x548C;@AfterEach</a></li><li><span class="title-icon "></span><a href="#2-beforeall&#x548C;afterall"><b></b>2. @BeforeAll&#x548C;@AfterAll</a></li><li><span class="title-icon "></span><a href="#3-&#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;beforeeach&#x8FD8;&#x662F;beforeall"><b></b>3. &#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;@BeforeEach&#x8FD8;&#x662F;@BeforeAll</a></li><li><span class="title-icon "></span><a href="#4-&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><b></b>4. &#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</a></li><li><span class="title-icon "></span><a href="#4-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><b></b>4. &#x4EE3;&#x7801;&#x793A;&#x4F8B;</a></li></ul></ul></div><a href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</p>
+<p>XUnit&#x6D4B;&#x8BD5;&#x6A21;&#x5F0F;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;<code>&#x56DB;&#x9636;&#x6BB5;&#x6D4B;&#x8BD5;</code>&#x6A21;&#x5F0F;<strong>setup - exercise - verify - teardown</strong>&#xFF1A;</p>
+<p><img src="../../images/Four-Phase-Test.gif" alt="Four-Phase-Test"></p>
+<p>&#x7F16;&#x5199;&#x7684;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x57FA;&#x672C;&#x90FD;&#x5305;&#x542B;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x56DB;&#x4E2A;&#x9636;&#x6BB5;&#xFF1A;</p>
+<ol>
+<li><p><strong>&#x6D4B;&#x8BD5;&#x51C6;&#x5907;&#xFF08;fixture setup&#xFF09;&#x9636;&#x6BB5;</strong></p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x51C6;&#x5907;&#x6D4B;&#x8BD5;&#x6240;&#x4F9D;&#x8D56;&#x7684;&#x5916;&#x90E8;&#x73AF;&#x5883;&#xFF08;&#x4F8B;&#x5982;&#x88AB;&#x6D4B;&#x7C7B;&#x8981;&#x8BFB;&#x5199;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x5148;&#x5728;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x521B;&#x5EFA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5FC5;&#x8981;&#x65F6;&#x8FD8;&#x5199;&#x5165;&#x7279;&#x5B9A;&#x7684;&#x5185;&#x5BB9;&#xFF09;&#xFF0C;&#x521B;&#x5EFA;&#x88AB;&#x6D4B;&#x7C7B;&#xFF08;System Under Test&#xFF0C;&#x7B80;&#x79F0;SUT&#xFF09;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x8BBE;&#x7F6E;&#x88AB;&#x6D4B;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x6CE8;&#x5165;&#x5B83;&#x7684;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#xFF08;&#x4E00;&#x822C;&#x7528;&#x6D4B;&#x8BD5;&#x66FF;&#x8EAB;&#x66FF;&#x4EE3;&#xFF09;&#xFF0C;&#x7B49;&#x7B49;&#x7B49;&#x7B49;&#x3002;&#x4E00;&#x53E5;&#x8BDD;&#xFF1A;&#x4E3A;&#x6D4B;&#x8BD5;&#x7684;&#x6267;&#x884C;&#x6EE1;&#x8DB3;&#x5404;&#x79CD;&#x5185;&#x5916;&#x6761;&#x4EF6;&#xFF0C;&#x4F7F;&#x88AB;&#x6D4B;&#x7CFB;&#x7EDF;&#xFF08;SUT&#xFF09;&#x548C;&#x73AF;&#x5883;&#x8FBE;&#x5230;&#x4E00;&#x4E2A;&#x786E;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#xFF08;&#x79F0;&#x4E3A;<code>Fixture</code>&#xFF09;&#x3002;</p>
+</li>
+<li><p><strong>&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#xFF08;exercise SUT&#xFF09;&#x9636;&#x6BB5;</strong></p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0E;&#x88AB;&#x6D4B;&#x7C7B;&#xFF08;SUT&#xFF09;&#x4EA4;&#x4E92;&#xFF0C;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x3002;</p>
+</li>
+<li><p><strong>&#x7ED3;&#x679C;&#x9A8C;&#x8BC1;&#xFF08;result verification&#xFF09;&#x9636;&#x6BB5;</strong></p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x6211;&#x4EEC;&#x9A8C;&#x8BC1;&#x6D4B;&#x8BD5;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x7B26;&#x5408;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x7684;&#x9884;&#x671F;&#xFF1A;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5426;&#x548C;&#x6211;&#x4EEC;&#x7684;&#x671F;&#x671B;&#x503C;&#x76F8;&#x540C;&#xFF1F;SUT&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x662F;&#x5426;&#x66F4;&#x65B0;&#x5230;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x7684;&#x503C;&#xFF1F;&#x662F;&#x5426;&#x5411;&#x6587;&#x4EF6;&#x6216;&#x6570;&#x636E;&#x5E93;&#x5199;&#x5165;&#x4E86;&#x9884;&#x671F;&#x7684;&#x6570;&#x636E;&#xFF1F;&#x662F;&#x5426;&#x6309;&#x7167;&#x5951;&#x7EA6;&#x8C03;&#x7528;&#x4E86;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x7684;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;&#xFF1F;&#x7B49;&#x7B49;&#x3002;</p>
+</li>
+<li><p><strong>&#x73AF;&#x5883;&#x6E05;&#x7406;&#xFF08;fixture teardown&#xFF09;&#x9636;&#x6BB5;</strong></p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#x5C06;&#x7CFB;&#x7EDF;&#x548C;&#x73AF;&#x5883;&#x6062;&#x590D;&#x5230;&#x6D4B;&#x8BD5;&#x524D;&#x7684;&#x72B6;&#x6001;&#x2014;&#x2014;&#x6D4B;&#x8BD5;&#x4E0D;&#x5E94;&#x8BE5;&#x5BF9;&#x7CFB;&#x7EDF;&#x548C;&#x73AF;&#x5883;&#x9020;&#x6210;&#x6301;&#x4E45;&#x6027;&#x7684;&#x6539;&#x53D8;&#x3002;&#x8FD9;&#x5305;&#x62EC;&#xFF1A;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5220;&#x9664;&#x6D4B;&#x8BD5;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5220;&#x9664;&#x6D4B;&#x8BD5;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x4FEE;&#x6539;&#x4E86;&#x7684;&#x6570;&#x636E;&#x884C;&#x6062;&#x590D;&#x539F;&#x72B6;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+</li>
+</ol>
+<p>&#x5B58;&#x5728;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;setup&#x548C;teardown&#x9636;&#x6BB5;&#x5F80;&#x5F80;&#x6709;&#x91CD;&#x590D;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x4F8B;&#x5982;&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4E24;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5728;setup&#x9636;&#x6BB5;&#x5B58;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">        Path file = tempDir.resolve(<span class="hljs-string">&quot;conf.properties&quot;</span>);
+        Files.write(file, Arrays.asList(<span class="hljs-string">&quot;birthday=2002-05-11&quot;</span>,
+                <span class="hljs-string">&quot;size=15&quot;</span>,
+                <span class="hljs-string">&quot;closed=true&quot;</span>,
+                <span class="hljs-string">&quot;locked=false&quot;</span>,
+                <span class="hljs-string">&quot;salary=12.5&quot;</span>,
+                <span class="hljs-string">&quot;name=&#x5F20;&#x4E09;&quot;</span>,
+                <span class="hljs-string">&quot;noneValue=&quot;</span>));
+        Configuration instance = Configuration.builder()
+                .fromFile(file.toFile())
+                .dateFormat(<span class="hljs-string">&quot;yyyy-MM-dd&quot;</span>)
+                .build();
+</code></pre>
+<p>JUnit&#x63D0;&#x4F9B;&#x4E86;4&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x6D88;&#x9664;setup&#x548C;teardown&#x9636;&#x6BB5;&#x7684;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x90FD;&#x5E94;&#x8BE5;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x4E0D;&#x662F;private&#x7684;&#x65B9;&#x6CD5;</li>
+<li>&#x8FD4;&#x56DE;void</li>
+<li>&#x4E00;&#x822C;&#x4E5F;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#xFF08;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x9664;&#x5916;&#xFF09;</li>
+<li>&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x4EFB;&#x4F55;&#x5F02;&#x5E38;</li>
+</ul>
+<h2 id="1-beforeeach&#x548C;aftereach"><a name="1-beforeeach&#x548C;aftereach" class="anchor-navigation-ex-anchor" href="#1-beforeeach&#x548C;aftereach"><i class="fa fa-link" aria-hidden="true"></i></a>1. @BeforeEach&#x548C;@AfterEach</h2>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x6CE8;&#x89E3;&#x6807;&#x8BC6;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x4E0A;&#x3002;&#x5206;&#x522B;&#x7528;&#x5728;&#x56DB;&#x9636;&#x6BB5;&#x6D4B;&#x8BD5;<strong>setup-exercise-verify-teardown</strong>&#x7684;setup&#x9636;&#x6BB5;&#x548C;teardown&#x9636;&#x6BB5;&#x4E0A;&#x3002;</p>
+<p><strong>&#x6807;&#x8BC6;&#x4E3A;@BeforeEach&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;<em>&#x6BCF;&#x4E2A;</em>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x6807;&#x8BC6;&#x4E3A;@AfterEach&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;<em>&#x6BCF;&#x4E2A;</em>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</strong></p>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x53EF;&#x4EE5;&#x7528;BeforeEach&#x548C;AfterEach&#x6539;&#x5199;&#x4E3A;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.configuration;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.io.TempDir;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.nio.file.Files;
+<span class="hljs-keyword">import</span> java.nio.file.Path;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.assertj.core.api.Assertions.assertThat;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Configuration3Test</span> </span>{
+
+    <span class="hljs-meta">@TempDir</span>
+    Path tempDir;
+
+    <span class="hljs-keyword">private</span> Configuration instance;
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setUp</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Path file = tempDir.resolve(<span class="hljs-string">&quot;conf.properties&quot;</span>);
+        Files.write(file, Arrays.asList(<span class="hljs-string">&quot;birthday=2002-05-11&quot;</span>,
+                <span class="hljs-string">&quot;size=15&quot;</span>,
+                <span class="hljs-string">&quot;closed=true&quot;</span>,
+                <span class="hljs-string">&quot;locked = false&quot;</span>,
+                <span class="hljs-string">&quot;salary=12.5&quot;</span>,
+                <span class="hljs-string">&quot;name=&#x5F20;&#x4E09;&quot;</span>,
+                <span class="hljs-string">&quot;noneValue=&quot;</span>));
+        instance = Configuration.builder()
+                .fromFile(file.toFile())
+                .dateFormat(<span class="hljs-string">&quot;yyyy-MM-dd&quot;</span>)
+                .build();
+    }
+
+    <span class="hljs-meta">@AfterEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tearDown</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Noting to do for now.&quot;</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * key&#x5B58;&#x5728;,value&#x5B58;&#x5728;,&#x5E94;&#x5F53;&#x8FD4;&#x56DE;value
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_string_without_defaultValue_happy</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        assertThat(instance.getString(<span class="hljs-string">&quot;name&quot;</span>)).isEqualTo(<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * key&#x5B58;&#x5728;, value&#x5B58;&#x5728;,&#x683C;&#x5F0F;&#x6B63;&#x786E;,&#x5E94;&#x5F53;&#x8FD4;&#x56DE;value
+     */</span>
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_int_with_defaultValue_and_with_value</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        assertThat(instance.getInt(<span class="hljs-string">&quot;size&quot;</span>, <span class="hljs-number">1000</span>)).isEqualTo(<span class="hljs-number">15</span>);
+    }
+
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x5C06;&#x5171;&#x540C;&#x7684;setup&#x4EE3;&#x7801;&#x63D0;&#x53D6;&#x5230;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x91CD;&#x590D;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x4E86;PER_CLASS&#x751F;&#x547D;&#x5468;&#x671F;&#x65F6;&#xFF0C;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#x4E0A;&#x4F9D;&#x6B21;&#x8C03;&#x7528;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x548C;@AfterEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x4E86;PER_CLASS&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5206;&#x522B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x800C;&#x662F;&#x5171;&#x540C;&#x540C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F46;&#x662F;&#x4F9D;&#x7136;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x524D;&#x540E;&#x6267;&#x884C;&#x4E00;&#x6B21;@BeforeEach&#x548C;@AfterEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="2-beforeall&#x548C;afterall"><a name="2-beforeall&#x548C;afterall" class="anchor-navigation-ex-anchor" href="#2-beforeall&#x548C;afterall"><i class="fa fa-link" aria-hidden="true"></i></a>2. @BeforeAll&#x548C;@AfterAll</h2>
+<p><strong>&#x6807;&#x8BC6;&#x4E3A;@BeforeAll&#x548C;@AfterAll&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x6267;&#x884C;&#x4E4B;&#x524D;/&#x540E;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x3002;&#x4E0D;&#x8FC7;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x53EA;&#x5728;&#x7C7B;&#x7EA7;&#x8303;&#x56F4;&#x5185;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x3002;</strong></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x91C7;&#x7528;PER_METHOD&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;@BeforeAll&#x548C;@AfterAll&#x53EA;&#x80FD;&#x6807;&#x8BC6;&#x6D4B;&#x8BD5;&#x7C7B;&#x5185;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF08;&#x4ECE;&#x800C;&#x53EA;&#x80FD;&#x64CD;&#x4F5C;&#x6D4B;&#x8BD5;&#x7C7B;&#x5185;&#x7684;&#x9759;&#x6001;&#x5B57;&#x6BB5;&#xFF09;&#x3002;&#x5982;&#x679C;&#x91C7;&#x7528;PER_CLASS&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6807;&#x8BC6;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x4E0A;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.fail;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assumptions.assumeTrue;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterAll;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeAll;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Disabled;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StandardTests</span> </span>{
+
+    <span class="hljs-meta">@BeforeAll</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initAll</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">succeedingTest</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">failingTest</span><span class="hljs-params">()</span> </span>{
+        fail(<span class="hljs-string">&quot;a failing test&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@Disabled</span>(<span class="hljs-string">&quot;for demonstration purposes&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">skippedTest</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// not executed</span>
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">abortedTest</span><span class="hljs-params">()</span> </span>{
+        assumeTrue(<span class="hljs-string">&quot;abc&quot;</span>.contains(<span class="hljs-string">&quot;Z&quot;</span>));
+        fail(<span class="hljs-string">&quot;test should have been aborted&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tearDown</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@AfterAll</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tearDownAll</span><span class="hljs-params">()</span> </span>{
+    }
+
+}
+</code></pre>
+<p>&#x6D4B;&#x8BD5;&#x65F6;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<ol>
+<li>initAll()</li>
+<li>init()</li>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF08;succeedingTest()&#x3001;failingTest()&#x3001;abortedTest()&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;&#x4E0D;&#x786E;&#x5B9A;&#x5148;&#x8DD1;&#x54EA;&#x4E2A;&#xFF09;</li>
+<li>tearDown()</li>
+<li>init()</li>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF08;succeedingTest()&#x3001;failingTest()&#x3001;abortedTest()&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;&#x4E0D;&#x786E;&#x5B9A;&#x5148;&#x8DD1;&#x54EA;&#x4E2A;&#xFF09;</li>
+<li>tearDown()</li>
+<li>init()</li>
+<li>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF08;succeedingTest()&#x3001;failingTest()&#x3001;abortedTest()&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;&#x4E0D;&#x786E;&#x5B9A;&#x5148;&#x8DD1;&#x54EA;&#x4E2A;&#xFF09;</li>
+<li>tearDown()</li>
+<li>tearDownAll()</li>
+</ol>
+<h2 id="3-&#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;beforeeach&#x8FD8;&#x662F;beforeall"><a name="3-&#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;beforeeach&#x8FD8;&#x662F;beforeall" class="anchor-navigation-ex-anchor" href="#3-&#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;beforeeach&#x8FD8;&#x662F;beforeall"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5728;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5E94;&#x8BE5;&#x7528;<code>@BeforeEach</code>&#x8FD8;&#x662F;<code>@BeforeAll</code></h2>
+<p><strong>&#x4E00;&#x822C;&#x800C;&#x8A00;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x7684;&#x9694;&#x79BB;&#x6027;&#x66F4;&#x597D;&#xFF0C;&#x4F7F;&#x5F97;&#x540C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#x76F8;&#x4E92;&#x5F71;&#x54CD;&#x3002;</strong>&#x53EA;&#x6709;&#x5728;setup&#x4EE3;&#x7801;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x592A;&#x5927;&#x3001;&#x6027;&#x80FD;&#x592A;&#x4F4E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x8003;&#x8651;&#x4F7F;&#x7528;@BeforeAll&#x4EE3;&#x66FF;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x4F7F;&#x7528;@BeforeAll&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x7EC6;&#x5FC3;&#x5BA1;&#x67E5;&#x4F60;&#x7684;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF0C;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7684;&#x6267;&#x884C;&#x4E0D;&#x4F1A;&#x5BF9;&#x53E6;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x9020;&#x6210;&#x7684;&#x663E;&#x8457;&#x5F71;&#x54CD;&#x3002;</p>
+<p>@BeforeAll&#x4E00;&#x822C;&#x53EA;&#x7528;&#x4E8E;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x3002;&#x56E0;&#x4E3A;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x7684;setup&#x9636;&#x6BB5;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x542F;&#x52A8;&#x6570;&#x636E;&#x5E93;&#x6216;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x7B49;&#xFF0C;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x6BD4;&#x8F83;&#x5927;&#x3002;</p>
+<h2 id="4-&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><a name="4-&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;" class="anchor-navigation-ex-anchor" href="#4-&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7EE7;&#x627F;&#x5173;&#x7CFB;</h2>
+<p>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x7C7B;&#x6240;&#x7EE7;&#x627F;&#x7684;&#x8D85;&#x7C7B;&#x6216;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#x4E2D;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF08;Java 8&#x4E4B;&#x540E;&#x5141;&#x8BB8;&#x5728;&#x63A5;&#x53E3;&#x4E0A;&#x5B9A;&#x4E49;&#x7F3A;&#x7701;&#x65B9;&#x6CD5;&#xFF0C;&#x7F3A;&#x7701;&#x65B9;&#x6CD5;&#x4F34;&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EE3;&#x7801;&#xFF09;&#xFF0C;&#x800C;&#x6D4B;&#x8BD5;&#x7C7B;&#x81EA;&#x8EAB;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x8D85;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x88AB;&#x6D4B;&#x8BD5;&#x7C7B;&#x9690;&#x85CF;&#xFF08;<em>hidden</em>&#xFF09;&#x6216;&#x8986;&#x76D6;&#xFF08;<em>overridden</em>&#xFF09;&#x65F6;&#xFF0C;&#x63A5;&#x53E3;&#x3001;&#x8D85;&#x7C7B;&#x548C;&#x6D4B;&#x8BD5;&#x7C7B;&#x672C;&#x8EAB;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E14;&#xFF1A;</p>
+<ul>
+<li>&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;@BeforeAll&#x548C;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x76F8;&#x5E94;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;<strong>&#x4E4B;&#x524D;</strong>&#x6267;&#x884C;&#xFF1B;</li>
+<li>&#x8D85;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;@BeforeAll&#x548C;@BeforeEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5B50;&#x7C7B;&#x7684;&#x76F8;&#x5E94;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;<strong>&#x4E4B;&#x524D;</strong>&#x6267;&#x884C;&#xFF1B;</li>
+<li>&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;@AfterAll&#x548C;@AfterEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x76F8;&#x5E94;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;<strong>&#x4E4B;&#x540E;</strong>&#x6267;&#x884C;&#xFF1B;</li>
+<li>&#x8D85;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;@AfterAll&#x548C;@AfterEach&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5B50;&#x7C7B;&#x7684;&#x76F8;&#x5E94;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;<strong>&#x4E4B;&#x540E;</strong>&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x6709;&#x63A5;&#x53E3;<code>I</code>&#xFF0C;&#x8D85;&#x7C7B;<code>A</code>&#x548C;&#x5B50;&#x7C7B;<code>S</code>&#xFF0C;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x56DB;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x800C;&#x4E14;&#x4E0D;&#x76F8;&#x4E92;&#x8986;&#x76D6;/&#x91CD;&#x8F7D;&#xFF1A;</p>
+<ol>
+<li>&#x5982;&#x679C;<code>A</code>&#x5B9E;&#x73B0;<code>I</code>&#xFF0C;<code>S</code>&#x7EE7;&#x627F;<code>A</code>&#xFF1A;</li>
+</ol>
+<p>&#xFF08;1&#xFF09;&#x5BF9;&#x4E8E;<code>@BeforeAll</code>&#x548C;<code>@BeforeEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<p><em>&#x63A5;&#x53E3;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;</em></p>
+<p>&#xFF08;2&#xFF09;&#x5BF9;&#x4E8E;<code>@AfterAll</code>&#x548C;<code>@AfterEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<p><em>&#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x63A5;&#x53E3;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;</em></p>
+<ol>
+<li>&#x5982;&#x679C;<code>S</code>&#x7EE7;&#x627F;<code>A</code>&#xFF0C;&#x540C;&#x65F6;&#x5B9E;&#x73B0;<code>I</code>&#xFF1A;</li>
+</ol>
+<p>&#xFF08;1&#xFF09;&#x5BF9;&#x4E8E;<code>@BeforeAll</code>&#x548C;<code>@BeforeEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<p><em>&#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x63A5;&#x53E3;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;</em></p>
+<p>&#xFF08;2&#xFF09;&#x5BF9;&#x4E8E;<code>@AfterAll</code>&#x548C;<code>@AfterEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#xFF0C;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#xFF1A;</p>
+<p><em>&#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x63A5;&#x53E3;&#x4E0A;&#x7684;&#x65B9;&#x6CD5; &gt; &#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;</em></p>
+<h2 id="4-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><a name="4-&#x4EE3;&#x7801;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#4-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x4EE3;&#x7801;&#x793A;&#x4F8B;</h2>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;<code>TheInterface</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.lifecycle;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">TheInterface</span> </span>{
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before Each In Interface&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeEachInInterface</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before Each In Interface&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After Each In Interface&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterEachInInterface</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After Each In Interface&quot;</span>);
+    }
+
+    <span class="hljs-meta">@BeforeAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before All In Interface&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeAllInInterface</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before All In Interface&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After All In Interface&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterAllInInterface</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After All In Interface&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x518D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x57FA;&#x7C7B;<code>TheSuperClass</code>&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;<code>TheInterface</code>&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.lifecycle;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TheSuperClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">TheInterface</span> </span>{
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before Each In Superclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">beforeEachInSuperclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before Each In Superclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After Each In Superclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterEachInSuperclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After Each In Superclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@BeforeAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before All In Superclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeAllInSuperclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before All In Superclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After All In Superclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterAllInSuperclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After All In Superclass&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#x5B9A;&#x4E49;&#x6D4B;&#x8BD5;&#x7C7B;<code>TheSubClass</code>&#xFF0C;&#x5B83;&#x7EE7;&#x627F;<code>TheSuperClass</code>&#x5E76;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;<code>aTest()</code>&#x548C;<code>anotherTest()</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.lifecycle;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TheSubClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">TheSuperClass</span> </span>{
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before Each In Subclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">beforeEachInSubclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before Each In Subclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterEach</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After Each In Subclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterEachInSubclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After Each In Subclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@BeforeAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Before All In Subclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">beforeAllInSubclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Before All In Subclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@AfterAll</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;After All In Subclass&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterAllInSubclass</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;After All In Subclass&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;A Test Method&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aTest</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;A Test Method&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;Another Test Method&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">anotherTest</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Another Test Method&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#x4E09;&#x4E2A;&#x7C7B;&#x4E2D;&#x90FD;&#x5B9A;&#x4E49;&#x4E86;&#x56DB;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3002;&#x5BF9;<code>TheSubClass</code>&#x7C7B;&#x6267;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>Before All In Interface
+Before All In Superclass
+Before All In Subclass
+
+Before Each In Interface
+Before Each In Superclass
+Before Each In Subclass
+Another Test Method
+After Each In Subclass
+After Each In Superclass
+After Each In Interface
+
+
+Before Each In Interface
+Before Each In Superclass
+Before Each In Subclass
+A Test Method
+After Each In Subclass
+After Each In Superclass
+After Each In Interface
+
+After All In Subclass
+After All In Superclass
+After All In Interface
+
+Process finished with exit code 0
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;&#x8BC1;&#x660E;&#x4E86;&#xFF1A;</p>
+<ul>
+<li><code>@BeforeAll</code>&#x65B9;&#x6CD5;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;<code>@AfterAll</code>&#x65B9;&#x6CD5;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</li>
+<li><code>@BeforeEach</code>&#x65B9;&#x6CD5;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;<code>@AfterEach</code>&#x65B9;&#x6CD5;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x7C7B;&#x7EE7;&#x627F;&#x4E86;&#x8D85;&#x7C7B;&#x6216;&#x5B9E;&#x73B0;&#x4E86;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x4E5F;&#x5B9A;&#x4E49;&#x4E86;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x88AB;&#x6D4B;&#x8BD5;&#x7C7B;&#x9690;&#x85CF;&#x6216;&#x8986;&#x76D6;&#xFF0C;&#x5219;&#x8D85;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x4E0A;&#x5B9A;&#x4E49;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x4E5F;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x5176;&#x987A;&#x5E8F;&#x4E0E;&#x7EE7;&#x627F;&#x6216;&#x5B9E;&#x73B0;&#x7684;&#x5C42;&#x7EA7;&#x76F8;&#x5173;&#x3002;&#x5BF9;&#x4E8E;<code>@BeforeAll</code>&#x548C;<code>@BeforeEach</code>&#x65B9;&#x6CD5;&#xFF0C;&#x662F;&#x5148;&#x6267;&#x884C;&#x63A5;&#x53E3;&#x548C;&#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x518D;&#x6267;&#x884C;&#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#xFF1B;&#x5BF9;&#x4E8E;<code>@AfterAll</code>&#x548C;<code>@AfterEach</code>&#x65B9;&#x6CD5;&#xFF0C;&#x662F;&#x5148;&#x6267;&#x884C;&#x5B50;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x518D;&#x6267;&#x884C;&#x63A5;&#x53E3;&#x548C;&#x8D85;&#x7C7B;&#x4E0A;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="First_Test.html" class="navigation navigation-prev " aria-label="Previous page: 简单测试">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Display_Name.html" class="navigation navigation-next " aria-label="Next page: 显示名">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"生命周期方法","level":"1.3.2.2","depth":3,"next":{"title":"显示名","level":"1.3.2.3","depth":3,"path":"junit/writing/Display_Name.md","ref":"junit/writing/Display_Name.md","articles":[]},"previous":{"title":"简单测试","level":"1.3.2.1","depth":3,"path":"junit/writing/First_Test.md","ref":"junit/writing/First_Test.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Life_Cycle_Methods.md","mtime":"2020-05-28T03:31:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

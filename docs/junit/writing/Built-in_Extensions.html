@@ -459,7 +459,7 @@
                 <a href="Nested_Tests.html">
             
                     
-                    嵌套测试
+                    嵌套的测试
             
                 </a>
             
@@ -599,6 +599,51 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../exec/Run_Tests_in_IDEs.html">
+            
+                <a href="../exec/Run_Tests_in_IDEs.html">
+            
+                    
+                    在IDE中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../exec/Run_Tests_in_Build_Tools.html">
+            
+                <a href="../exec/Run_Tests_in_Build_Tools.html">
+            
+                    
+                    在构建工具中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../exec/Run_Tests_in_Console.html">
+            
+                <a href="../exec/Run_Tests_in_Console.html">
+            
+                    
+                    在终端控制台中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -936,6 +981,42 @@
                                 <section class="normal markdown-section">
                                 
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x5EFA;&#x6269;&#x5C55;"><b></b>&#x5185;&#x5EFA;&#x6269;&#x5C55;</a></li></ul></div><a href="#&#x5185;&#x5EFA;&#x6269;&#x5C55;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5185;&#x5EFA;&#x6269;&#x5C55;"><a name="&#x5185;&#x5EFA;&#x6269;&#x5C55;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5EFA;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5EFA;&#x6269;&#x5C55;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2606;&#x2606;&#x2606;</p>
+<p>JUnit&#x9F13;&#x52B1;&#x81EA;&#x884C;&#x5F00;&#x53D1;&#x6269;&#x5C55;&#x5E93;&#x6765;&#x589E;&#x5F3A;JUnit&#x7684;&#x80FD;&#x529B;&#x3002;JUnit&#x672C;&#x8EAB;&#x4E5F;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x5185;&#x7F6E;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5176;&#x4E2D;&#x4E4B;&#x4E00;&#x662F;<strong>&#x4E34;&#x65F6;&#x76EE;&#x5F55;</strong>&#x6269;&#x5C55;&#xFF0C;&#x5B83;&#x4E3A;&#x5355;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x6574;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5728;&#x6D4B;&#x8BD5;&#x524D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x5E76;&#x5728;&#x6D4B;&#x8BD5;&#x540E;&#x6E05;&#x9664;&#x5B83;&#x3002;</p>
+<p>&#x8981;&#x542F;&#x7528;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x6D4B;&#x8BD5;&#x7C7B;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;<code>java.nio.file.Path</code> &#x6216; <code>java.io.File</code>&#x7684;&#x975E;private&#x5B57;&#x6BB5;&#x5E76;&#x6CE8;&#x89E3;&#x4E3A;<code>@TempDir</code>&#xFF0C;&#x6216;&#x8005;&#x7ED9;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;<code>java.nio.file.Path</code> &#x6216; <code>java.io.File</code>&#x7684;&#x53C2;&#x6570;&#x5E76;&#x6CE8;&#x89E3;&#x4E3A;<code>@TempDir</code>&#x3002;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x53EA;&#x652F;&#x6301;&#x5B57;&#x6BB5;&#x6CE8;&#x5165;&#x548C;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x6CE8;&#x5165;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5B57;&#x6BB5;&#x6CE8;&#x5165;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x4F1A;&#x5728;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x540E;&#x6E05;&#x9664;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x3002;&#x5982;&#x679C;&#x662F;&#x901A;&#x8FC7;&#x9759;&#x6001;&#x5B57;&#x6BB5;&#x6CE8;&#x5165;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#xFF0C;&#x5219;&#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x5E76;&#x7531;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5171;&#x4EAB;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x624D;&#x6E05;&#x9664;&#x8FD9;&#x4E2A;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.tempdir;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.io.TempDir;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.nio.file.Files;
+<span class="hljs-keyword">import</span> java.nio.file.Path;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.assertj.core.api.Assertions.assertThat;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SharedTempDirectoryDemo</span> </span>{
+
+    <span class="hljs-meta">@TempDir</span>
+    <span class="hljs-keyword">static</span> Path sharedTempDir;
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">writeItemsToFile</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        Path file = sharedTempDir.resolve(<span class="hljs-string">&quot;test.txt&quot;</span>);
+
+        Files.write(file, Arrays.asList(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>));
+        assertThat(Files.readAllLines(file)).containsExactly(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">anotherTestThatUsesTheSameTempDir</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// use sharedTempDir</span>
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -979,7 +1060,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内建扩展","level":"1.3.2.19","depth":3,"next":{"title":"运行测试","level":"1.3.3","depth":2,"path":"junit/exec/README.md","ref":"junit/exec/README.md","articles":[]},"previous":{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Built-in_Extensions.md","mtime":"2020-05-27T04:20:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内建扩展","level":"1.3.2.19","depth":3,"next":{"title":"运行测试","level":"1.3.3","depth":2,"path":"junit/exec/README.md","ref":"junit/exec/README.md","articles":[{"title":"在IDE中运行测试","level":"1.3.3.1","depth":3,"path":"junit/exec/Run_Tests_in_IDEs.md","ref":"junit/exec/Run_Tests_in_IDEs.md","articles":[]},{"title":"在构建工具中运行测试","level":"1.3.3.2","depth":3,"path":"junit/exec/Run_Tests_in_Build_Tools.md","ref":"junit/exec/Run_Tests_in_Build_Tools.md","articles":[]},{"title":"在终端控制台中运行测试","level":"1.3.3.3","depth":3,"path":"junit/exec/Run_Tests_in_Console.md","ref":"junit/exec/Run_Tests_in_Console.md","articles":[]}]},"previous":{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Built-in_Extensions.md","mtime":"2020-06-16T04:16:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T04:33:00.930Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

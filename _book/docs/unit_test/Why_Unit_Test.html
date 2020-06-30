@@ -1,0 +1,1073 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>为什么要写单元测试 · Java开发工具集之单元测试工具</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨宇">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Unit_Test_in_the_Test_System.html" />
+    
+    
+    <link rel="prev" href="What_is_Unit_Test.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一部分 单元测试和TDD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="What_is_Unit_Test.html">
+            
+                <a href="What_is_Unit_Test.html">
+            
+                    
+                    什么是单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="Why_Unit_Test.html">
+            
+                <a href="Why_Unit_Test.html">
+            
+                    
+                    为什么要写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Unit_Test_in_the_Test_System.html">
+            
+                <a href="Unit_Test_in_the_Test_System.html">
+            
+                    
+                    单元测试在整个测试体系中的位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Misunderstanding_about_Unit_test.html">
+            
+                <a href="Misunderstanding_about_Unit_test.html">
+            
+                    
+                    单元测试的常见错误观念和做法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="The_First_Unit_Tests.html">
+            
+                <a href="The_First_Unit_Tests.html">
+            
+                    
+                    第一个单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="What_to_Test.html">
+            
+                <a href="What_to_Test.html">
+            
+                    
+                    测试哪些内容：Right-BICEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="CORRECT.html">
+            
+                <a href="CORRECT.html">
+            
+                    
+                    CORRECT边界条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="What_is_Good_Unit_Test.html">
+            
+                <a href="What_is_Good_Unit_Test.html">
+            
+                    
+                    好单元测试的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="TDD.html">
+            
+                <a href="TDD.html">
+            
+                    
+                    测试驱动开发（TDD）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="Environment.html">
+            
+                <a href="Environment.html">
+            
+                    
+                    在项目中准备测试环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../junit/">
+            
+                <a href="../junit/">
+            
+                    
+                    第二部分 使用JUnit编写和执行单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../junit/What_is_JUnit.html">
+            
+                <a href="../junit/What_is_JUnit.html">
+            
+                    
+                    JUnit概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../junit/writing/">
+            
+                <a href="../junit/writing/">
+            
+                    
+                    编写测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../junit/writing/First_Test.html">
+            
+                <a href="../junit/writing/First_Test.html">
+            
+                    
+                    简单测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../junit/writing/Life_Cycle_Methods.html">
+            
+                <a href="../junit/writing/Life_Cycle_Methods.html">
+            
+                    
+                    生命周期方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../junit/writing/Display_Name.html">
+            
+                <a href="../junit/writing/Display_Name.html">
+            
+                    
+                    显示名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../junit/writing/Assertions.html">
+            
+                <a href="../junit/writing/Assertions.html">
+            
+                    
+                    断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../junit/writing/Assumptions.html">
+            
+                <a href="../junit/writing/Assumptions.html">
+            
+                    
+                    假设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../junit/writing/Disabling_Tests.html">
+            
+                <a href="../junit/writing/Disabling_Tests.html">
+            
+                    
+                    使测试失效
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="../junit/writing/Conditional_Test_Execution.html">
+            
+                <a href="../junit/writing/Conditional_Test_Execution.html">
+            
+                    
+                    有条件执行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="../junit/writing/Tags_and_Filtering.html">
+            
+                <a href="../junit/writing/Tags_and_Filtering.html">
+            
+                    
+                    标签和过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="../junit/writing/Test_Execution_Order.html">
+            
+                <a href="../junit/writing/Test_Execution_Order.html">
+            
+                    
+                    测试执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="../junit/writing/Nested_Tests.html">
+            
+                <a href="../junit/writing/Nested_Tests.html">
+            
+                    
+                    嵌套测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="../junit/writing/Dependency_Injection.html">
+            
+                <a href="../junit/writing/Dependency_Injection.html">
+            
+                    
+                    依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="../junit/writing/Test_Interfaces.html">
+            
+                <a href="../junit/writing/Test_Interfaces.html">
+            
+                    
+                    测试接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="../junit/writing/Repeated_Tests.html">
+            
+                <a href="../junit/writing/Repeated_Tests.html">
+            
+                    
+                    重复测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="../junit/writing/Parameterized_Test.html">
+            
+                <a href="../junit/writing/Parameterized_Test.html">
+            
+                    
+                    参数化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="../junit/writing/Test_Templates.html">
+            
+                <a href="../junit/writing/Test_Templates.html">
+            
+                    
+                    测试模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="../junit/writing/Dynamic_Tests.html">
+            
+                <a href="../junit/writing/Dynamic_Tests.html">
+            
+                    
+                    动态测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="../junit/writing/Timeouts.html">
+            
+                <a href="../junit/writing/Timeouts.html">
+            
+                    
+                    超时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="../junit/writing/Parallel_Execution.html">
+            
+                <a href="../junit/writing/Parallel_Execution.html">
+            
+                    
+                    并行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="../junit/writing/Built-in_Extensions.html">
+            
+                <a href="../junit/writing/Built-in_Extensions.html">
+            
+                    
+                    内建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../junit/exec/">
+            
+                <a href="../junit/exec/">
+            
+                    
+                    运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../junit/Reports.html">
+            
+                <a href="../junit/Reports.html">
+            
+                    
+                    测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../assertj/">
+            
+                <a href="../assertj/">
+            
+                    
+                    第三部分 使用AssertJ编写测试断言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../assertj/What_is_AssertJ.html">
+            
+                <a href="../assertj/What_is_AssertJ.html">
+            
+                    
+                    断言和AssertJ简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                <a href="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                    
+                    为什么不采用Hamcrest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../assertj/Using_AssertJ.html">
+            
+                <a href="../assertj/Using_AssertJ.html">
+            
+                    
+                    使用AssertJ编写断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    第四部分 使用Mockito创建测试替身
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    测试替身和Mockito简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../mockito/Using_Mockito.html">
+            
+                <a href="../mockito/Using_Mockito.html">
+            
+                    
+                    用Mockito生成测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../integration/">
+            
+                <a href="../integration/">
+            
+                    
+                    第五部分 与其他开发工具的集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../integration/ide/">
+            
+                <a href="../integration/ide/">
+            
+                    
+                    集成到IntelliJ Idea和Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../integration/ide/IDEA.html">
+            
+                <a href="../integration/ide/IDEA.html">
+            
+                    
+                    与IntelliJ IDEA集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../integration/ide/Eclipse.html">
+            
+                <a href="../integration/ide/Eclipse.html">
+            
+                    
+                    与Eclipse集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../integration/build/">
+            
+                <a href="../integration/build/">
+            
+                    
+                    集成到Maven、Ant和Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../integration/build/Maven.html">
+            
+                <a href="../integration/build/Maven.html">
+            
+                    
+                    与Maven集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../integration/build/Ant.html">
+            
+                <a href="../integration/build/Ant.html">
+            
+                    
+                    与Ant集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../integration/build/Gradle.html">
+            
+                <a href="../integration/build/Gradle.html">
+            
+                    
+                    与Gradle集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../integration/ci/">
+            
+                <a href="../integration/ci/">
+            
+                    
+                    与Jenkins和Sonarqube集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../integration/ci/Jenkins.html">
+            
+                <a href="../integration/ci/Jenkins.html">
+            
+                    
+                    与Jenkins集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../integration/ci/Sonarqube.html">
+            
+                <a href="../integration/ci/Sonarqube.html">
+            
+                    
+                    与Sonarqube集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >为什么要写单元测试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</a></li></ul></div><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;</h1>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;</strong></p>
+<p>&#x542C;&#x5230;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x7684;&#x76F4;&#x63A5;&#x56DE;&#x7B54;&#x5C31;&#x662F;&#xFF1A;</p>
+<p><strong>&#x201C;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF1F;&#x201D;</strong></p>
+<p>&#x4E0D;&#x8FC7;&#x4E3A;&#x4E86;&#x8BF4;&#x670D;&#x90A3;&#x4E9B;&#x6000;&#x7591;&#x8BBA;&#x8005;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x7F57;&#x5217;&#x4E00;&#x4E0B;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x597D;&#x5904;&#x3002;&#x4ECE;&#x751F;&#x7406;&#x5230;&#x5FC3;&#x7406;&#xFF0C;&#x4ECE;&#x505A;&#x4E8B;&#x5230;&#x505A;&#x4EBA;&#x3002;:&#xFF09;</p>
+<ul>
+<li><p><strong>&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x6B63;&#x786E;&#x6027;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x4E0D;&#x7528;&#x591A;&#x8BF4;&#xFF0C;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x6B63;&#x786E;&#x6027;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x9898;&#x4E2D;&#x4E4B;&#x4E49;&#x3002;</p>
+</li>
+<li><p><strong>&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x5728;&#x8FB9;&#x7F18;&#x72B6;&#x6001;&#x548C;&#x5F02;&#x5E38;&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x6B63;&#x786E;&#x6027;</strong></p>
+<p>&#x5168;&#x9762;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#x4E0D;&#x4EC5;&#x4FDD;&#x8BC1;&#x4E86;&#x4EE3;&#x7801;&#x5728;&#x4E00;&#x5207;&#x6B63;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x6B63;&#x786E;&#x6027;&#xFF0C;&#x8FD8;&#x4F1A;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x5728;&#x5404;&#x79CD;&#x7279;&#x6B8A;&#x6761;&#x4EF6;&#x4E0B;&#x7684;&#x6B63;&#x786E;&#x6027;&#x3002;&#x5728;&#x4E0A;&#x4E00;&#x7AE0;&#x5217;&#x4E3E;&#x7684;&#x94F6;&#x884C;&#x8D26;&#x6237;&#x7684;&#x53D6;&#x6B3E;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x9664;&#x4E86;&#x4FDD;&#x8BC1;&#x5728;&#x8D26;&#x6237;&#x72B6;&#x6001;&#x6B63;&#x5E38;&#x4E14;&#x4F59;&#x989D;&#x8DB3;&#x591F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53D6;&#x6B3E;&#x884C;&#x4E3A;&#x7684;&#x6B63;&#x786E;&#x6027;&#xFF0C;&#x8FD8;&#x4FDD;&#x8BC1;&#x4E86;&#x5728;&#x8D26;&#x6237;&#x51BB;&#x7ED3;&#x3001;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x3001;&#x53D6;&#x6B3E;&#x91D1;&#x989D;&#x4E0D;&#x5408;&#x6CD5;&#x7B49;&#x7B49;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x6B63;&#x786E;&#x6027;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#x8FD9;&#x4E9B;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x4EE3;&#x7801;&#x5F88;&#x53EF;&#x80FD;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x51FA;&#x9519;&#xFF0C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x6545;&#x969C;&#xFF0C;&#x4E25;&#x91CD;&#x65F6;&#x751A;&#x81F3;&#x4F1A;&#x5BFC;&#x81F4;&#x4E1A;&#x52A1;&#x635F;&#x5931;&#x3002;</p>
+</li>
+<li><p><strong>&#x901A;&#x8FC7;&#x56DE;&#x5F52;&#x6D4B;&#x8BD5;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x5728;&#x672A;&#x6765;&#x7684;&#x6B63;&#x786E;&#x6027;</strong></p>
+<p>&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x7ECF;&#x5E38;&#x4FEE;&#x6539;&#x548C;&#x91CD;&#x6784;&#x4EE3;&#x7801;&#x3002;&#x7531;&#x4E8E;&#x6709;&#x9884;&#x5148;&#x5199;&#x597D;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x4FDD;&#x62A4;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x540E;&#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x539F;&#x6765;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF08;&#x5373;&#x56DE;&#x5F52;&#x6D4B;&#x8BD5;&#xFF09;&#x3002;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x4ECD;&#x7136;&#x901A;&#x8FC7;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x77E5;&#x9053;&#x8FD9;&#x6B21;&#x4FEE;&#x6539;&#x6CA1;&#x6709;&#x7834;&#x574F;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#xFF1B;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x77E5;&#x9053;&#x8FD9;&#x6B21;&#x4FEE;&#x6539;&#x5F15;&#x5165;&#x4E86;bug&#xFF0C;&#x53EF;&#x4EE5;&#x53CA;&#x65F6;&#x5B9A;&#x4F4D;&#x548C;&#x6539;&#x6B63;&#x5B83;&#x3002;&#x9664;&#x4E86;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x4E4B;&#x5916;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x66F4;&#x6362;&#x4E86;&#x4F9D;&#x8D56;&#x5E93;&#xFF0C;&#x6216;&#x5347;&#x7EA7;&#x4E86;&#x4F9D;&#x8D56;&#x5E93;&#x7684;&#x7248;&#x672C;&#x65F6;&#x4E5F;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#x5BFC;&#x81F4;bug&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4E5F;&#x53EF;&#x4EE5;&#x53CA;&#x65F6;&#x53D1;&#x73B0;&#x548C;&#x5B9A;&#x4F4D;&#x8FD9;&#x4E9B;&#x6545;&#x969C;&#x3002;&#x6211;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x5728;&#x5C06;hibernate&#x7248;&#x672C;&#x5347;&#x7EA7;&#x65F6;&#xFF0C;&#x5C31;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x66FF;&#x6211;&#x53D1;&#x73B0;&#x548C;&#x5B9A;&#x4F4D;&#x4E86;bug&#x3002;</p>
+</li>
+<li><p><strong>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x5E2E;&#x52A9;&#x53CA;&#x65F6;&#x53D1;&#x73B0;&#x548C;&#x5B9A;&#x4F4D;Bug</strong></p>
+<p>&#x8F6F;&#x4EF6;&#x603B;&#x662F;&#x5145;&#x6EE1;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x4E25;&#x91CD;&#x7EA7;&#x522B;&#x7684;bug&#x3002;&#x6539;&#x6B63;bug&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x6CA1;&#x6709;bug&#xFF0C;&#x7B2C;&#x4E8C;&#x5927;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x4E0D;&#x77E5;&#x9053;bug&#x7684;&#x786E;&#x5207;&#x4F4D;&#x7F6E;&#x3002;&#x5047;&#x8BBE;&#x4F60;&#x4E0A;&#x7EBF;&#x4E86;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x91D1;&#x878D;&#x7C7B;&#x9879;&#x76EE;&#xFF0C;&#x4F46;&#x662F;&#x91CC;&#x9762;&#x6F5C;&#x85CF;&#x7740;&#x4E00;&#x4E2A;bug&#xFF1A;&#x5BA2;&#x6237;&#x53D6;&#x6B3E;&#x65F6;&#x6CA1;&#x6709;&#x6263;&#x51CF;&#x4ED6;&#x7684;&#x8D26;&#x6237;&#x4F59;&#x989D;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x9879;&#x76EE;&#x4E0A;&#x7EBF;&#x540E;&#x4E00;&#x4E24;&#x661F;&#x671F;&#x90FD;&#x6CA1;&#x6709;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;bug&#xFF0C;&#x90A3;&#x4E48;&#x8D44;&#x91D1;&#x7684;&#x635F;&#x5931;&#x4F1A;&#x662F;&#x4E2A;&#x60CA;&#x4EBA;&#x7684;&#x6570;&#x5B57;&#xFF01;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x53CA;&#x65F6;&#x53D1;&#x73B0;bug&#xFF0C;&#x8FD8;&#x80FD;&#x51C6;&#x786E;&#x5B9A;&#x4F4D;bug&#x2014;&#x2014;&#x54EA;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x4E86;&#xFF0C;bug&#x5C31;&#x5728;&#x8FD9;&#x4E2A;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6240;&#x6D4B;&#x8BD5;&#x7684;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#x91CC;&#x9762;&#xFF01;<strong>&#x8981;&#x6D4B;&#x8BD5;&#xFF0C;&#x4E0D;&#x8981;&#x8C03;&#x8BD5;&#xFF01;&#xFF01;&#xFF01;</strong></p>
+</li>
+<li><p><strong>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4F5C;&#x4E3A;&#x4EE3;&#x7801;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x4E3A;&#x4ED6;&#x4EBA;&#x548C;&#x672A;&#x6765;&#x7684;&#x81EA;&#x5DF1;&#x6307;&#x8DEF;</strong></p>
+<p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4F5C;&#x4E3A;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#xFF0C;&#x672C;&#x8EAB;&#x8D77;&#x7740;&#x6587;&#x6863;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5F53;&#x4F60;&#x6839;&#x636E;&#x6D4B;&#x8BD5;&#x610F;&#x56FE;&#x7ED9;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x53D6;&#x4E86;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x540D;&#x5B57;&#x7684;&#x65F6;&#x5019;&#xFF08;&#x4F8B;&#x5982;&#x5C06;&#x6D4B;&#x8BD5;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x547D;&#x540D;&#x4E3A;<em>shouldFailWhenBalanceNotEnough()</em>&#xFF09;&#x3002;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x4F5C;&#x4E3A;&#x4EE3;&#x7801;&#x6BD4;&#x6587;&#x5B57;&#x7248;&#x7684;&#x6587;&#x6863;&#x66F4;&#x52A0;&#x76F4;&#x89C2;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x6587;&#x6863;&#x5E38;&#x5E38;&#x4F1A;&#x8FC7;&#x65F6;&#xFF08;&#x5F88;&#x591A;&#x4EBA;&#x5728;&#x4FEE;&#x6539;&#x4E86;&#x4EE3;&#x7801;&#x4E4B;&#x540E;&#x5FD8;&#x8BB0;&#x4FEE;&#x6539;&#x6587;&#x6863;&#xFF09;&#xFF0C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8DDF;&#x7D27;&#x4EA7;&#x54C1;&#x4EE3;&#x7801;&#xFF0C;&#x6C38;&#x4E0D;&#x8FC7;&#x65F6;&#x3002;</p>
+</li>
+<li><p><strong>&#x53EF;&#x6D4B;&#x8BD5;&#x6027;&#x7684;&#x8981;&#x6C42;&#x4F1A;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x5458;&#x5199;&#x51FA;&#x7CDF;&#x7CD5;&#x7684;&#x4EE3;&#x7801;</strong></p>
+<p>&#x5982;&#x679C;&#x8981;&#x6C42;&#x5168;&#x9762;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#xFF0C;&#x4F60;&#x5C31;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x4F60;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x53EF;&#x6D4B;&#x8BD5;&#x7684;&#x3002;&#x5728;&#x53EF;&#x6D4B;&#x8BD5;&#x6027;&#x7684;&#x8981;&#x6C42;&#x4E0B;&#xFF0C;&#x4F60;&#x5C31;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x4E0A;&#x5343;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;&#x51E0;&#x5341;&#x4E2A;if...else...&#xFF0C;&#x751A;&#x81F3;&#x4E00;&#x5C42;&#x5957;&#x4E00;&#x5C42;&#x7684;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x548C;&#x5FAA;&#x73AF;&#x8BED;&#x53E5;&#x2014;&#x2014;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x590D;&#x6742;&#x7684;&#x65B9;&#x6CD5;&#x6839;&#x672C;&#x4E0D;&#x53EF;&#x80FD;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x3002;&#x53EF;&#x6D4B;&#x8BD5;&#x6027;&#x7684;&#x5F3A;&#x8FEB;&#x4F60;&#x5199;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x597D;&#x4EE3;&#x7801;&#x3002;</p>
+</li>
+<li><p><strong>&#x51CF;&#x8F7B;&#x5FC3;&#x7406;&#x8D1F;&#x62C5;&#xFF0C;&#x81EA;&#x4FE1;&#x5730;&#x7F16;&#x7801;</strong></p>
+<p>&#x6CA1;&#x6709;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8986;&#x76D6;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x81EA;&#x5DF1;&#x7684;&#x63D0;&#x4EA4;&#x7684;&#x4EE3;&#x7801;&#x5F88;&#x96BE;&#x6709;&#x5145;&#x5206;&#x7684;&#x4FE1;&#x5FC3;&#x3002;&#x6211;&#x4EEC;&#x5F88;&#x591A;&#x4EBA;&#x662F;&#x6218;&#x6218;&#x5162;&#x5162;&#x5730;&#x63D0;&#x4EA4;&#x4E86;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5185;&#x5FC3;&#x7948;&#x7977;&#x5B83;&#x201C;&#x5343;&#x4E07;&#x522B;&#x51FA;&#x9519;&#x201D;&#x3002;&#x5F88;&#x591A;&#x4EBA;&#x7761;&#x4E0D;&#x5B89;&#x7A33;&#xFF0C;&#x62C5;&#x5FC3;&#x56E0;&#x4E3A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;bug&#x800C;&#x5728;&#x534A;&#x591C;&#x542C;&#x5230;&#x9886;&#x5BFC;&#x6216;&#x5BA2;&#x6237;&#x5728;&#x7535;&#x8BDD;&#x91CC;&#x7684;&#x5486;&#x54EE;&#x3002;&#x6211;&#x4EEC;&#x5F88;&#x5927;&#x4E00;&#x90E8;&#x5206;&#x65F6;&#x95F4;&#x82B1;&#x5728;&#x5BFB;&#x627E;bug&#x548C;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;&#x4E0A;&#x9762;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x6709;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x7531;&#x4E8E;&#x524D;&#x671F;&#x7F3A;&#x4E4F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6240;&#x81F4;&#x3002;</p>
+</li>
+<li><p><strong>&#x6811;&#x7ACB;&#x4E13;&#x4E1A;&#x5F62;&#x8C61;&#xFF0C;&#x83B7;&#x5F97;&#x540C;&#x4E8B;&#x3001;&#x4E0A;&#x53F8;&#x3001;&#x5BA2;&#x6237;&#x7684;&#x8BA4;&#x53EF;&#x4E0E;&#x8D4F;&#x8BC6;</strong></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x901A;&#x8FC7;&#x7F16;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E86;&#x4EE3;&#x7801;&#x65B9;&#x65B9;&#x9762;&#x9762;&#x7684;&#x6B63;&#x786E;&#x6027;&#x548C;&#x53EF;&#x9760;&#x6027;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x540C;&#x4E8B;&#x3001;&#x4E0A;&#x53F8;&#x548C;&#x540C;&#x4E8B;&#x7684;&#x773C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x662F;&#x4E13;&#x4E1A;&#x7684;&#x3001;&#x53EF;&#x9760;&#x7684;&#x4EBA;&#x3002;&#x4E0E;&#x7531;&#x4E8E;&#x4EE3;&#x7801;&#x51FA;&#x9519;&#x800C;&#x6328;&#x6279;&#x8BC4;&#x53D7;&#x9119;&#x89C6;&#x76F8;&#x6BD4;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5BF9;&#x81EA;&#x6211;&#x5F62;&#x8C61;&#x611F;&#x89C9;&#x6EE1;&#x610F;&#xFF0C;&#x5E78;&#x798F;&#x611F;&#x4E5F;&#x4F1A;&#x589E;&#x5F3A;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x624D;&#x662F;&#x7F16;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x6700;&#x5927;&#x7684;&#x597D;&#x5904;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x662F;&#x4E00;&#x6B21;&#x6295;&#x8D44;&#xFF0C;&#x7EC8;&#x8EAB;&#x53D7;&#x76CA;&#x3002;&#x662F;&#x4E2A;&#x4E00;&#x672C;&#x4E07;&#x5229;&#x7684;&#x751F;&#x610F;&#x3002;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x65E2;&#x6539;&#x5584;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x7684;&#x53EF;&#x9760;&#x6027;&#x548C;&#x8D28;&#x91CF;&#xFF0C;&#x4E5F;&#x63D0;&#x9AD8;&#x4E86;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x6539;&#x5584;&#x4E86;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x751F;&#x6D3B;&#x3002;&#x5F88;&#x96BE;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;&#x5FC3;&#x667A;&#x6B63;&#x5E38;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4F1A;&#x4E0D;&#x5199;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="What_is_Unit_Test.html" class="navigation navigation-prev " aria-label="Previous page: 什么是单元测试">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Unit_Test_in_the_Test_System.html" class="navigation navigation-next " aria-label="Next page: 单元测试在整个测试体系中的位置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"为什么要写单元测试","level":"1.2.2","depth":2,"next":{"title":"单元测试在整个测试体系中的位置","level":"1.2.3","depth":2,"path":"unit_test/Unit_Test_in_the_Test_System.md","ref":"unit_test/Unit_Test_in_the_Test_System.md","articles":[]},"previous":{"title":"什么是单元测试","level":"1.2.1","depth":2,"path":"unit_test/What_is_Unit_Test.md","ref":"unit_test/What_is_Unit_Test.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"unit_test/Why_Unit_Test.md","mtime":"2020-05-13T02:56:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

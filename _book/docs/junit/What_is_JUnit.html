@@ -1,0 +1,1247 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JUnit概述 · Java开发工具集之单元测试工具</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨宇">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="writing/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../unit_test/">
+            
+                <a href="../unit_test/">
+            
+                    
+                    第一部分 单元测试和TDD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../unit_test/What_is_Unit_Test.html">
+            
+                <a href="../unit_test/What_is_Unit_Test.html">
+            
+                    
+                    什么是单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../unit_test/Why_Unit_Test.html">
+            
+                <a href="../unit_test/Why_Unit_Test.html">
+            
+                    
+                    为什么要写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                <a href="../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                    
+                    单元测试在整个测试体系中的位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                <a href="../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                    
+                    单元测试的常见错误观念和做法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../unit_test/The_First_Unit_Tests.html">
+            
+                <a href="../unit_test/The_First_Unit_Tests.html">
+            
+                    
+                    第一个单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../unit_test/What_to_Test.html">
+            
+                <a href="../unit_test/What_to_Test.html">
+            
+                    
+                    测试哪些内容：Right-BICEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../unit_test/CORRECT.html">
+            
+                <a href="../unit_test/CORRECT.html">
+            
+                    
+                    CORRECT边界条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../unit_test/What_is_Good_Unit_Test.html">
+            
+                <a href="../unit_test/What_is_Good_Unit_Test.html">
+            
+                    
+                    好单元测试的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../unit_test/TDD.html">
+            
+                <a href="../unit_test/TDD.html">
+            
+                    
+                    测试驱动开发（TDD）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../unit_test/Environment.html">
+            
+                <a href="../unit_test/Environment.html">
+            
+                    
+                    在项目中准备测试环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第二部分 使用JUnit编写和执行单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="What_is_JUnit.html">
+            
+                <a href="What_is_JUnit.html">
+            
+                    
+                    JUnit概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="writing/">
+            
+                <a href="writing/">
+            
+                    
+                    编写测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="writing/First_Test.html">
+            
+                <a href="writing/First_Test.html">
+            
+                    
+                    简单测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="writing/Life_Cycle_Methods.html">
+            
+                <a href="writing/Life_Cycle_Methods.html">
+            
+                    
+                    生命周期方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="writing/Display_Name.html">
+            
+                <a href="writing/Display_Name.html">
+            
+                    
+                    显示名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="writing/Assertions.html">
+            
+                <a href="writing/Assertions.html">
+            
+                    
+                    断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="writing/Assumptions.html">
+            
+                <a href="writing/Assumptions.html">
+            
+                    
+                    假设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="writing/Disabling_Tests.html">
+            
+                <a href="writing/Disabling_Tests.html">
+            
+                    
+                    使测试失效
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="writing/Conditional_Test_Execution.html">
+            
+                <a href="writing/Conditional_Test_Execution.html">
+            
+                    
+                    有条件执行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="writing/Tags_and_Filtering.html">
+            
+                <a href="writing/Tags_and_Filtering.html">
+            
+                    
+                    标签和过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="writing/Test_Execution_Order.html">
+            
+                <a href="writing/Test_Execution_Order.html">
+            
+                    
+                    测试执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="writing/Nested_Tests.html">
+            
+                <a href="writing/Nested_Tests.html">
+            
+                    
+                    嵌套测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="writing/Dependency_Injection.html">
+            
+                <a href="writing/Dependency_Injection.html">
+            
+                    
+                    依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="writing/Test_Interfaces.html">
+            
+                <a href="writing/Test_Interfaces.html">
+            
+                    
+                    测试接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="writing/Repeated_Tests.html">
+            
+                <a href="writing/Repeated_Tests.html">
+            
+                    
+                    重复测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="writing/Parameterized_Test.html">
+            
+                <a href="writing/Parameterized_Test.html">
+            
+                    
+                    参数化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="writing/Test_Templates.html">
+            
+                <a href="writing/Test_Templates.html">
+            
+                    
+                    测试模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="writing/Dynamic_Tests.html">
+            
+                <a href="writing/Dynamic_Tests.html">
+            
+                    
+                    动态测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="writing/Timeouts.html">
+            
+                <a href="writing/Timeouts.html">
+            
+                    
+                    超时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="writing/Parallel_Execution.html">
+            
+                <a href="writing/Parallel_Execution.html">
+            
+                    
+                    并行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="writing/Built-in_Extensions.html">
+            
+                <a href="writing/Built-in_Extensions.html">
+            
+                    
+                    内建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="exec/">
+            
+                <a href="exec/">
+            
+                    
+                    运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="Reports.html">
+            
+                <a href="Reports.html">
+            
+                    
+                    测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../assertj/">
+            
+                <a href="../assertj/">
+            
+                    
+                    第三部分 使用AssertJ编写测试断言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../assertj/What_is_AssertJ.html">
+            
+                <a href="../assertj/What_is_AssertJ.html">
+            
+                    
+                    断言和AssertJ简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                <a href="../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                    
+                    为什么不采用Hamcrest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../assertj/Using_AssertJ.html">
+            
+                <a href="../assertj/Using_AssertJ.html">
+            
+                    
+                    使用AssertJ编写断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    第四部分 使用Mockito创建测试替身
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../mockito/">
+            
+                <a href="../mockito/">
+            
+                    
+                    测试替身和Mockito简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../mockito/Using_Mockito.html">
+            
+                <a href="../mockito/Using_Mockito.html">
+            
+                    
+                    用Mockito生成测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../integration/">
+            
+                <a href="../integration/">
+            
+                    
+                    第五部分 与其他开发工具的集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../integration/ide/">
+            
+                <a href="../integration/ide/">
+            
+                    
+                    集成到IntelliJ Idea和Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../integration/ide/IDEA.html">
+            
+                <a href="../integration/ide/IDEA.html">
+            
+                    
+                    与IntelliJ IDEA集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../integration/ide/Eclipse.html">
+            
+                <a href="../integration/ide/Eclipse.html">
+            
+                    
+                    与Eclipse集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../integration/build/">
+            
+                <a href="../integration/build/">
+            
+                    
+                    集成到Maven、Ant和Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../integration/build/Maven.html">
+            
+                <a href="../integration/build/Maven.html">
+            
+                    
+                    与Maven集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../integration/build/Ant.html">
+            
+                <a href="../integration/build/Ant.html">
+            
+                    
+                    与Ant集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../integration/build/Gradle.html">
+            
+                <a href="../integration/build/Gradle.html">
+            
+                    
+                    与Gradle集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../integration/ci/">
+            
+                <a href="../integration/ci/">
+            
+                    
+                    与Jenkins和Sonarqube集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../integration/ci/Jenkins.html">
+            
+                <a href="../integration/ci/Jenkins.html">
+            
+                    
+                    与Jenkins集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../integration/ci/Sonarqube.html">
+            
+                <a href="../integration/ci/Sonarqube.html">
+            
+                    
+                    与Sonarqube集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JUnit概述</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#junit-&#x6982;&#x8FF0;"><b></b>JUnit &#x6982;&#x8FF0;</a></li><ul><li><span class="title-icon "></span><a href="#1-junit-5&#x7684;&#x7EC4;&#x6210;"><b></b>1. JUnit 5&#x7684;&#x7EC4;&#x6210;</a></li><li><span class="title-icon "></span><a href="#2-&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;"><b></b>2. &#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#3-&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;"><b></b>3. &#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;</a></li><li><span class="title-icon "></span><a href="#4-junit&#x5168;&#x5C40;&#x914D;&#x7F6E;"><b></b>4. JUnit&#x5168;&#x5C40;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#5-&#x6CE8;&#x89E3;&#xFF08;annotations&#xFF09;"><b></b>5. &#x6CE8;&#x89E3;&#xFF08;Annotations&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#51-&#x6838;&#x5FC3;&#x6CE8;&#x89E3;"><b></b>5.1 &#x6838;&#x5FC3;&#x6CE8;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#52-&#x5143;&#x6CE8;&#x89E3;&#xFF08;meta-annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;composed-annotations&#xFF09;"><b></b>5.2 &#x5143;&#x6CE8;&#x89E3;&#xFF08;Meta-Annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;Composed Annotations&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#6-&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;"><b></b>6. &#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</a></li></ul></ul></div><a href="#junit-&#x6982;&#x8FF0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="junit-&#x6982;&#x8FF0;"><a name="junit-&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#junit-&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>JUnit &#x6982;&#x8FF0;</h1>
+<p>JUnit&#x662F;&#x4E8B;&#x5B9E;&#x4E0A;&#x7684;Java&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x6807;&#x51C6;&#x3002;&#x81F3;&#x4ECA;JUnit&#x5DF2;&#x7ECF;&#x53D1;&#x5E03;&#x4E86;&#x7B2C;5&#x4E2A;&#x7248;&#x672C;&#x3002;&#x4E0E;&#x4EE5;&#x524D;&#x7684;&#x7248;&#x672C;&#x76F8;&#x6BD4;&#xFF0C;JUnit5&#x4F5C;&#x51FA;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x6539;&#x8FDB;&#x3002;&#x672C;&#x6559;&#x7A0B;&#x4E5F;&#x662F;&#x4EE5;&#x7248;&#x672C;5&#x4E3A;&#x57FA;&#x51C6;&#x4ECB;&#x7ECD;JUnit&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>JUnit 5&#x9700;&#x8981;JDK 8.0&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x3002;</p>
+<h2 id="1-junit-5&#x7684;&#x7EC4;&#x6210;"><a name="1-junit-5&#x7684;&#x7EC4;&#x6210;" class="anchor-navigation-ex-anchor" href="#1-junit-5&#x7684;&#x7EC4;&#x6210;"><i class="fa fa-link" aria-hidden="true"></i></a>1. JUnit 5&#x7684;&#x7EC4;&#x6210;</h2>
+<p><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></p>
+<p>JUnit 5&#x4E3B;&#x8981;&#x7531;&#x4E09;&#x5927;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li><strong>JUnit Platform</strong>&#xFF1A;&#x4E3A;&#x5728;JVM&#x4E0A;&#x542F;&#x52A8;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x57FA;&#x7840;&#x3002;&#x5B83;&#x8FD8;&#x5B9A;&#x4E49;&#x4E86;<a href="http://junit.org/junit5/docs/current/api/org/junit/platform/engine/TestEngine.html" target="_blank">TestEngine</a> API, &#x7528;&#x6765;&#x5F00;&#x53D1;&#x5728;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8BE5;&#x5E73;&#x53F0;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x542F;&#x52A8;&#x8BE5;&#x5E73;&#x53F0;&#x7684;&#x63A7;&#x5236;&#x53F0;&#x542F;&#x52A8;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;JUnit 4&#x7684;&#x8FD0;&#x884C;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x57FA;&#x4E8E;JUnit 4&#x7684;&#x73AF;&#x5883;&#x4E2D;&#x5728;&#x8BE5;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x4EFB;&#x4F55;TestEngine&#x3002;&#x5B83;&#x4E5F;&#x4E3A;&#x6D41;&#x884C;&#x7684;IDE&#xFF08;IntelliJ IDEA&#x3001;Eclipse&#x3001;NetBeans&#x3001;Visual Studio Code&#x7B49;&#xFF09;&#x548C;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#xFF08;Gradle&#x3001;Maven&#x3001;Ant&#x7B49;&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EA7;&#x7684;&#x652F;&#x6301;&#x3002;</li>
+<li><strong>JUnit Jupiter</strong>&#xFF1A;&#x662F;&#x5728;JUnit 5&#x4E2D;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x548C;&#x6269;&#x5C55;&#x7684;&#x65B0;&#x578B;&#x7F16;&#x7A0B;&#x6A21;&#x578B;[&#x6269;&#x5C55;&#x6A21;&#x578B;&#x7684;&#x7EC4;&#x5408;&#x3002;Jupiter&#x5B50;&#x9879;&#x76EE;&#x63D0;&#x4F9B;&#x4E86;&#x7528;&#x4E8E;&#x5728;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x57FA;&#x4E8E;Jupiter&#x7684;&#x6D4B;&#x8BD5;&#x7684;<code>TestEngine</code>&#x3002;</li>
+<li><strong>JUnit Vintage</strong>&#xFF1A;&#x63D0;&#x4F9B;&#x7528;&#x4E8E;&#x5728;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x57FA;&#x4E8E;JUnit 3&#x548C;JUnit 4&#x7684;&#x6D4B;&#x8BD5;&#x7684;<code>TestEngine</code>&#x3002;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x548C;JUnit&#x7248;&#x672C;3&#x6216;&#x8005;4&#x517C;&#x5BB9;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;JUnit Vintage&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;JUnit 5&#x7684;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x56FE;&#xFF1A;</p>
+<p><img src="../images/junit5-component-diagram.svg" alt="junit5-component-diagram"></p>
+<h2 id="2-&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;"><a name="2-&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#2-&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x6D4B;&#x8BD5;&#x7C7B;&#x4E0E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</h2>
+<p><code>&#x6D4B;&#x8BD5;&#x7C7B;</code>&#x662F;&#x540C;&#x65F6;&#x7B26;&#x5408;&#x4E0B;&#x8FF0;&#x6761;&#x4EF6;&#x7684;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x81F3;&#x5C11;&#x5305;&#x542B;&#x4E00;&#x4E2A;<code>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;</code></li>
+<li>&#x662F;&#x9876;&#x5C42;&#x7C7B;&#x3001;&#x9759;&#x6001;&#x6210;&#x5458;&#x7C7B;&#x6216;&#x6807;&#x8BB0;&#x4E3A;@Nested&#x7684;&#x6210;&#x5458;&#x7C7B;&#x3002;</li>
+<li>&#x4E0D;&#x662F;&#x62BD;&#x8C61;&#x7C7B;&#x3002;</li>
+<li>&#x4E0D;&#x662F;private&#x7C7B;&#x3002;</li>
+<li>&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E00;&#x822C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x53C2;&#x6570;&#xFF08;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4F1A;&#x8C08;&#x5230;&#x8FD9;&#x4E2A;&#xFF09;&#x3002;</li>
+</ul>
+<p><code>&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;</code>&#x662F;&#x540C;&#x65F6;&#x7B26;&#x5408;&#x4E0B;&#x8FF0;&#x6761;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x88AB;&#x6CE8;&#x89E3;&#x6216;&#x5143;&#x6CE8;&#x89E3;&#x4E3A;@Test<code>,</code>@RepeatedTest<code>,</code>@ParameterizedTest<code>,</code>@TestFactory,  @TestTemplate&#x4E4B;&#x4E00;&#x3002;</li>
+<li>&#x662F;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x4E0D;&#x662F;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x4E0D;&#x662F;private&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;</li>
+<li>&#x4E00;&#x822C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x4E0B;&#x6709;&#x53C2;&#x6570;&#xFF08;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4F1A;&#x8C08;&#x5230;&#x8FD9;&#x4E2A;&#xFF09;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x4EFB;&#x4F55;&#x5F02;&#x5E38;&#x3002;</li>
+</ul>
+<p>&#x6D4B;&#x8BD5;&#x7C7B;&#x53EF;&#x4EE5;&#x4ECE;&#x8D85;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x4E0A;&#x7EE7;&#x627F;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="3-&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;"><a name="3-&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#3-&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<p>JUnit&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x6709;&#x4E24;&#x79CD;&#xFF1A;</p>
+<ul>
+<li><p><strong>PER_METHOD</strong></p>
+<p>&#x8FD9;&#x662F;JUnit&#x9ED8;&#x8BA4;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x65F6;&#x4E3A;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x540E;&#x9500;&#x6BC1;&#x8FD9;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#x6765;&#x6267;&#x884C;&#x4F59;&#x4E0B;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p><strong>PER_CLASS</strong></p>
+<p>&#x5728;PER_CLASS&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;JUnit&#x5728;&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x65F6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E0A;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x8BE5;&#x91C7;&#x7528;&#x91C7;&#x7528;PER_METHOD&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x7684;&#x9694;&#x79BB;&#x6027;&#x66F4;&#x597D;&#xFF08;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E4B;&#x95F4;&#x4E0D;&#x4F1A;&#x76F8;&#x4E92;&#x5F71;&#x54CD;&#xFF09;&#x3002;&#x5982;&#x679C;&#x91C7;&#x7528;PER_CLASS&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7684;&#x6267;&#x884C;&#x53EF;&#x80FD;&#x66F4;&#x6539;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF08;&#x4FEE;&#x6539;&#x4E86;&#x5B57;&#x6BB5;&#x503C;&#xFF09;&#xFF0C;&#x4ECE;&#x800C;&#x5F71;&#x54CD;&#x4E86;&#x540E;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x7684;&#x5148;&#x51B3;&#x6761;&#x4EF6;&#x3002;</p>
+<p>PER_CLASS&#x6A21;&#x5F0F;&#x6BD4;&#x9ED8;&#x8BA4;&#x7684;PER_METHOD&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x597D;&#x5904;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528;PER_CLASS&#x6A21;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x63A5;&#x53E3;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4E0A;&#x58F0;&#x660E;@BeforeAll&#x548C;@AfterAll&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x201D;per-class&#x201D;&#x6A21;&#x5F0F;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;@Nested&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;@BeforeAll&#x548C;@AfterAll&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x8981;&#x8BBE;&#x5B9A;PER_CLASS&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x53EF;&#x884C;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><p>&#x5BF9;&#x6D4B;&#x8BD5;&#x7C7B;&#x52A0;&#x5165;@TestInstance(Lifecycle.PER_CLASS)&#x6CE8;&#x89E3;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x5F71;&#x54CD;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x7C7B;&#x3002;</p>
+</li>
+<li><p>&#x4FEE;&#x6539;junit-platform.properties&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x5165;&#x4E0B;&#x9762;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>junit.jupiter.testinstance.lifecycle.default = per_class
+</code></pre><p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5C06;&#x5F71;&#x54CD;&#x6574;&#x4E2A;&#x6D4B;&#x8BD5;&#x8BA1;&#x5212;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x7C7B;&#x3002;</p>
+</li>
+</ul>
+<p>&#x5982;&#x679C;&#x65E2;&#x6709;&#x6CE8;&#x89E3;&#xFF0C;&#x53C8;&#x6709;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#xFF0C;&#x5219;&#x4EE5;&#x6CE8;&#x89E3;&#x4E3A;&#x4F18;&#x5148;&#x3002;</p>
+<h2 id="4-junit&#x5168;&#x5C40;&#x914D;&#x7F6E;"><a name="4-junit&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#4-junit&#x5168;&#x5C40;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>4. JUnit&#x5168;&#x5C40;&#x914D;&#x7F6E;</h2>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x8DEF;&#x5F84;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;junit-platform.properties&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x6765;&#x5B9A;&#x4E49;JUnit&#x5E73;&#x53F0;&#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x3002;&#x5728;Maven&#x548C;Gradle&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x901A;&#x5E38;&#x662F;&#xFF1A;</p>
+<pre><code>src/test/resources/junit-platform.properties
+</code></pre><p>&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x8BB2;&#x8FF0;&#x3002;</p>
+<h2 id="5-&#x6CE8;&#x89E3;&#xFF08;annotations&#xFF09;"><a name="5-&#x6CE8;&#x89E3;&#xFF08;annotations&#xFF09;" class="anchor-navigation-ex-anchor" href="#5-&#x6CE8;&#x89E3;&#xFF08;annotations&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x6CE8;&#x89E3;&#xFF08;Annotations&#xFF09;</h2>
+<p>JUnit&#x662F;&#x7531;Annotation&#x9A71;&#x52A8;&#x7684;&#x3002;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;JUnit&#x5B9A;&#x4E49;&#x7684;Annotation&#x6765;&#x6CE8;&#x89E3;&#x6D4B;&#x8BD5;&#x7C7B;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x5B57;&#x6BB5;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7EE7;&#x627F;JUnit&#x7279;&#x5B9A;&#x7684;&#x8D85;&#x7C7B;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;JUnit&#x7279;&#x5B9A;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;JUnit&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x3002;</p>
+<h3 id="51-&#x6838;&#x5FC3;&#x6CE8;&#x89E3;"><a name="51-&#x6838;&#x5FC3;&#x6CE8;&#x89E3;" class="anchor-navigation-ex-anchor" href="#51-&#x6838;&#x5FC3;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>5.1 &#x6838;&#x5FC3;&#x6CE8;&#x89E3;</h3>
+<p>JUnit Jupiter&#x652F;&#x6301;&#x4E0B;&#x5217;&#x6CE8;&#x89E3;&#xFF0C;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x6D4B;&#x8BD5;&#x548C;&#x6269;&#x5C55;&#x6846;&#x67B6;&#x3002;</p>
+<p>&#x9664;&#x975E;&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF0C;&#x6240;&#x6709;&#x6838;&#x5FC3;&#x6CE8;&#x89E3;&#x4F4D;&#x4E8E;junit-jupiter-api&#x6A21;&#x5757;&#x4E2D;&#x7684;org.junit.jupiter.api&#x5305;&#x4E2D;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6CE8;&#x89E3;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>@Test</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x662F;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3002;&#x4E0E;JUnit4&#x7684;@Test&#x6CE8;&#x89E3;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x6CA1;&#x6709;&#x58F0;&#x660E;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;JUnit Jupiter&#x4E2D;&#x7684;&#x6D4B;&#x8BD5;&#x6269;&#x5C55;&#x662F;&#x57FA;&#x4E8E;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E13;&#x7528;&#x6CE8;&#x89E3;&#x6765;&#x64CD;&#x4F5C;&#x7684;&#x3002;&#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@ParameterizedTest</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x662F;&#x53C2;&#x6570;&#x5316;&#x6D4B;&#x8BD5;&#x3002; &#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@RepeatedTest</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x4E8E;&#x91CD;&#x590D;&#x6D4B;&#x8BD5;&#x7684;&#x6D4B;&#x8BD5;&#x6A21;&#x677F;&#x3002;&#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@TestFactory</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x4E8E;&#x52A8;&#x6001;&#x6D4B;&#x8BD5;&#x7684;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x3002;&#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@TestTemplate</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x662F;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x8BBE;&#x8BA1;&#x4E3A;&#x88AB;&#x8C03;&#x7528;&#x591A;&#x6B21;&#xFF0C;&#x8C03;&#x7528;&#x6B21;&#x6570;&#x53D6;&#x51B3;&#x4E8E;&#x81EA;&#x6CE8;&#x518C;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#x8FD4;&#x56DE;&#x7684;&#x8C03;&#x7528;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@TestMethodOrder</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x4E3A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x914D;&#x7F6E;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;JUnit 4&#x7684;<code>@FixMethodOrder</code>&#x6CE8;&#x89E3;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@TestInstance</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x4E3A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#x7C7B;&#x914D;&#x7F6E;&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#x3002; &#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@DisplayName</code></td>
+<td style="text-align:left">&#x58F0;&#x660E;&#x6D4B;&#x8BD5;&#x7C7B;&#x6216;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x663E;&#x793A;&#x540D;&#x79F0;&#x3002;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x4E0D;&#x88AB;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@DisplayNameGeneration</code></td>
+<td style="text-align:left">&#x4E3A;&#x6D4B;&#x8BD5;&#x7C7B;&#x751F;&#x547D;&#x4E00;&#x4E2A;&#x5B9A;&#x5236;&#x7684;&#x663E;&#x793A;&#x540D;&#x751F;&#x6210;&#x5668;&#x3002;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@BeforeEach</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x5E94;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x7684;&#x6BCF;&#x4E2A;@Test&#xFF0C;@RepeatedTest&#xFF0C;@ParameterizedTest&#x6216;@TestFactory&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x6267;&#x884C;; &#x7C7B;&#x4F3C;&#x4E8E;JUnit 4&#x7684;@Before&#x3002; &#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@AfterEach</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x5E94;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x7684;&#x6BCF;&#x4E2A;@Test&#xFF0C;@RepeatedTest&#xFF0C;@ParameterizedTest&#x6216;@TestFactory&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#x6267;&#x884C;; &#x7C7B;&#x4F3C;&#x4E8E;JUnit 4&#x7684;@After&#x3002; &#x9664;&#x975E;&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x5426;&#x5219;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@BeforeAll</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x7684;&#x6240;&#x6709;@Test&#xFF0C;@RepeatedTest&#xFF0C;@ParameterizedTest&#x548C;@TestFactory&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#x6267;&#x884C;; &#x7C7B;&#x4F3C;&#x4E8E;JUnit 4&#x7684;@BeforeClass&#x3002; &#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#xFF08;&#x9664;&#x975E;&#x88AB;&#x9690;&#x85CF;&#x6216;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF08;&#x9664;&#x975E;&#x4F7F;&#x7528;&#x201C;per-class&#x201D;&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@AfterAll</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x7684;&#x6240;&#x6709;@Test&#xFF0C;@RepeatedTest&#xFF0C;@ParameterizedTest&#x548C;@TestFactory&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#x6267;&#x884C;; &#x7C7B;&#x4F3C;&#x4E8E;JUnit 4&#x7684;@AfterClass&#x3002; &#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#xFF08;&#x9664;&#x975E;&#x88AB;&#x9690;&#x85CF;&#x6216;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF08;&#x9664;&#x975E;&#x4F7F;&#x7528;&#x201C;per-class&#x201D;&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF09;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@Nested</code></td>
+<td style="text-align:left">&#x8868;&#x793A;&#x88AB;&#x6CE8;&#x89E3;&#x7684;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x7684;&#x975E;&#x9759;&#x6001;&#x6D4B;&#x8BD5;&#x7C7B;&#x3002;&#x9664;&#x975E;&#x4F7F;&#x7528;&#x201C;per-class&#x201D;&#x6D4B;&#x8BD5;&#x5B9E;&#x4F8B;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x5426;&#x5219;@BeforeAll&#x548C;@AfterAll&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5728;@Nested&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x3002; &#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x4E0D;&#x80FD;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@Tag</code></td>
+<td style="text-align:left">&#x5728;&#x7C7B;&#x6216;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x58F0;&#x660E;&#x6807;&#x7B7E;&#xFF0C;&#x7528;&#x4E8E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;; &#x7C7B;&#x4F3C;&#x4E8E;TestNG&#x4E2D;&#x7684;test group&#x6216;JUnit 4&#x4E2D;&#x7684;Categories&#x3002;&#x8FD9;&#x4E2A;&#x6CE8;&#x91CA;&#x53EF;&#x4EE5;&#x5728;&#x7C7B;&#x7EA7;&#x522B;&#x4E0A;&#x7EE7;&#x627F;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5728;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x4E0A;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@Disabled</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x7981;&#x7528;&#x6D4B;&#x8BD5;&#x7C7B;&#x6216;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;; &#x7C7B;&#x4F3C;&#x4E8E;JUnit4&#x7684;@Ignore&#x3002;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x4E0D;&#x80FD;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@Timeout</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x4F7F;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x3001;&#x6D4B;&#x8BD5;&#x6A21;&#x677F;&#x6216;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x5728;&#x6267;&#x884C;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x65F6;&#x5931;&#x8D25;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@ExtendWith</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x3002; &#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@RegisterExtension</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x901A;&#x8FC7;&#x7C7B;&#x5B57;&#x6BB5;&#x7F16;&#x7A0B;&#x5F0F;&#x6CE8;&#x518C;&#x6269;&#x5C55;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x88AB;&#x7EE7;&#x627F;&#xFF0C;&#x9664;&#x975E;&#x5B83;&#x4EEC;&#x88AB;&#x5C4F;&#x853D;&#x4E86;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@TempDir</code></td>
+<td style="text-align:left">&#x7528;&#x4E8E;&#x63D0;&#x4F9B;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#xFF0C;&#x901A;&#x8FC7;&#x5B57;&#x6BB5;&#x6CE8;&#x5165;&#x6216;&#x8005;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x6CE8;&#x5165;&#x3002;&#x4F4D;&#x4E8E;<code>org.junit.jupiter.api.io</code> &#x5305;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-&#x5143;&#x6CE8;&#x89E3;&#xFF08;meta-annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;composed-annotations&#xFF09;"><a name="52-&#x5143;&#x6CE8;&#x89E3;&#xFF08;meta-annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;composed-annotations&#xFF09;" class="anchor-navigation-ex-anchor" href="#52-&#x5143;&#x6CE8;&#x89E3;&#xFF08;meta-annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;composed-annotations&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>5.2 &#x5143;&#x6CE8;&#x89E3;&#xFF08;Meta-Annotations&#xFF09;&#x4E0E;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF08;Composed Annotations&#xFF09;</h3>
+<p>JUnit&#x7684;&#x6CE8;&#x89E3;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5143;&#x6CE8;&#x89E3;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;JUnit&#x7684;&#x6CE8;&#x89E3;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF0C;&#x5B83;&#x4EEC;&#x81EA;&#x52A8;&#x7EE7;&#x627F;&#x5B83;&#x4EEC;&#x7684;&#x5143;&#x6CE8;&#x89E3;&#x7684;&#x8BED;&#x4E49;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x50CF;&#x4E0B;&#x9762;&#x90A3;&#x6837;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;@Fast&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x5408;&#x6CE8;&#x91CA;&#xFF0C;&#x800C;&#x4E0D;&#x5FC5;&#x5728;&#x6574;&#x4E2A;&#x4EE3;&#x7801;&#x5E93;&#xFF08;&#x8BF7;&#x53C2;&#x9605;&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;&#xFF09;&#x4E2D;&#x590D;&#x5236;&#x548C;&#x7C98;&#x8D34;@Tag(&quot;fast&quot;)&#x3002;&#x7136;&#x540E;@Fast&#x53EF;&#x4EE5;&#x7528;&#x4F5C;@Tag(&quot;fast&quot;)&#x7684;&#x4E00;&#x4E2A;&#x66FF;&#x4EE3;&#x54C1;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Tag;
+
+<span class="hljs-meta">@Target</span>({ ElementType.TYPE, ElementType.METHOD })
+<span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;fast&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Fast {
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x663E;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528;@Fast&#x6CE8;&#x89E3;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Fast</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">myFastTest</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x6807;&#x8BB0;&#x4E86;@Fast&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x6807;&#x8BB0;&#x4E86;@Tag(&quot;fast&quot;)&#x6CE8;&#x89E3;&#x3002;</p>
+<p>&#x4F60;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540C;&#x65F6;&#x7528;@Tag(&quot;fast&quot;)&#x548C;@Test&#x6CE8;&#x89E3;&#x7684;@FastTest&#x7EC4;&#x5408;&#x6CE8;&#x89E3;&#xFF0C;&#x7528;&#x6765;&#x5728;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E2D;&#x53D6;&#x4EE3;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x6CE8;&#x89E3;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Tag;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+
+<span class="hljs-meta">@Target</span>(ElementType.METHOD)
+<span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;fast&quot;</span>)
+<span class="hljs-meta">@Test</span>
+<span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> FastTest {
+}
+</code></pre>
+<p>JUnit&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#x4E0B;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E3A;@Test&#x548C;@Tag(&quot;fast&quot;)&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@FastTest</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">myFastTest</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h2 id="6-&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;"><a name="6-&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#6-&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</h2>
+<p>&#x5982;&#x4F55;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x6709;&#x5177;&#x4F53;&#x8868;&#x8FF0;&#x3002;&#x5728;&#x5404;&#x79CD;IDE&#x4E2D;&#x901A;&#x5E38;&#x90FD;&#x652F;&#x6301;&#x9488;&#x5BF9;&#x6D4B;&#x8BD5;&#x7C7B;&#x9F20;&#x6807;&#x53F3;&#x952E;&#x5F39;&#x51FA;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x83DC;&#x5355;&#x4E2D;&#x6267;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5728;IntelliJ IDEA&#x4E2D;&#x7684;&#x56FE;&#x793A;&#xFF1A;</p>
+<p><img src="../images/run-test-idea.png" alt="run-test-idea"></p>
+<p>&#x4E0B;&#x9762;&#x662F;Eclipse&#x4E2D;&#x7684;&#x56FE;&#x793A;&#xFF1A;</p>
+<p><img src="../images/run-test-eclipse.png" alt="run-test-eclipse"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第二部分 使用JUnit编写和执行单元测试">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="writing/" class="navigation navigation-next " aria-label="Next page: 编写测试">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JUnit概述","level":"1.3.1","depth":2,"next":{"title":"编写测试","level":"1.3.2","depth":2,"path":"junit/writing/README.md","ref":"junit/writing/README.md","articles":[{"title":"简单测试","level":"1.3.2.1","depth":3,"path":"junit/writing/First_Test.md","ref":"junit/writing/First_Test.md","articles":[]},{"title":"生命周期方法","level":"1.3.2.2","depth":3,"path":"junit/writing/Life_Cycle_Methods.md","ref":"junit/writing/Life_Cycle_Methods.md","articles":[]},{"title":"显示名","level":"1.3.2.3","depth":3,"path":"junit/writing/Display_Name.md","ref":"junit/writing/Display_Name.md","articles":[]},{"title":"断言","level":"1.3.2.4","depth":3,"path":"junit/writing/Assertions.md","ref":"junit/writing/Assertions.md","articles":[]},{"title":"假设","level":"1.3.2.5","depth":3,"path":"junit/writing/Assumptions.md","ref":"junit/writing/Assumptions.md","articles":[]},{"title":"使测试失效","level":"1.3.2.6","depth":3,"path":"junit/writing/Disabling_Tests.md","ref":"junit/writing/Disabling_Tests.md","articles":[]},{"title":"有条件执行测试","level":"1.3.2.7","depth":3,"path":"junit/writing/Conditional_Test_Execution.md","ref":"junit/writing/Conditional_Test_Execution.md","articles":[]},{"title":"标签和过滤","level":"1.3.2.8","depth":3,"path":"junit/writing/Tags_and_Filtering.md","ref":"junit/writing/Tags_and_Filtering.md","articles":[]},{"title":"测试执行顺序","level":"1.3.2.9","depth":3,"path":"junit/writing/Test_Execution_Order.md","ref":"junit/writing/Test_Execution_Order.md","articles":[]},{"title":"嵌套测试","level":"1.3.2.10","depth":3,"path":"junit/writing/Nested_Tests.md","ref":"junit/writing/Nested_Tests.md","articles":[]},{"title":"依赖注入","level":"1.3.2.11","depth":3,"path":"junit/writing/Dependency_Injection.md","ref":"junit/writing/Dependency_Injection.md","articles":[]},{"title":"测试接口","level":"1.3.2.12","depth":3,"path":"junit/writing/Test_Interfaces.md","ref":"junit/writing/Test_Interfaces.md","articles":[]},{"title":"重复测试","level":"1.3.2.13","depth":3,"path":"junit/writing/Repeated_Tests.md","ref":"junit/writing/Repeated_Tests.md","articles":[]},{"title":"参数化测试","level":"1.3.2.14","depth":3,"path":"junit/writing/Parameterized_Test.md","ref":"junit/writing/Parameterized_Test.md","articles":[]},{"title":"测试模板","level":"1.3.2.15","depth":3,"path":"junit/writing/Test_Templates.md","ref":"junit/writing/Test_Templates.md","articles":[]},{"title":"动态测试","level":"1.3.2.16","depth":3,"path":"junit/writing/Dynamic_Tests.md","ref":"junit/writing/Dynamic_Tests.md","articles":[]},{"title":"超时","level":"1.3.2.17","depth":3,"path":"junit/writing/Timeouts.md","ref":"junit/writing/Timeouts.md","articles":[]},{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},{"title":"内建扩展","level":"1.3.2.19","depth":3,"path":"junit/writing/Built-in_Extensions.md","ref":"junit/writing/Built-in_Extensions.md","articles":[]}]},"previous":{"title":"第二部分 使用JUnit编写和执行单元测试","level":"1.3","depth":1,"path":"junit/README.md","ref":"junit/README.md","articles":[{"title":"JUnit概述","level":"1.3.1","depth":2,"path":"junit/What_is_JUnit.md","ref":"junit/What_is_JUnit.md","articles":[]},{"title":"编写测试","level":"1.3.2","depth":2,"path":"junit/writing/README.md","ref":"junit/writing/README.md","articles":[{"title":"简单测试","level":"1.3.2.1","depth":3,"path":"junit/writing/First_Test.md","ref":"junit/writing/First_Test.md","articles":[]},{"title":"生命周期方法","level":"1.3.2.2","depth":3,"path":"junit/writing/Life_Cycle_Methods.md","ref":"junit/writing/Life_Cycle_Methods.md","articles":[]},{"title":"显示名","level":"1.3.2.3","depth":3,"path":"junit/writing/Display_Name.md","ref":"junit/writing/Display_Name.md","articles":[]},{"title":"断言","level":"1.3.2.4","depth":3,"path":"junit/writing/Assertions.md","ref":"junit/writing/Assertions.md","articles":[]},{"title":"假设","level":"1.3.2.5","depth":3,"path":"junit/writing/Assumptions.md","ref":"junit/writing/Assumptions.md","articles":[]},{"title":"使测试失效","level":"1.3.2.6","depth":3,"path":"junit/writing/Disabling_Tests.md","ref":"junit/writing/Disabling_Tests.md","articles":[]},{"title":"有条件执行测试","level":"1.3.2.7","depth":3,"path":"junit/writing/Conditional_Test_Execution.md","ref":"junit/writing/Conditional_Test_Execution.md","articles":[]},{"title":"标签和过滤","level":"1.3.2.8","depth":3,"path":"junit/writing/Tags_and_Filtering.md","ref":"junit/writing/Tags_and_Filtering.md","articles":[]},{"title":"测试执行顺序","level":"1.3.2.9","depth":3,"path":"junit/writing/Test_Execution_Order.md","ref":"junit/writing/Test_Execution_Order.md","articles":[]},{"title":"嵌套测试","level":"1.3.2.10","depth":3,"path":"junit/writing/Nested_Tests.md","ref":"junit/writing/Nested_Tests.md","articles":[]},{"title":"依赖注入","level":"1.3.2.11","depth":3,"path":"junit/writing/Dependency_Injection.md","ref":"junit/writing/Dependency_Injection.md","articles":[]},{"title":"测试接口","level":"1.3.2.12","depth":3,"path":"junit/writing/Test_Interfaces.md","ref":"junit/writing/Test_Interfaces.md","articles":[]},{"title":"重复测试","level":"1.3.2.13","depth":3,"path":"junit/writing/Repeated_Tests.md","ref":"junit/writing/Repeated_Tests.md","articles":[]},{"title":"参数化测试","level":"1.3.2.14","depth":3,"path":"junit/writing/Parameterized_Test.md","ref":"junit/writing/Parameterized_Test.md","articles":[]},{"title":"测试模板","level":"1.3.2.15","depth":3,"path":"junit/writing/Test_Templates.md","ref":"junit/writing/Test_Templates.md","articles":[]},{"title":"动态测试","level":"1.3.2.16","depth":3,"path":"junit/writing/Dynamic_Tests.md","ref":"junit/writing/Dynamic_Tests.md","articles":[]},{"title":"超时","level":"1.3.2.17","depth":3,"path":"junit/writing/Timeouts.md","ref":"junit/writing/Timeouts.md","articles":[]},{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},{"title":"内建扩展","level":"1.3.2.19","depth":3,"path":"junit/writing/Built-in_Extensions.md","ref":"junit/writing/Built-in_Extensions.md","articles":[]}]},{"title":"运行测试","level":"1.3.3","depth":2,"path":"junit/exec/README.md","ref":"junit/exec/README.md","articles":[]},{"title":"测试报告","level":"1.3.4","depth":2,"path":"junit/Reports.md","ref":"junit/Reports.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/What_is_JUnit.md","mtime":"2020-05-27T10:26:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

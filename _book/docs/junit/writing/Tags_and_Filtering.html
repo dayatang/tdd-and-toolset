@@ -1,0 +1,1168 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>标签和过滤 · Java开发工具集之单元测试工具</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="杨宇">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Test_Execution_Order.html" />
+    
+    
+    <link rel="prev" href="Conditional_Test_Execution.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yyang.io/" target="_blank" class="custom-link">我的博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../unit_test/">
+            
+                <a href="../../unit_test/">
+            
+                    
+                    第一部分 单元测试和TDD
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../unit_test/What_is_Unit_Test.html">
+            
+                <a href="../../unit_test/What_is_Unit_Test.html">
+            
+                    
+                    什么是单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../unit_test/Why_Unit_Test.html">
+            
+                <a href="../../unit_test/Why_Unit_Test.html">
+            
+                    
+                    为什么要写单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                <a href="../../unit_test/Unit_Test_in_the_Test_System.html">
+            
+                    
+                    单元测试在整个测试体系中的位置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                <a href="../../unit_test/Misunderstanding_about_Unit_test.html">
+            
+                    
+                    单元测试的常见错误观念和做法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../unit_test/The_First_Unit_Tests.html">
+            
+                <a href="../../unit_test/The_First_Unit_Tests.html">
+            
+                    
+                    第一个单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../unit_test/What_to_Test.html">
+            
+                <a href="../../unit_test/What_to_Test.html">
+            
+                    
+                    测试哪些内容：Right-BICEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../unit_test/CORRECT.html">
+            
+                <a href="../../unit_test/CORRECT.html">
+            
+                    
+                    CORRECT边界条件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../unit_test/What_is_Good_Unit_Test.html">
+            
+                <a href="../../unit_test/What_is_Good_Unit_Test.html">
+            
+                    
+                    好单元测试的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../unit_test/TDD.html">
+            
+                <a href="../../unit_test/TDD.html">
+            
+                    
+                    测试驱动开发（TDD）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../unit_test/Environment.html">
+            
+                <a href="../../unit_test/Environment.html">
+            
+                    
+                    在项目中准备测试环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第二部分 使用JUnit编写和执行单元测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../What_is_JUnit.html">
+            
+                <a href="../What_is_JUnit.html">
+            
+                    
+                    JUnit概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    编写测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="First_Test.html">
+            
+                <a href="First_Test.html">
+            
+                    
+                    简单测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="Life_Cycle_Methods.html">
+            
+                <a href="Life_Cycle_Methods.html">
+            
+                    
+                    生命周期方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="Display_Name.html">
+            
+                <a href="Display_Name.html">
+            
+                    
+                    显示名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="Assertions.html">
+            
+                <a href="Assertions.html">
+            
+                    
+                    断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="Assumptions.html">
+            
+                <a href="Assumptions.html">
+            
+                    
+                    假设
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="Disabling_Tests.html">
+            
+                <a href="Disabling_Tests.html">
+            
+                    
+                    使测试失效
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="Conditional_Test_Execution.html">
+            
+                <a href="Conditional_Test_Execution.html">
+            
+                    
+                    有条件执行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.8" data-path="Tags_and_Filtering.html">
+            
+                <a href="Tags_and_Filtering.html">
+            
+                    
+                    标签和过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.9" data-path="Test_Execution_Order.html">
+            
+                <a href="Test_Execution_Order.html">
+            
+                    
+                    测试执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.10" data-path="Nested_Tests.html">
+            
+                <a href="Nested_Tests.html">
+            
+                    
+                    嵌套测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.11" data-path="Dependency_Injection.html">
+            
+                <a href="Dependency_Injection.html">
+            
+                    
+                    依赖注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.12" data-path="Test_Interfaces.html">
+            
+                <a href="Test_Interfaces.html">
+            
+                    
+                    测试接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.13" data-path="Repeated_Tests.html">
+            
+                <a href="Repeated_Tests.html">
+            
+                    
+                    重复测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.14" data-path="Parameterized_Test.html">
+            
+                <a href="Parameterized_Test.html">
+            
+                    
+                    参数化测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.15" data-path="Test_Templates.html">
+            
+                <a href="Test_Templates.html">
+            
+                    
+                    测试模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.16" data-path="Dynamic_Tests.html">
+            
+                <a href="Dynamic_Tests.html">
+            
+                    
+                    动态测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.17" data-path="Timeouts.html">
+            
+                <a href="Timeouts.html">
+            
+                    
+                    超时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.18" data-path="Parallel_Execution.html">
+            
+                <a href="Parallel_Execution.html">
+            
+                    
+                    并行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.19" data-path="Built-in_Extensions.html">
+            
+                <a href="Built-in_Extensions.html">
+            
+                    
+                    内建扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../exec/">
+            
+                <a href="../exec/">
+            
+                    
+                    运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Reports.html">
+            
+                <a href="../Reports.html">
+            
+                    
+                    测试报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../assertj/">
+            
+                <a href="../../assertj/">
+            
+                    
+                    第三部分 使用AssertJ编写测试断言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../assertj/What_is_AssertJ.html">
+            
+                <a href="../../assertj/What_is_AssertJ.html">
+            
+                    
+                    断言和AssertJ简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                <a href="../../assertj/Why_AssertJ_not_Hamcrest.html">
+            
+                    
+                    为什么不采用Hamcrest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../assertj/Using_AssertJ.html">
+            
+                <a href="../../assertj/Using_AssertJ.html">
+            
+                    
+                    使用AssertJ编写断言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../mockito/">
+            
+                <a href="../../mockito/">
+            
+                    
+                    第四部分 使用Mockito创建测试替身
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../mockito/">
+            
+                <a href="../../mockito/">
+            
+                    
+                    测试替身和Mockito简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../mockito/Using_Mockito.html">
+            
+                <a href="../../mockito/Using_Mockito.html">
+            
+                    
+                    用Mockito生成测试替身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../integration/">
+            
+                <a href="../../integration/">
+            
+                    
+                    第五部分 与其他开发工具的集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../integration/ide/">
+            
+                <a href="../../integration/ide/">
+            
+                    
+                    集成到IntelliJ Idea和Eclipse
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../integration/ide/IDEA.html">
+            
+                <a href="../../integration/ide/IDEA.html">
+            
+                    
+                    与IntelliJ IDEA集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../integration/ide/Eclipse.html">
+            
+                <a href="../../integration/ide/Eclipse.html">
+            
+                    
+                    与Eclipse集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../integration/build/">
+            
+                <a href="../../integration/build/">
+            
+                    
+                    集成到Maven、Ant和Gradle
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../integration/build/Maven.html">
+            
+                <a href="../../integration/build/Maven.html">
+            
+                    
+                    与Maven集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="../../integration/build/Ant.html">
+            
+                <a href="../../integration/build/Ant.html">
+            
+                    
+                    与Ant集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="../../integration/build/Gradle.html">
+            
+                <a href="../../integration/build/Gradle.html">
+            
+                    
+                    与Gradle集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../integration/ci/">
+            
+                <a href="../../integration/ci/">
+            
+                    
+                    与Jenkins和Sonarqube集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../../integration/ci/Jenkins.html">
+            
+                <a href="../../integration/ci/Jenkins.html">
+            
+                    
+                    与Jenkins集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../../integration/ci/Sonarqube.html">
+            
+                <a href="../../integration/ci/Sonarqube.html">
+            
+                    
+                    与Sonarqube集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >标签和过滤</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;"><b></b>&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><b></b>1. &#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;</a></li><li><span class="title-icon "></span><a href="#2-&#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><b></b>2. &#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</a></li><ul><li><span class="title-icon "></span><a href="#21-&#x5728;maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><b></b>2.1 &#x5728;Maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</a></li><li><span class="title-icon "></span><a href="#22-&#x5728;gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><b></b>2.2 &#x5728;Gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</a></li></ul></ul></ul></div><a href="#&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;"><a name="&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;" class="anchor-navigation-ex-anchor" href="#&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x7B7E;&#x548C;&#x8FC7;&#x6EE4;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</p>
+<p>&#x6D4B;&#x8BD5;&#x7C7B;&#x548C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7528;<code>@Tag</code>&#x6CE8;&#x89E3;&#x6253;&#x6807;&#x7B7E;&#xFF0C;&#x8FD9;&#x4E9B;&#x6807;&#x7B7E;&#x968F;&#x540E;&#x53EF;&#x7528;&#x4E8E;&#x5728;&#x6D4B;&#x8BD5;&#x53D1;&#x73B0;&#x548C;&#x6267;&#x884C;&#x4E2D;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x7B5B;&#x9009;&#x6761;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.tags;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Tag;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Tags;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+
+<span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+
+<span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;fast&quot;</span>)
+<span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;model&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TagDemo</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;taxes&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testingTaxCalculation</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@IntegrationTest</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">aIntegrationTest</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@Tags</span>( {
+            <span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;fast&quot;</span>),
+            <span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;model&quot;</span>)
+    })
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">testWithTags</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-meta">@Target</span>({ElementType.METHOD, ElementType.TYPE})
+    <span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+    <span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;IntegrationTest&quot;</span>)
+    <span class="hljs-meta">@interface</span> IntegrationTest {
+    }
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5BF9;&#x540C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x6D4B;&#x8BD5;&#x7C7B;&#x591A;&#x6B21;&#x58F0;&#x660E;<code>@Tag</code>&#x6CE8;&#x89E3;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>@Tags</code>&#x7EC4;&#x5408;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#x3002;</p>
+<h2 id="1-&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><a name="1-&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;" class="anchor-navigation-ex-anchor" href="#1-&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6807;&#x7B7E;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;</h2>
+<p><code>@Tag</code>&#x6CE8;&#x89E3;&#x91CC;&#x9762;&#x7684;&#x6807;&#x7B7E;&#x503C;&#x5FC5;&#x987B;&#x9075;&#x5B88;&#x4E0B;&#x9762;&#x7684;&#x89C4;&#x5219;&#xFF1A;</p>
+<ul>
+<li>&#x6807;&#x7B7E;&#x4E0D;&#x80FD;&#x662F;null&#x6216;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>&#x53BB;&#x9664;&#x4E24;&#x7AEF;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x540E;&#x7684;&#x6807;&#x7B7E;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF08;&#x7A7A;&#x683C;&#x3001;&#x5236;&#x8868;&#x7B26;&#x3001;&#x56DE;&#x8F66;&#x3001;&#x6362;&#x884C;&#x7B26;&#x7B49;&#x7B49;&#xFF09;</li>
+<li>&#x53BB;&#x9664;&#x4E24;&#x7AEF;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x540E;&#x7684;&#x6807;&#x7B7E;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;ISO&#x63A7;&#x5236;&#x5B57;&#x7B26;</li>
+<li>&#x53BB;&#x9664;&#x4E24;&#x7AEF;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x540E;&#x7684;&#x6807;&#x7B7E;&#x4E2D;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x4E0B;&#x5217;&#x7684;&#x4FDD;&#x7559;&#x5B57;&#x7B26;&#xFF1A;<ul>
+<li>,</li>
+<li>(</li>
+<li>)</li>
+<li>&amp;</li>
+<li>!</li>
+<li>|</li>
+</ul>
+</li>
+</ul>
+<p>&#x6807;&#x7B7E;&#x4E24;&#x7AEF;&#x5982;&#x679C;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF08;&#x7A7A;&#x683C;&#x3001;&#x5236;&#x8868;&#x7B26;&#x3001;&#x56DE;&#x8F66;&#x3001;&#x6362;&#x884C;&#x7B26;&#x7B49;&#x7B49;&#xFF09;&#xFF0C;&#x5C06;&#x88AB;&#x81EA;&#x52A8;&#x53BB;&#x9664;&#x3002;</p>
+<h2 id="2-&#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><a name="2-&#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#2-&#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5728;&#x6784;&#x5EFA;&#x7CFB;&#x7EDF;&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</h2>
+<h3 id="21-&#x5728;maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><a name="21-&#x5728;maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#21-&#x5728;maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x5728;Maven&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</h3>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4E3A;&#x4E86;&#x5C06;&#x5FEB;&#x901F;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x548C;&#x6162;&#x901F;&#x7684;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x5206;&#x5F00;&#xFF0C;&#x6211;&#x4EEC;&#x5206;&#x522B;&#x7528;<code>@Tag(&quot;Unit&quot;)</code>&#x548C;<code>@Tag(&quot;Integration&quot;)</code>&#x6765;&#x6CE8;&#x89E3;&#x5B83;&#x4EEC;&#x3002;&#x5728;Maven&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;surefire&#x63D2;&#x4EF6;&#x6765;&#x5206;&#x522B;&#x7B5B;&#x9009;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x548C;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x3002;</p>
+<pre><code class="lang-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-surefire-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.22.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">executions</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>unit-test<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">phase</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">phase</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">excludedGroups</span>&gt;</span>integration, acceptance<span class="hljs-tag">&lt;/<span class="hljs-name">excludedGroups</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>integration-test<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">phase</span>&gt;</span>integration-test<span class="hljs-tag">&lt;/<span class="hljs-name">phase</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">groups</span>&gt;</span>integration<span class="hljs-tag">&lt;/<span class="hljs-name">groups</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">executions</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;pom.xml&#x7684;maven-surefire-plugin&#x6D4B;&#x8BD5;&#x63D2;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x914D;&#x7F6E;&#x4E86;&#x4E24;&#x4E2A;<code>execution</code>&#xFF0C;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x548C;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x3002;&#x5176;&#x4E2D;<code>id</code>&#x4E3A;<code>unit-test</code>&#x7684;<code>execution</code>&#x7ED1;&#x5B9A;&#x5230;<code>test</code>&#x9636;&#x6BB5;&#xFF0C;&#x6392;&#x9664;&#x6389;&#x6CE8;&#x89E3;&#x4E86;<code>@Tag(&quot;integration&quot;)</code>&#x6216;<code>@Tag(&quot;acceptance&quot;)</code>&#x7684;&#x6D4B;&#x8BD5;&#x3002;&#x800C;<code>id</code>&#x4E3A;<code>integration-test</code>&#x7684;<code>execution</code>&#x7ED1;&#x5B9A;&#x5230;<code>integration-test</code>&#x9636;&#x6BB5;&#xFF0C;&#x53EA;&#x5305;&#x542B;&#x6CE8;&#x89E3;&#x4E86;<code>@Tag(&quot;integration&quot;)</code>&#x7684;&#x6D4B;&#x8BD5;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5F53;&#x6267;&#x884C;maven&#x6784;&#x5EFA;&#x6D41;&#x6C34;&#x7EBF;&#x65F6;&#xFF0C;&#x5230;&#x8FBE;&#x5355;&#x5143;&#x6D4B;&#x9636;&#x6BB5;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x6CE8;&#x89E3;<code>@Tag(&quot;integration&quot;)</code>&#x548C;<code>@Tag(&quot;acceptance&quot;)</code>&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#xFF0C;&#x5230;&#x8FBE;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#x5305;&#x542B;&#x4E86;<code>@Tag(&quot;integration&quot;)</code>&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A;</p>
+<ul>
+<li><p><code>&lt;groups&gt;</code>&#x5143;&#x7D20;&#x5B9A;&#x4E49;&#x8981;&#x5305;&#x542B;&#x5728;&#x6D4B;&#x8BD5;&#x4E2D;&#x7684;&#x6807;&#x7B7E;&#x3002;&#x800C;<code>&lt;excludedGroups&gt;</code>&#x5143;&#x7D20;&#x5B9A;&#x4E49;&#x8981;&#x6392;&#x9664;&#x7684;&#x6807;&#x7B7E;&#x3002;</p>
+</li>
+<li><p><code>&lt;groups&gt;</code>&#x548C;<code>&lt;excludedGroups&gt;</code>&#x5143;&#x7D20;&#x90FD;&#x652F;&#x6301;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x9017;&#x53F7;&#x201C;<code>,</code>&#x201D;&#x5206;&#x9694;&#x5404;&#x4E2A;&#x6807;&#x7B7E;&#x9879;&#x3002;</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Tag&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x8868;&#x8FBE;&#x591A;&#x4E2A;&#x6807;&#x7B7E;&#x7684;&#x7EC4;&#x5408;&#x3002;&#x64CD;&#x4F5C;&#x7B26;&#x5305;&#x62EC;<code>&amp;</code>&#x3001;<code>|</code>&#x3001;<code>!</code>&#x548C;<code>()</code>&#x3002;&#x4F8B;&#x5982;<code>&lt;groups&gt;(A | B) &amp; !C&lt;/groups&gt;</code>&#x8868;&#x793A;&#x5305;&#x542B;&#x90A3;&#x4E9B;&#x88AB;<code>@Tag(&quot;A&quot;)</code>&#x6216;<code>@Tag(&quot;B&quot;)</code>&#x6CE8;&#x89E3;&#x3001;&#x4F46;&#x6CA1;&#x6709;&#x88AB;<code>@Tag(&quot;A&quot;)</code>&#x6CE8;&#x89E3;&#x7684;&#x6D4B;&#x8BD5;&#x3002;</p>
+</li>
+<li><p><code>&lt;groups&gt;</code>&#x548C;<code>&lt;excludedGroups&gt;</code>&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">groups</span>&gt;</span>A, !B<span class="hljs-tag">&lt;/<span class="hljs-name">groups</span>&gt;</span>
+</code></pre>
+<p>&#x548C;&#x4E0B;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x7B49;&#x4EF7;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">groups</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">groups</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">excludedGroups</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">excludedGroups</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="22-&#x5728;gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><a name="22-&#x5728;gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#22-&#x5728;gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x5728;Gradle&#x4E2D;&#x6839;&#x636E;&#x6807;&#x7B7E;&#x8FC7;&#x6EE4;&#x6D4B;&#x8BD5;</h3>
+<p>&#x5728;<code>build.gradle</code>&#x6587;&#x4EF6;&#x7684;<code>test</code>&#x8282;&#x4E2D;&#x5B9A;&#x4E49;&#x7C7B;&#x4F3C;&#x4E0B;&#x9762;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-groovy">test {
+    useJUnitPlatform {
+        includeTags <span class="hljs-string">&apos;fast&apos;</span>, <span class="hljs-string">&apos;smoke &amp; feature-a&apos;</span>
+        <span class="hljs-comment">// excludeTags &apos;slow&apos;, &apos;ci&apos;</span>
+        includeEngines <span class="hljs-string">&apos;junit-jupiter&apos;</span>
+        <span class="hljs-comment">// excludeEngines &apos;junit-vintage&apos;</span>
+    }
+}
+</code></pre>
+<p>&#x6807;&#x7B7E;&#x8868;&#x8FBE;&#x5F0F;&#x548C;Maven&#x4E2D;&#x7684;&#x76F8;&#x540C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Conditional_Test_Execution.html" class="navigation navigation-prev " aria-label="Previous page: 有条件执行测试">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Test_Execution_Order.html" class="navigation navigation-next " aria-label="Next page: 测试执行顺序">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"标签和过滤","level":"1.3.2.8","depth":3,"next":{"title":"测试执行顺序","level":"1.3.2.9","depth":3,"path":"junit/writing/Test_Execution_Order.md","ref":"junit/writing/Test_Execution_Order.md","articles":[]},"previous":{"title":"有条件执行测试","level":"1.3.2.7","depth":3,"path":"junit/writing/Conditional_Test_Execution.md","ref":"junit/writing/Conditional_Test_Execution.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Tags_and_Filtering.md","mtime":"2020-05-29T04:18:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

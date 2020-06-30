@@ -459,7 +459,7 @@
                 <a href="Nested_Tests.html">
             
                     
-                    嵌套测试
+                    嵌套的测试
             
                 </a>
             
@@ -599,6 +599,51 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../exec/Run_Tests_in_IDEs.html">
+            
+                <a href="../exec/Run_Tests_in_IDEs.html">
+            
+                    
+                    在IDE中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../exec/Run_Tests_in_Build_Tools.html">
+            
+                <a href="../exec/Run_Tests_in_Build_Tools.html">
+            
+                    
+                    在构建工具中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../exec/Run_Tests_in_Console.html">
+            
+                <a href="../exec/Run_Tests_in_Console.html">
+            
+                    
+                    在终端控制台中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -935,7 +980,176 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><b></b>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</a></li></ul></div><a href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><a name="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><b></b>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><b></b>1. &#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;</a></li><li><span class="title-icon "></span><a href="#2-&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><b></b>2. &#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;</a></li></ul></ul></div><a href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><a name="&#x4F9D;&#x8D56;&#x6CE8;&#x5165;" class="anchor-navigation-ex-anchor" href="#&#x4F9D;&#x8D56;&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2606;&#x2606;&#x2606;</p>
+<p>JUnit Jupiter&#x5141;&#x8BB8;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x901A;&#x8FC7;&#x9884;&#x5148;&#x6CE8;&#x518C;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;<code>ParameterResolver</code>&#x7684;&#x5B9E;&#x4F8B;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p>
+<h2 id="1-&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><a name="1-&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;" class="anchor-navigation-ex-anchor" href="#1-&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;</h2>
+<p>&#x6709;3&#x4E2A;&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5728;JUnit&#x4E2D;&#x5B83;&#x4EEC;&#x662F;&#x81EA;&#x52A8;&#x6CE8;&#x518C;&#x7684;&#xFF1A;</p>
+<ul>
+<li><strong><code>TestInfoParameterResolver</code></strong></li>
+</ul>
+<p>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x662F;<code>TestInfo</code>&#xFF0C;&#x5185;&#x5EFA;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;<code>TestInfoParameterResolver</code>&#x5C06;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;<code>TestInfo</code>&#x7684;&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;<code>TestInfo</code>&#x5B9E;&#x4F8B;&#x6765;&#x68C0;&#x7D22;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x5BB9;&#x5668;&#x6216;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x663E;&#x793A;&#x540D;&#x79F0;&#x3001;&#x6D4B;&#x8BD5;&#x7C7B;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x6807;&#x7B7E;&#x7B49;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x663E;&#x793A;&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x6CE8;&#x5165;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x51FD;&#x6570;&#x548C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;<code>TestInfo</code>&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.di;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.assertj.core.api.Assertions.assertThat;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.DisplayName;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Tag;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.TestInfo;
+
+<span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;TestInfo Demo&quot;</span>)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestInfoDemo</span> </span>{
+
+    TestInfoDemo(TestInfo testInfo) {
+        assertThat(testInfo.getDisplayName()).isEqualTo(<span class="hljs-string">&quot;TestInfo Demo&quot;</span>);
+    }
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(TestInfo testInfo)</span> </span>{
+        String displayName = testInfo.getDisplayName();
+        assertThat(displayName).isIn(<span class="hljs-string">&quot;TEST 1&quot;</span>, <span class="hljs-string">&quot;test2()&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@DisplayName</span>(<span class="hljs-string">&quot;TEST 1&quot;</span>)
+    <span class="hljs-meta">@Tag</span>(<span class="hljs-string">&quot;my-tag&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">(TestInfo testInfo)</span> </span>{
+        assertThat(testInfo.getDisplayName()).isEqualTo(<span class="hljs-string">&quot;TEST 1&quot;</span>);
+        assertThat(testInfo.getTags()).contains(<span class="hljs-string">&quot;my-tag&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span> </span>{
+    }
+}
+</code></pre>
+<ul>
+<li><strong><code>RepetitionInfoParameterResolver</code></strong></li>
+</ul>
+<p>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x62E5;&#x6709;&#x6CE8;&#x89E3;<code>@RepeatedTest</code>&#x3001;<code>@BeforeEach</code>&#x3001;<code>@AfterEach</code>&#xFF0C;&#x5E76;&#x4E14;&#x63A5;&#x53D7;&#x7C7B;&#x578B;&#x4E3A;<code>RepetitionInfo</code>&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;<code>RepetitionInfoParameterResolver</code>&#x5C06;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;<code>RepetitionInfo</code>&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x4ECE;<code>RepetitionInfo</code>&#x4E2D;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x4EE5;&#x53CA;&#x603B;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x7B49;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.di;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.RepeatedTest;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.RepetitionInfo;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RepetitionInfoDemo</span> </span>{
+
+    <span class="hljs-meta">@RepeatedTest</span>(<span class="hljs-number">5</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">repeat</span><span class="hljs-params">(RepetitionInfo repetitionInfo)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Current Repetition: &quot;</span> + repetitionInfo.getCurrentRepetition());
+        System.out.println(<span class="hljs-string">&quot;Total Repetitions: &quot;</span> + repetitionInfo.getTotalRepetitions());
+    }
+}
+</code></pre>
+<ul>
+<li><strong><code>TestReporterParameterResolver</code></strong></li>
+</ul>
+<p>&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6216;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x662F;<code>TestReporter</code>&#xFF0C;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;<code>TestReporterParameterResolver</code>&#x5C06;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;<code>TestReporter</code>&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x503C;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;<code>TestReporter</code>&#x5411;&#x5F53;&#x524D;&#x6D4B;&#x8BD5;&#x7684;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x88AB;<code>TestExecutionListener</code>&#x7684;<code>reportingEntryPublished()</code>&#x65B9;&#x6CD5;&#x6D88;&#x8D39;&#xFF0C;&#x4F7F;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5728;IDE&#x89C6;&#x56FE;&#x548C;&#x6D4B;&#x8BD5;&#x62A5;&#x544A;&#x4E2D;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.di;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.TestReporter;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestReporterDemo</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reportSingleValue</span><span class="hljs-params">(TestReporter testReporter)</span> </span>{
+        testReporter.publishEntry(<span class="hljs-string">&quot;a status message&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reportKeyValuePair</span><span class="hljs-params">(TestReporter testReporter)</span> </span>{
+        testReporter.publishEntry(<span class="hljs-string">&quot;a key&quot;</span>, <span class="hljs-string">&quot;a value&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reportMultipleKeyValuePairs</span><span class="hljs-params">(TestReporter testReporter)</span> </span>{
+        Map&lt;String, String&gt; values = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+        values.put(<span class="hljs-string">&quot;user name&quot;</span>, <span class="hljs-string">&quot;dk38&quot;</span>);
+        values.put(<span class="hljs-string">&quot;award year&quot;</span>, <span class="hljs-string">&quot;1974&quot;</span>);
+        testReporter.publishEntry(values);
+    }
+}
+</code></pre>
+<h2 id="2-&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><a name="2-&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;" class="anchor-navigation-ex-anchor" href="#2-&#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x81EA;&#x5B9A;&#x4E49;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;</h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;&#x5E76;&#x901A;&#x8FC7;<code>@ExtendWith</code>&#x6CE8;&#x89E3;&#x6CE8;&#x518C;&#x5230;&#x88AB;&#x6D4B;&#x8BD5;&#x7C7B;&#xFF0C;&#x6765;&#x8BA9;&#x6D4B;&#x8BD5;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;<code>RandomParametersExtension</code>&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;&#x5728;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E2D;&#x67E5;&#x627E;&#x62E5;&#x6709;<code>@Random</code>&#x6CE8;&#x89E3;&#x7684;int&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6574;&#x6570;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.di;
+
+<span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+<span class="hljs-keyword">import</span> java.lang.reflect.Parameter;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ExtensionContext;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ExtensionContext.Namespace;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ParameterContext;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ParameterResolutionException;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ParameterResolver;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RandomParametersExtension</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ParameterResolver</span> </span>{
+
+    <span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+    <span class="hljs-meta">@Target</span>(ElementType.PARAMETER)
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Random {
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">supportsParameter</span><span class="hljs-params">(ParameterContext parameterContext, ExtensionContext extensionContext)</span> </span>{
+        <span class="hljs-keyword">return</span> parameterContext.isAnnotated(Random.class);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">resolveParameter</span><span class="hljs-params">(ParameterContext parameterContext, ExtensionContext extensionContext)</span> </span>{
+        <span class="hljs-keyword">return</span> getRandomValue(parameterContext.getParameter(), extensionContext);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> Object <span class="hljs-title">getRandomValue</span><span class="hljs-params">(Parameter parameter, ExtensionContext extensionContext)</span> </span>{
+        Class&lt;?&gt; type = parameter.getType();
+        java.util.Random random = extensionContext.getRoot().getStore(Namespace.GLOBAL)<span class="hljs-comment">//</span>
+                .getOrComputeIfAbsent(java.util.Random.class);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">int</span>.class.equals(type)) {
+            <span class="hljs-keyword">return</span> random.nextInt();
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">double</span>.class.equals(type)) {
+            <span class="hljs-keyword">return</span> random.nextDouble();
+        }
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ParameterResolutionException(<span class="hljs-string">&quot;No random generator implemented for &quot;</span> + type);
+    }
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x663E;&#x793A;&#x901A;&#x8FC7;&#x6CE8;&#x518C;<code>RandomParametersExtension</code>&#x53C2;&#x6570;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x7ED9;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x968F;&#x673A;&#x6574;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.di;
+
+<span class="hljs-keyword">import</span> org.assertj.core.data.Offset;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.extension.ExtendWith;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.assertj.core.api.Assertions.assertThat;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> yang.yu.tdd.di.RandomParametersExtension.*;
+
+<span class="hljs-meta">@ExtendWith</span>(RandomParametersExtension.class)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyRandomParametersTest</span> </span>{
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">injectsInteger</span><span class="hljs-params">(@Random <span class="hljs-keyword">int</span> i, @Random <span class="hljs-keyword">int</span> j)</span> </span>{
+        assertThat(i).isNotEqualTo(j);
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">injectsDouble</span><span class="hljs-params">(@Random <span class="hljs-keyword">double</span> d)</span> </span>{
+        assertThat(d).isCloseTo(<span class="hljs-number">0.0</span>, Offset.offset(<span class="hljs-number">1.0</span>));
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -963,7 +1177,7 @@
 
             
                 
-                <a href="Nested_Tests.html" class="navigation navigation-prev " aria-label="Previous page: 嵌套测试">
+                <a href="Nested_Tests.html" class="navigation navigation-prev " aria-label="Previous page: 嵌套的测试">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -979,7 +1193,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"依赖注入","level":"1.3.2.11","depth":3,"next":{"title":"测试接口","level":"1.3.2.12","depth":3,"path":"junit/writing/Test_Interfaces.md","ref":"junit/writing/Test_Interfaces.md","articles":[]},"previous":{"title":"嵌套测试","level":"1.3.2.10","depth":3,"path":"junit/writing/Nested_Tests.md","ref":"junit/writing/Nested_Tests.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Dependency_Injection.md","mtime":"2020-05-29T05:56:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"依赖注入","level":"1.3.2.11","depth":3,"next":{"title":"测试接口","level":"1.3.2.12","depth":3,"path":"junit/writing/Test_Interfaces.md","ref":"junit/writing/Test_Interfaces.md","articles":[]},"previous":{"title":"嵌套的测试","level":"1.3.2.10","depth":3,"path":"junit/writing/Nested_Tests.md","ref":"junit/writing/Nested_Tests.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Dependency_Injection.md","mtime":"2020-06-02T04:20:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T04:33:00.930Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -459,7 +459,7 @@
                 <a href="Nested_Tests.html">
             
                     
-                    嵌套测试
+                    嵌套的测试
             
                 </a>
             
@@ -599,6 +599,51 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../exec/Run_Tests_in_IDEs.html">
+            
+                <a href="../exec/Run_Tests_in_IDEs.html">
+            
+                    
+                    在IDE中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../exec/Run_Tests_in_Build_Tools.html">
+            
+                <a href="../exec/Run_Tests_in_Build_Tools.html">
+            
+                    
+                    在构建工具中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../exec/Run_Tests_in_Console.html">
+            
+                <a href="../exec/Run_Tests_in_Console.html">
+            
+                    
+                    在终端控制台中运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -936,6 +981,140 @@
                                 <section class="normal markdown-section">
                                 
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x8D85;&#x65F6;"><b></b>&#x8D85;&#x65F6;</a></li></ul></div><a href="#&#x8D85;&#x65F6;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8D85;&#x65F6;"><a name="&#x8D85;&#x65F6;" class="anchor-navigation-ex-anchor" href="#&#x8D85;&#x65F6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8D85;&#x65F6;</h1>
+<p><strong>&#x91CD;&#x8981;&#x6027;</strong>&#xFF1A;&#x2605;&#x2605;&#x2606;&#x2606;&#x2606;</p>
+<p>&#x5982;&#x679C;&#x7ED9;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x3001;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x4E86;<code>@Timeout</code>&#x6CE8;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x5F53;&#x6D4B;&#x8BD5;&#x6CA1;&#x6709;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x6D4B;&#x8BD5;&#x5C06;&#x88AB;&#x6807;&#x8BC6;&#x4E3A;&#x5931;&#x8D25;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#x662F;&#x79D2;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> yang.yu.tdd.timeout;
+
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+<span class="hljs-keyword">import</span> org.junit.jupiter.api.Timeout;
+
+<span class="hljs-keyword">import</span> java.util.concurrent.TimeUnit;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TimeoutDemo</span> </span>{
+
+    <span class="hljs-meta">@BeforeEach</span>
+    <span class="hljs-meta">@Timeout</span>(<span class="hljs-number">5</span>)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setUp</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// fails if execution time exceeds 5 seconds</span>
+    }
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-meta">@Timeout</span>(value = <span class="hljs-number">100</span>, unit = TimeUnit.MILLISECONDS)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">failsIfExecutionTimeExceeds100Milliseconds</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// fails if execution time exceeds 100 milliseconds</span>
+    }
+
+}
+</code></pre>
+<p>&#x4E0E;<code>assertTimeoutPreemptively()</code>&#x65AD;&#x8A00;&#x76F8;&#x53CD;&#xFF0C;<code>@Timeout</code>&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#x5728;&#x6D4B;&#x8BD5;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FDB;&#x884C;&#x3002; &#x5982;&#x679C;&#x8D85;&#x8FC7;&#x8BBE;&#x5B9A;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x5219;&#x4E3B;&#x7EBF;&#x7A0B;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;&#x3002; &#x8FD9;&#x6837;&#x505A;&#x662F;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x4E0E;Spring&#x7B49;&#x6846;&#x67B6;&#x7684;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x6846;&#x67B6;&#x4F7F;&#x7528;&#x4E86;&#x5BF9;&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x7684;&#x7EBF;&#x7A0B;&#x654F;&#x611F;&#x7684;&#x673A;&#x5236;&#x2014;&#x2014;&#x4F8B;&#x5982;<code>ThreadLocal</code>&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5728;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0A;&#x6DFB;&#x52A0;<code>@Timeout</code>&#x6CE8;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x3001;&#x6D4B;&#x8BD5;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x548C;&#x5D4C;&#x5957;&#x6D4B;&#x8BD5;&#x7C7B;&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x9664;&#x975E;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x6216;&#x5D4C;&#x5957;&#x7C7B;&#x4E0A;&#x9762;&#x4E5F;&#x6709;&#x52A0;<code>@Timeout</code>&#x6CE8;&#x89E3;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6D4B;&#x8BD5;&#x7C7B;&#x4E0A;&#x7684;<code>@Timeout</code>&#x6CE8;&#x89E3;&#x5BF9;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x4F5C;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;<code>@TestFactory</code>&#x4E0A;&#x6DFB;&#x52A0;<code>@Timeout</code>&#x6CE8;&#x89E3;&#xFF0C;&#x53EA;&#x4F1A;&#x5BF9;&#x6574;&#x4E2A;&#x6D4B;&#x8BD5;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x8BBE;&#x5B9A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x9488;&#x5BF9;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4EA7;&#x751F;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x8BBE;&#x5B9A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x3002;&#x5982;&#x679C;&#x8981;&#x5BF9;&#x540E;&#x8005;&#x8BBE;&#x5B9A;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;<code>assertTimeout()</code>&#x6216; <code>assertTimeoutPreemptively()</code>&#x65AD;&#x8A00;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5728;<code>@TestTemplate</code>&#x3001;<code>@RepeatedTest</code>&#x3001;<code>@ParameterizedTest</code>&#x7B49;&#x6D4B;&#x8BD5;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x4E0A;&#x6DFB;&#x52A0;<code>@Timeout</code>&#x6CE8;&#x89E3;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x9488;&#x5BF9;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x6765;&#x5E94;&#x7528;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>junit-platform.properties</code>&#x4E0A;&#x7EDF;&#x4E00;&#x8FDB;&#x884C;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8BBE;&#x7F6E;&#x9879;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>junit.jupiter.execution.timeout.default</td>
+<td>&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.testable.method.default</td>
+<td>&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.test.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@Test</code>&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.testtemplate.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@TestTemplate</code>&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF08;&#x5305;&#x62EC;<code>@RepeatedTest</code>&#x548C;<code>@ParameterizedTest</code>&#xFF09;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.testfactory.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@TestFactory</code>&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.lifecycle.method.default</td>
+<td>&#x8BBE;&#x7F6E;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.beforeall.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@BeforeAll</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.beforeeach.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@BeforeEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.aftereach.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@AfterEach</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>junit.jupiter.execution.timeout.afterall.method.default</td>
+<td>&#x8BBE;&#x7F6E;<code>@AfterAll</code>&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7684;&#x7F3A;&#x7701;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x66F4;&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x4F1A;&#x8986;&#x76D6;&#x66F4;&#x4E0D;&#x5177;&#x4F53;&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>junit.jupiter.execution.timeout.test.method.default</code> &gt; <code>junit.jupiter.execution.timeout.testable.method.default</code> &gt; <code>junit.jupiter.execution.timeout.default</code></p>
+<p>&#x4E0A;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x7684;&#x503C;&#x9075;&#x5FAA;&#x4E0B;&#x9762;&#x7684;&#xFF08;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x7684;&#xFF09;&#x683C;&#x5F0F;&#xFF1A;<code>&lt;number&gt; [ns|&#x3BC;s|ms|s|m|h|d]</code>&#x3002;&#x6570;&#x503C;&#x548C;&#x5355;&#x4F4D;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#x3002;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x5355;&#x4F4D;&#x7B49;&#x4EF7;&#x4E8E;&#x4F7F;&#x7528;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;&#x503C;</th>
+<th style="text-align:left">Equivalent annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>42</code></td>
+<td style="text-align:left"><code>@Timeout(42)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 ns</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = NANOSECONDS)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 &#x3BC;s</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = MICROSECONDS)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 ms</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = MILLISECONDS)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 s</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = SECONDS)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 m</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = MINUTES)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 h</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = HOURS)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>42 d</code></td>
+<td style="text-align:left"><code>@Timeout(value = 42, unit = DAYS)</code></td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;<code>junit.jupiter.execution.timeout.mode</code>&#x53C2;&#x6570;&#x6765;&#x4E34;&#x65F6;&#x53D6;&#x6D88;&#x8D85;&#x65F6;&#x673A;&#x5236;&#x3002;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6709;&#x4E09;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x53D6;&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>enabled</code>&#xFF1A;&#x7F3A;&#x7701;&#x6A21;&#x5F0F;&#x3002;&#x4F7F;&#x8D85;&#x65F6;&#x673A;&#x5236;&#x751F;&#x6548;&#x3002;</li>
+<li><code>disabled</code>&#xFF1A;&#x4F7F;&#x8D85;&#x65F6;&#x914D;&#x7F6E;&#x65E0;&#x6548;&#x3002;</li>
+<li><code>disabled_on_debug</code>&#xFF1A;&#x5728;&#x8C03;&#x8BD5;&#x65F6;&#x4F7F;&#x8D85;&#x65F6;&#x8BBE;&#x7F6E;&#x65E0;&#x6548;&#x3002;&#x5982;&#x679C;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;<code>agentlib:jdwp</code>&#x5F00;&#x5934;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;JVM&#x8FD0;&#x884C;&#x65F6;&#x5C31;&#x5904;&#x4E8E;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#x3002;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x53EF;&#x80FD;&#x8017;&#x65F6;&#x5F88;&#x4E45;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;<code>@Timeout</code>&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x7531;&#x4E8E;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x6302;&#x8D77;&#x800C;&#x5BFC;&#x81F4;&#x7684;&#x65E0;&#x9650;&#x671F;&#x7B49;&#x5F85;&#x6D4B;&#x8BD5;&#x5B8C;&#x6210;&#x3002;</p>
 
                                 
                                 </section>
@@ -979,7 +1158,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"超时","level":"1.3.2.17","depth":3,"next":{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},"previous":{"title":"动态测试","level":"1.3.2.16","depth":3,"path":"junit/writing/Dynamic_Tests.md","ref":"junit/writing/Dynamic_Tests.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Timeouts.md","mtime":"2020-05-27T04:20:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-29T07:01:35.822Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"超时","level":"1.3.2.17","depth":3,"next":{"title":"并行测试","level":"1.3.2.18","depth":3,"path":"junit/writing/Parallel_Execution.md","ref":"junit/writing/Parallel_Execution.md","articles":[]},"previous":{"title":"动态测试","level":"1.3.2.16","depth":3,"path":"junit/writing/Dynamic_Tests.md","ref":"junit/writing/Dynamic_Tests.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/dayatang/"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"/images/alipay.png","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"/images/wechat.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"dayatang","repo":"mysql","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"杨宇","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java开发工具集之单元测试工具","language":"zh-hans","links":{"sidebar":{"我的博客":"https://yyang.io/"}},"gitbook":"3.2.3","description":"使用单元测试三大工具：JUnit、AssertJ和Mockito进行测试驱动开发"},"file":{"path":"junit/writing/Timeouts.md","mtime":"2020-06-03T05:36:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T04:33:00.930Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
